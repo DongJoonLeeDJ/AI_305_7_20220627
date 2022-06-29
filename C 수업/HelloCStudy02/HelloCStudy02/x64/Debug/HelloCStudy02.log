@@ -1,0 +1,7 @@
+﻿  CStudy04.c
+D:\shareFolder\C 수업\HelloCStudy02\HelloCStudy02\CStudy04.c(4,2): warning C4013: '프린터'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+D:\shareFolder\C 수업\HelloCStudy02\HelloCStudy02\CStudy04.c(33,10): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'size_t'입니다.
+D:\shareFolder\C 수업\HelloCStudy02\HelloCStudy02\CStudy04.c(33,10): message : 이 인수는 버퍼 크기로 사용됩니다.
+D:\shareFolder\C 수업\HelloCStudy02\HelloCStudy02\CStudy04.c(37,2): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+CStudy04.obj : error LNK2019: 프린터main 함수에서 참조되는 확인할 수 없는 외부 기호
+D:\shareFolder\C 수업\HelloCStudy02\x64\Debug\HelloCStudy02.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
