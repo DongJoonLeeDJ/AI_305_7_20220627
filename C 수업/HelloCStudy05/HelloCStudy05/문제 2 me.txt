@@ -1,0 +1,40 @@
+	int a, b, c;
+	printf("세 변수를 입력하세요");
+	scanf_s("%d,%d,%d", &a, &b, &c);
+	int sum = 0;
+	for (int i = a; i <= b; i++)
+	{
+		if (i % c == 0)
+			continue;
+		else
+			sum += i;
+	}
+	printf("%d부터 %d까지의 합이면서 %d의 배수는 빼기=%d", a, b, c, sum);
+	//2.
+		//3의 배수, 5의배수.
+	int sugar;
+	printf("요구하는 설탕 수");
+	scanf_s("%d", &sugar);
+	if (sugar % 3 == 0)
+		printf("%d묶음.", sugar / 3);
+	else if (sugar % 5 == 0)
+		printf("%d묶음.", sugar / 5);
+	else
+		sugar -= 1;
+	printf("%d", sugar);
+		//2.
+		//3의 배수, 5의배수.
+	int sugar;
+	int pocket[2] = { 3,5 };
+	int a[2], b[2];
+	printf("설탕 양은?");
+	scanf_s("%d", &sugar);
+	a[0] = sugar / pocket[0];
+	b[0] = sugar - pocket[0];
+	printf("%5d주머니:\t%dkg", pocket[0], a[0]);
+	for (int i = 1; i < 2; i++)
+	{
+		a[i] = b[i - 1] / sugar[i];
+		b[i] = b[i - 1] - sugar[i] * a[i];
+		printf("%5d주머니:%dkg\n", pocket[i], a[i]);
+	}
