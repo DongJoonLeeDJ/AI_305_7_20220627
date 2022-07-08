@@ -24,7 +24,12 @@ int main()
 		}
 	}
 	if (i != -1)
-		printf("둘은 똑같다. %s %s\n", sentense1, sentense2);
+	{
+		if (sentense1[i] == sentense2[i])
+			printf("둘은 똑같다. %s %s\n", sentense1, sentense2);
+		else
+			printf("둘은 길이가 다릅니다.");
+	}
 
 	return 0;
 }

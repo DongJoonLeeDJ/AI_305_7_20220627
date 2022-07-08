@@ -20,7 +20,7 @@ int main()
 		}
 	}
 
-	int gugu2[10][9];
+	int gugu2[10][9];//10단부터 19단
 	//10~19단이니까 10개
 	// 10 11 12 13 14 15 16 17 18 19
 	int gugu2_row = sizeof(gugu2) / sizeof(gugu2[0]);
@@ -36,7 +36,7 @@ int main()
 	for (int i = 0; i < row; i++)
 	{
 		for (int j = 0; j < col; j++)
-			sum1 += gugu1[i][j];
+			sum1 += gugu1[i][j]; //sum = gugu1[i][j]+sum;
 	}
 	//4
 	int sum2 = 0;

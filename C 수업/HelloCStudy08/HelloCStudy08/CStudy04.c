@@ -17,9 +17,9 @@ int main()
 
 	//305호 교실 학생들의 나이(교실에 5명 있다고 가정)
 	int room[5] = { 30, 22, 25, 29, 27 };
+	//int** rr = r_room;
 	//3층에 교실이 3개가 있고, 거기 있는 학생들의 나이
 	int r_room[3][5];
-	//int** rr = r_room;
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 5; j++)
@@ -31,7 +31,7 @@ int main()
 			printf("%d\n", r_room[i][j]);
 	}
 
-	int num[6] = { 1,11,12,1121,122111,112213 };
-	for (int i = 0;i < )
+	//int num[6] = { 1,11,12,1121,122111,112213 };
+	//for (int i = 0;i < )
 	return 0;
 }

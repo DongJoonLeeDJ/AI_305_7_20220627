@@ -17,15 +17,24 @@ int main()
 		}
 	}
 	printf("1. %s\n", s1);
+
+
+
 	for (int i = 0; s1[i] != NULL; i++)
 	{
-		//a~z까지의 값인 경우
+		//A~Z까지의 값인 경우
 		if (s1[i] >= 'A' && s1[i] <= 'Z')
 		{
 			s1[i] += diff;
 		}
 	}
 	printf("2. %s\n", s1);
+
+
+
+	////////////////////////////////
+
+
 
 	printf("문장 다시 입력해보세요.");
 	gets(s2);
@@ -37,6 +46,13 @@ int main()
 			s2[i] -= diff;//대문자로 변환
 	}
 	printf("%s\n", s2);
+
+
+
+
+
+
+
 
 	char r[1024]; //뒤집힌 거 저장하기
 	int index = 0;
