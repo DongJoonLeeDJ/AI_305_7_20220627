@@ -30,7 +30,10 @@ int main()
 	int* ptr = numbers;
 
 	for (int i = 0; i < 10; i++)
+	{
 		ptr[i] = i * 10;
+		printf("tetst....\n");
+	}
 
 	for (int i = 0; i < 10; i++)
 		printf("%d", numbers[i]);

@@ -2,7 +2,7 @@
 int main()
 {
 	printf("1번 나이가 몇 살이니?");
-	int age;
+	int age=10;
 	scanf_s("%d", &age);
 	if (age < 0) 
 	{
@@ -10,7 +10,7 @@ int main()
 	}
 	else
 	{
-		age /= 10; //34 -> 3
+		age /= 10; //age = age/10 //34 -> 3
 
 		switch (age)
 		{
