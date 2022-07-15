@@ -1,3 +1,2 @@
-﻿  solve3_4.c
-D:\shareFolder\C 수업\Solutions\Solutions\solve3_4.c(6,2): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+﻿  solve9.c
   Solutions.vcxproj -> D:\shareFolder\C 수업\Solutions\x64\Debug\Solutions.exe

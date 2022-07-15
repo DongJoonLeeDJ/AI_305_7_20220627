@@ -17,7 +17,7 @@ void changeColor(char a, char b)
 	//인식이 안 된다.
 	color[6] = a;
 	color[7] = b;
-	//color[8] = NULL;//'\0';
+	color[8] = NULL;//'\0';
 	system(color);
 }
 int main()
@@ -25,10 +25,12 @@ int main()
 	//system("color 0a");
 	greenChar();
 	printf("첫번째 문자 입력");
-	char a = getchar();
+	char a;// = getchar();
+	scanf_s("%c", &a, 1);
 	rewind(stdin);
 	printf("두번째 문자 입력");
-	char b = getchar();
+	char b;//; = getchar();
+	scanf_s("%c", &b, 1);
 	changeColor(a, b);
 	return 0;
 }

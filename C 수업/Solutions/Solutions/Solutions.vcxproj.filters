@@ -24,5 +24,8 @@
     <ClCompile Include="solve3_4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="solve9.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
