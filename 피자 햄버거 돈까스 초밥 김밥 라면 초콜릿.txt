@@ -1,0 +1,6 @@
+git branch, git checkout,  
+
+업로드할 거 있음 변경
+
+git add
+git commit -m "메시지"
