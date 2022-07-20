@@ -1,0 +1,84 @@
+	○ Sierra ; 콘솔창 커맨드 입력창으로 하는법. 
+	○ Git gui = unstaged changes => staged changes(will commit)// 배쉬가 더 편함. 속도도 빠르고,
+	○ 원하는 시점으로 돌리고 싶을땐 git gui - visualize all branch history ; 모든 정보 기록 다 볼 수 있다. ->우클릭->reset branch here
+	○ Git bash = CONSOLE 창에서 명령어로 GITHUB 이용
+
+Backup's_backup's_backup_ !!!!!!!!!!!!!!!!!!
+	1. 백업용으로 branch 만들어두기.
+	2. Gui 켜놓고 작업 하는거.
+	○ GIT INIT \\ INICIALIZE 초기화 : .GIT folder(흐린색임)에 정보가 들어가 있다.(형상기억정보랑 싹다
+	○ Git add . // will commit = 여기 시점 저장하겠다(git gui staged changes(will commit)
+	○ Git commit // 2개 파일 추가
+	○ Git log //
+	○ Branch 가 많다구 좋은게 아니당 'ㅅ'/
+	○ Main 이랑 branch 겹 ㄴㄴ
+	○ Main abc <-> main(master) push하면 main에서 master 브랜치 떙기거나 conflict.
+	○ Read me 잘적으면 이득이득~~~~ 저장소에 자동으로 생성됨.
+
+	Q. 오리진은=http git hub 저장소 주소. 근데 메인거 수정되면 바뀌나?? 자동 업데이트???⚠
+	R. 🤬Github에 만든거랑 방금 폴더에 만든건 남남
+	S. Solution1. 새로운 폴더 만들어서 깃허브 등록
+	T. Solution2. 드래그 해서 올리깅
+
+○ Git hub 를 쓸거면 branch 조심 해라. Main 에 안올라가게 ㄷㄷㄷ 업데이트가 꼬일 수 있다.  > 이거 떄매 기본 branch를 main으로 통일한거.
+○ 기본 branch 설정을 안하고 그냥 하게 되면 그 위에 덮어쓰기 될 수 있댱.
+○ 특히 push 에서!!!
+
+
+git fetch && git merge --ff-only Origin/master (서버 파일 가져와라) 클론화 해서 싹따 땡겨오는 거당😍 clone;pull 은 지정한 파일의 최신ver.만 떙겨오지만 
+Pull 떙겨오기실제로 갖고오는 것, // fetch 동기화 상태확인,  
+
+Push - origin-저장소(main은 생략해도 된당. Main이 기본) newBranch 명에 다른 brnach 명 오면 거기 업로드
+
+
+
+PULL🎃
+	1. 형상기억정보 등 다따온다. (Git hub desktop > Clone ; pull 이것만 됨. But 용량이 너무너무 커질 수 있어서 git bash 가 필요하당.
+	2.  일부 branch, main 등 하나만 땡겨 올 수 있게 하는거 - > git bash 가 되서 이걸로 콘솔에서 입력해서 하는거.
+	3. But ! 우린 아마 github desktop으로 다 될거다. 
+
+
+Git desktop > file > option > account logout & git name delete
+Git signin > option > git name with my email 
+
+
+
+File >  clone reposit dongjunT
+Patch origin > pull
+🎈저장소안에 .git 있는거 또 쓰지마랑
+
+🎆git bash, git gui 로 console 명령어이용해서 하는거 할줄 알면 편하당…
+근데 git hub 데스크탑 잇어ㅓㅅ 굳이?
+
+
+Window git bash 한글 안깨지게
+*utf-8은 글자를 2진법으로 컴퓨터가 해석하게 바꾸는거???
+
+
+Git add . (띄워쓰기 공백안에 있는걸 다 불러온당)~~!!
+명령어로 폴더 불러오는 법 = pull clone with github http.
+	• Clone -> git, clone, 주소지 쓰면 끝.
+	• Pull -> main 등 하나의 branch 만 땡겨온다.
+
+Origin =>주소선언=변수,  좀 더 쉽게 할려궁. 
+	Q. Pull 할때 오리진 안 쓰는 이유 ; clone 하면 origin이 없댜.????? 왜냐면 그냥 다 따오기 때문에 굳이 뭐 origin 주소선언 할 필요가 없다능~~~~~
+
+폴더에 변경사항 업로드하는법 = push
+
+Pull 할때 오리진으로 떙겨오는 것.
+
+
+
+- git console3
+1. git console2에서 만든 저장소를 이용하되, pull 명령어로 특정 branch만 가져와본다. (main 아니고 다른 branch!!!)
+git remote add origin https://github.com/parkmyounghoi/sec.git
+(어디 서버에 올릴지 지정)
+😫Main을 땡겨오고 local 을 수정하면 업로드가 안된당.
+
+
+2. 옆자리 사람을 초대한다(=옆 자리 사람한테 초대 받는다.)
+
+3. 옆 자리 사람의 저장소의 특정 branch에 파일을 하나 업로드해본다.
+선생님이랑 광현이 셋이서 하니까 pull로 땡기고 다시 push 해야한당,
+
+4. 서로 잘 올라갔는지 확인해본다.
