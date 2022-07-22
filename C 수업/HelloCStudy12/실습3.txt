@@ -1,0 +1,12 @@
+1. Rectangle 이라는 구조체를 만든다.
+안에는 width, height 속성이 있다.
+
+2. 이 Rectangle을 매개변수로 한 함수를 만들고
+이 Rectangle의 넓이값(width*height)을 리턴하게 한다.
+
+3. main에서 이 것을 호출한다.
+
+만약 함수가 어렵다면 main에서 이 모든 작업을 해보기
+사각형은 2개 정도 만들어보기
+1개는 코드로 값 넣고
+1개는 scanf_s로 값 넣어보기
