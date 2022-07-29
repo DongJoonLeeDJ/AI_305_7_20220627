@@ -1,0 +1,109 @@
+#pragma warning(disable:4996)
+#include <stdio.h>
+#include <windows.h>
+
+int arr[7][9] = { { " ","국어","영어","수학","사회","과학","합계","평균","석차" },				//7줄 9줄 설정
+	{ "철수" },
+	{ "영희" },
+	{ "지우" },
+	{ "이슬" },
+	{ "합계" },
+	{ "평균" }
+};
+/*색깔 입력용 함수*/ 
+int setcolor(int text)																		//색깔(setcolor)입력함수
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), text);
+}
+
+void enter(void) {																			//정수 입력 및 총합 (enter)함수 입력
+	int sum = 0, i, j;
+	for (i = 1; i < 5; i++) {
+		for (j = 1; j < 6; j++) {															//i열 j행 (i의 j의 점수는?)
+			printf("%s의 %s점수는? : ", arr[i][0], arr[0][j]);
+			scanf("%d", &arr[i][j]);														//점수 입력
+			sum += arr[i][j];																//점수 총합
+		}
+		printf("\n");
+		arr[i][6] = sum;																	//(사람이름)의 총합
+		sum = 0;																			//sum=0으로 초기
+	}
+}
+
+void add(void) {																			//과목총합() 함수 입력
+	int i, j, sum = 0;
+	for (j = 1; j < 6; j++) {
+		for (i = 1; i < 5; i++) {
+			sum = sum + arr[i][j];															//점수 총합
+		}
+		arr[5][j] = sum;																	//과목 총합
+		sum = 0;																			//sum를 0으로 초기
+	}
+}
+
+int avr(int i, int j, double k) {												//평균(avr) 함수 입력
+	double div;
+	div = arr[i][j] / k;														//평균값입력
+	printf("%0.1f점\t", div);													//arr[5][j]/4 아니라 arr[5][j]/4.0 입력하는 이유는 정수아닌 실수로 계산해야되기 때문
+}
+/*석차함수*/
+void ranking(void) {															//석차(ranking) 함수 입력
+	int i, k;
+	for (i = 1; i < 5; i++) {
+		arr[i][8] = 1;
+		for (k = 1; k < 5; k++) {
+			if (arr[i][6] < arr[k][6]) {										//arr[i][6] < arr[k][6] 참일수록 등수 낮아짐
+				++arr[i][8];													//
+			}
+		}
+	}
+}
+
+int prin1(i, j)
+{
+	if (i > 4 && j > 5) {																//빈칸출력
+		" \t";
+	}
+	else if (i == 6 && j != 0) {													//i가 6이 같고 j가 0아니면 arr[5][j]/4.0 으로 계산
+		avr(5, j, 4.0);																//div 를 0으로 초기
+	}
+	else if (j == 7 && i != 0) {													//j가 7이 같고 i가 0아니면 arr[5][j]/5.0 으로 계산
+		avr(i, 6, 5.0);
+	}
+	else if (i != 0 && j == 8) {													//i가 0아니고 j가 0아니면 
+		printf("%d등\t", arr[i][j]);												//arr[i][j]을 출력
+	}
+	else if (i != 0 && j != 0) {													//i가 0아니고 j가 0아니면 
+		printf("%4d점\t", arr[i][j]);												//arr[i][j]을 출력
+	}
+	else {
+		printf("%s\t", arr[i][j]);													//그 밖에는 arr[i][j](문자)로 출력
+	}
+}
+
+void prin(void) {
+	int i, j;
+	for (i = 0; i < 7; i++) {
+		for (j = 0; j < 9; j++) {
+			setcolor(15);																		//나머지 글자색 흰색으로 출력
+			if (arr[i][8] == 1) {
+				setcolor(10);																	//색깔 초록색으로
+				prin1(i, j);																		//prin1 문 입력
+			}
+
+
+			else {
+				prin1(i, j);																		//prin1 문 입력
+			}
+		}printf("\n");
+	}
+
+}
+
+int main() {
+	enter();				//입력 및 총합합수
+	add();					//과목총합함수
+	ranking();				//등수함수
+	prin();					//출력및평균값및샊깔함수
+	return 0;
+}
