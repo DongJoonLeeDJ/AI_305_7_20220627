@@ -30,6 +30,9 @@
     <ClCompile Include="CStudy05.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CStudy06.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mystructs.h">

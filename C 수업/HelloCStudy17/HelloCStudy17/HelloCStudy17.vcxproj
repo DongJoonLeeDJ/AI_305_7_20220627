@@ -139,7 +139,10 @@
     <ClCompile Include="CStudy04.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="CStudy05.c" />
+    <ClCompile Include="CStudy05.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="CStudy06.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mystructs.h" />
