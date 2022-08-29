@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B70910AB-8365-63F4-86D5-9505B6123169" name="지점">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:19:09 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="지점명" id="7AA1D005-FCD3-211B-290C-C25BBBAF8E39">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:19:47 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="지점번호" id="4E88C3AF-B0D5-CE4E-CFD6-2C88C3FCB37D">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:20:51 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="지역번호" id="60F7E0F7-A3A2-3AEC-D5BE-F50A85DB7E01">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:21:25 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="지점장" id="C9CA6669-1CE6-96A7-52CC-BED7A35A3D40">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:22:04 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>7 BYTE</dataTypeSize>
+<ownDataTypeParameters>7 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="지점장실" id="DF99ECEB-B263-3994-213F-047F28B56F99">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:23:17 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>13 BYTE</dataTypeSize>
+<ownDataTypeParameters>13 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="부지점장" id="DBFA5F81-4798-72A9-091B-E4067B7DD30F">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:22:22 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>7 BYTE</dataTypeSize>
+<ownDataTypeParameters>7 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="부지점장실" id="AC2387D2-A018-E0CF-9B21-6BC4A6A14972">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:23:30 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>13 BYTE</dataTypeSize>
+<ownDataTypeParameters>13 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A9E61E5A-3916-B9C4-1960-C3EF235BF08F" name="지점_PK">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:19:47 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7AA1D005-FCD3-211B-290C-C25BBBAF8E39"/>
+<colUsage columnID="4E88C3AF-B0D5-CE4E-CFD6-2C88C3FCB37D"/>
+<colUsage columnID="60F7E0F7-A3A2-3AEC-D5BE-F50A85DB7E01"/>
+<colUsage columnID="C9CA6669-1CE6-96A7-52CC-BED7A35A3D40"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="koreaEconomicHistoryDay" id="FF83D714-9441-91CF-4992-56B7AD7DE4D1" version="3.5">
+<createdBy>User</createdBy>
+<createdTime>2022-05-26 01:24:44 UTC</createdTime>
+<ownerDesignName>koreaEconomicHistoryDay</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>FF83D714-9441-91CF-4992-56B7AD7DE4D1</designId>
+</OSDM_Design>

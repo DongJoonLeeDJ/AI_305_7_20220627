@@ -1,0 +1,196 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3EE3213E-D884-E6BF-C6F0-F2A54E7E373A" name="사원정보">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:25:39 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="사원번호" id="294A188F-3C9A-6176-38BA-A686AD688C01">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:26:31 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="직책" id="4A4BAC86-F70B-F062-77C8-45A9183908DD">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:27:16 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="입사" id="97EC180C-8EFD-CA45-2FC5-914C2C24BB03">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:28:40 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="퇴사" id="1F46683C-B2C4-3F78-B29B-35FACD38F0EA">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:28:55 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="이름" id="204A2D85-A343-DCDA-31DD-077D75496D1A">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:29:18 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>14 BYTE</dataTypeSize>
+<ownDataTypeParameters>14 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="주민등록번호" id="CB5765A0-14DD-888E-EB4D-85668F8B75D4">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:34:11 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="사원번호_지점번호" id="E891B8E1-40A9-064C-DECF-30E85AF4EBD6">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:42:20 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5BC78C89-D0E6-38D0-2CD0-4E785B6C0C7E" referredColumn="9467E659-BBFA-EAF3-D7F4-19CAF7C564DC"/>
+</associations>
+</Column>
+<Column name="지점" id="5178F926-AC1A-EC04-C772-69C561EFB7C0">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:45:14 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="지점_지점명" id="C5791773-2511-41EB-7E0C-9545177E6BD3">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:45:22 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D1F2476E-6A38-262B-C9EA-99FACD7DC7A0" referredColumn="7AA1D005-FCD3-211B-290C-C25BBBAF8E39"/>
+</associations>
+</Column>
+<Column name="지점_지점번호" id="D606769C-F5A9-FBE8-B6AD-B22AEE010FE7">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:45:22 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D1F2476E-6A38-262B-C9EA-99FACD7DC7A0" referredColumn="4E88C3AF-B0D5-CE4E-CFD6-2C88C3FCB37D"/>
+</associations>
+</Column>
+<Column name="지점_지역번호" id="242ACF62-C5E7-2639-45F7-E34340F629B6">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:45:22 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D1F2476E-6A38-262B-C9EA-99FACD7DC7A0" referredColumn="60F7E0F7-A3A2-3AEC-D5BE-F50A85DB7E01"/>
+</associations>
+</Column>
+<Column name="지점_지점장" id="5AD6BC4D-46FB-50C0-CD16-C2871D1AB57A">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:45:22 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>7 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D1F2476E-6A38-262B-C9EA-99FACD7DC7A0" referredColumn="C9CA6669-1CE6-96A7-52CC-BED7A35A3D40"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B8C4C138-C52E-66EF-3F4C-E556AB4675B8" name="사원정보_PK">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:26:31 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="294A188F-3C9A-6176-38BA-A686AD688C01"/>
+<colUsage columnID="5178F926-AC1A-EC04-C772-69C561EFB7C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8AFCDF5A-3FB2-4A29-3740-4663F2A0C0D7" name="사원정보_사원번호_FK">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:42:20 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E891B8E1-40A9-064C-DECF-30E85AF4EBD6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="625E2645-4738-8174-BE27-9E92A9393624" name="사원정보_지점_FK">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:45:22 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C5791773-2511-41EB-7E0C-9545177E6BD3"/>
+<colUsage columnID="D606769C-F5A9-FBE8-B6AD-B22AEE010FE7"/>
+<colUsage columnID="242ACF62-C5E7-2639-45F7-E34340F629B6"/>
+<colUsage columnID="5AD6BC4D-46FB-50C0-CD16-C2871D1AB57A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

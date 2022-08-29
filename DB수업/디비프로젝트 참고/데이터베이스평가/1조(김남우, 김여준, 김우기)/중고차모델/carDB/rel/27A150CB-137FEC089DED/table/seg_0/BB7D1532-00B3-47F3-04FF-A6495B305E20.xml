@@ -1,0 +1,245 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BB7D1532-00B3-47F3-04FF-A6495B305E20" name="tradetbl">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:20:30 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="t_number" id="B74DE204-7255-A6E8-4B91-24F733CAFFCC">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:21:13 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="s_number" id="0FB94F65-2C25-D6A3-C2BE-CADDCBE5697B">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:21:44 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="c_name" id="57CE5330-DB02-52A7-C337-CE90086CEA9D">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:22:07 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="model" id="6ACFE2F3-3F67-5F30-AD79-C9A5CC22ACDE">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:22:50 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="price" id="07EF0E7F-5CB9-6781-0808-4AFC5AECC5FE">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:23:01 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="insureance" id="4A2F363A-F2A2-C4D3-9589-7CAD787501E5">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:23:28 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="trade_date" id="510A7BF6-614A-C94B-17EF-89BA62EAFCF6">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:23:51 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="d_name" id="0A8D01D5-5F78-95DD-EB0A-ACABD9A9819F">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:22:23 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="b_name" id="A42BFF87-F3D7-D8D4-39A7-DAB1FA2C8A6E">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:24:29 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stocked_cartbl_s_number" id="2C877CA8-4ED0-C670-7992-C2D4C8A20B9B">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:28:08 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62856083-A1E6-8BC0-E661-55668F30C07E" referredColumn="D11D291D-ADDB-4523-30B7-85E5DF5231AF"/>
+</associations>
+</Column>
+<Column name="carinfotbl_model" id="43731A7E-1952-2AA5-646E-73FF21C9F052">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:28:23 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="38F5A5B7-C9B1-589C-9348-22474D5CE5E0" referredColumn="B372E708-64E5-0C39-0516-E4C27BF969A8"/>
+</associations>
+</Column>
+<Column name="customertbl_c_name" id="AA4DB2D1-344B-1B6B-1D79-9CB6C7F35322">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:28:35 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FAB8F933-99DF-8D53-C698-9AC2CFFAFC2E" referredColumn="131150AD-DFD2-1B1A-5E01-F7D33F62E1D4"/>
+</associations>
+</Column>
+<Column name="dealertbl_d_name" id="75453D77-F74B-70D5-3113-D00506DAFDCF">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:29:34 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="34AED10B-7170-CD71-D039-A8A114485E6D" referredColumn="8E8A7D05-FBC8-9DAA-2AE2-79CADEDBA451"/>
+</associations>
+</Column>
+<Column name="branchtbl_b_name" id="349B8F50-8930-3B16-2365-328E46101EAF">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:29:41 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B48B8732-7221-B771-A269-1EC6D88B815E" referredColumn="401442EC-F8FB-1BB9-458B-B32B23E1C3EC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F04CF2AF-689B-F237-AD1A-2FD5678E815A" name="tradetbl_PK">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:21:13 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B74DE204-7255-A6E8-4B91-24F733CAFFCC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BA467355-61C6-EA04-3466-C083DC6F80BA" name="tradetbl_stocked_cartbl_FK">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:28:07 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C877CA8-4ED0-C670-7992-C2D4C8A20B9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C6EC8A7A-ECD3-8402-1AE5-278655B0F7F3" name="tradetbl_carinfotbl_FK">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:28:23 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="43731A7E-1952-2AA5-646E-73FF21C9F052"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EBF0A8AF-C467-C814-4750-733C8B7CA8E7" name="tradetbl_customertbl_FK">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:28:35 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA4DB2D1-344B-1B6B-1D79-9CB6C7F35322"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E0D1136-E77A-E5FF-EE84-837444963E65" name="tradetbl_dealertbl_FK">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:29:34 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75453D77-F74B-70D5-3113-D00506DAFDCF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7D0A7D09-CFA7-B805-5486-A4F00B0C0650" name="tradetbl_branchtbl_FK">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:29:41 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="349B8F50-8930-3B16-2365-328E46101EAF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

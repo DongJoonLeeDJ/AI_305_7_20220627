@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="70F8B049-7D37-32AE-1933-DE0F2FE62EE7" name="도서정보">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:08:22 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ena_13" id="EFAD227C-355B-0FFC-BAFA-284B998F36C4">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:09:03 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ean_5" id="B77C4764-C70F-C0E9-E402-9E7E65C22315">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:09:20 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="발행언어" id="BD8AB1F1-BC41-A23E-3B00-29061D819F54">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:09:34 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3 BYTE</dataTypeSize>
+<ownDataTypeParameters>3 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="제목" id="3880E73E-FAD8-AF78-A02B-1917927AF07D">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:11:27 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="저자" id="69813E9E-00F8-E518-96C4-FCF442B36E0C">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:11:50 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="편집자" id="80FF4A89-A378-59E9-003B-EBCC8F90972E">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:12:15 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="역자" id="DA528F0D-CB41-7E20-B36C-0272F4BD50FA">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:12:43 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="발행인" id="326459D1-3A3C-7FE5-0D3C-DDBB7A9AF93F">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:13:19 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="쪽수" id="BB77F816-7CE8-7229-5E18-86B5E79CC439">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:13:51 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="판매가" id="466B9617-BD3A-F38F-B968-870F4169930B">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:14:04 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C0D026ED-49A9-6F1B-35B8-D6F96129ED8E" name="도서정보_PK">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:48:04 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3880E73E-FAD8-AF78-A02B-1917927AF07D"/>
+<colUsage columnID="B77C4764-C70F-C0E9-E402-9E7E65C22315"/>
+<colUsage columnID="EFAD227C-355B-0FFC-BAFA-284B998F36C4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

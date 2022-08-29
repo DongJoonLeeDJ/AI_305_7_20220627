@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="02426248-A726-C064-9075-AA0FAA948F75" name="carinfotbl">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:06:23 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="brand" id="F2FCCA35-D8DF-61C4-7C13-A0D1A3B0C962">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:08:54 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="category" id="50C915D1-6E18-942F-86CD-ED57C3B3E475">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:10:05 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="model" id="B372E708-64E5-0C39-0516-E4C27BF969A8">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:10:27 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CC" id="786CFE3B-3309-9497-15FD-6C9EC09DCE4B">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:10:44 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="boarding" id="89F08F3D-029C-DA4E-4D7E-51199F111A4F">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:11:45 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FFE58392-1C0D-4946-EDB4-0065E451198E" name="carinfotbl_PK">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:10:27 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B372E708-64E5-0C39-0516-E4C27BF969A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

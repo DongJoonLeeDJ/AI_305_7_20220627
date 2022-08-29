@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5BC78C89-D0E6-38D0-2CD0-4E785B6C0C7E" containerWithKeyObject="3EE3213E-D884-E6BF-C6F0-F2A54E7E373A" localFKIndex="8AFCDF5A-3FB2-4A29-3740-4663F2A0C0D7" name="사원정보_사원번호_FK">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:42:20 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<referredTableLongName>사원번호</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7E991E52-1AC1-8864-7C2E-F16616427466</referredTableID>
+<keyObject>4560CFEC-B149-3569-E7E3-DCAB890054FE</keyObject>
+<referredKeyID>4560CFEC-B149-3569-E7E3-DCAB890054FE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>지점번호</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorColumn>2F3F56DD-B354-96AF-D8F8-9ED6548795AF</discriminatorColumn>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

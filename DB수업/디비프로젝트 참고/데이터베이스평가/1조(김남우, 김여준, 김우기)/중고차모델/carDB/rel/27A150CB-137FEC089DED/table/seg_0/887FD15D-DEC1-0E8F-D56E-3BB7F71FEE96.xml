@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="887FD15D-DEC1-0E8F-D56E-3BB7F71FEE96" name="branchtbl">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:18:44 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="area" id="F330A1BC-61CE-54D4-4FC3-314F54F74745">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:19:10 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="detail_area" id="7C4BA51B-D5C1-3B58-FB70-25464AABE69C">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:20:00 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="b_name" id="401442EC-F8FB-1BB9-458B-B32B23E1C3EC">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:20:28 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D08365D5-C249-6A45-D95D-B4B7050AB542" name="branch_PK">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:20:28 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="401442EC-F8FB-1BB9-458B-B32B23E1C3EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

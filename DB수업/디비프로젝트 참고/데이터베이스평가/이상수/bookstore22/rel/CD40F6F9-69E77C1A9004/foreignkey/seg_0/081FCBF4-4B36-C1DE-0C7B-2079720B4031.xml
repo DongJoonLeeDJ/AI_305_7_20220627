@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="081FCBF4-4B36-C1DE-0C7B-2079720B4031" containerWithKeyObject="26112189-BD11-4432-9E6E-B5A7826903C1" localFKIndex="47112366-61A5-5133-DDF3-82D7D56EFB45" name="국가코드_도서정보_FK">
+<createdBy>User</createdBy>
+<createdTime>2022-05-30 00:48:28 UTC</createdTime>
+<ownerDesignName>bookstore22</ownerDesignName>
+<referredTableLongName>도서정보</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>70F8B049-7D37-32AE-1933-DE0F2FE62EE7</referredTableID>
+<keyObject>C0D026ED-49A9-6F1B-35B8-D6F96129ED8E</keyObject>
+<referredKeyID>C0D026ED-49A9-6F1B-35B8-D6F96129ED8E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>제목,ean_5,ena_13</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorColumn>EFAD227C-355B-0FFC-BAFA-284B998F36C4</discriminatorColumn>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
