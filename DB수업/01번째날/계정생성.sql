@@ -23,6 +23,9 @@ create user c##scott identified by tiger;
 --기본적인 권한을 부여
 grant connect, resource to c##scott;
 
+-- 추후 뷰 수업때 필요
+grant create view to c##scott;
+
 -- 유저에 대해서 용량 제한을 풀은 것
 -- 이거 안 하면 제대로된 crud를 할 수 없다.
 ALTER USER c##scott DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
