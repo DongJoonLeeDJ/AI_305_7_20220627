@@ -1,0 +1,26 @@
+--insert update select를 했으므로 delete로 해보자.
+-- delete문
+-- update문과 마찬가지로 where절 안 적으면 모든 내용이 다 날아감
+delete from food where price >=50000;
+-- drop, truncate라는 구문도 있다.
+--drop은 테이블 자체를 싹 지워버리고 rollback(=복구)가 안 됨
+-- truncate는 데이터만 싹 지우고, 테이블은 남아 있는 데,
+--삭제한 데이터에 대해서 rollback이 안 됨.
+--다행히 delete는 rollback이 됨
+
+-- truncate도 문제지만 drop은 특히 주의해서 써야 함
+-- 테이블 자체를 싹 지워버리고 복구도 안 되서
+--문제가 커질 수 있음!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+--테이블의 컬럼을 추가할 수 있다.
+alter table food add recipe varchar2(1000);
+
+-- 컬럼의 속성도 변경이 가능하다.
+alter table food modify price not null; 
+
+select * from food;
+
+
+
+
+
