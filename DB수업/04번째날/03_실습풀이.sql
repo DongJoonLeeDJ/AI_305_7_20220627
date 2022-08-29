@@ -33,7 +33,7 @@ insert into food_category values(8, '디저트');
 insert into food_truck values(food_rownum.nextval, '아아', 3500, 8);
 insert into food_truck values(food_rownum.nextval, '쉬폰케이크', 160000, 8);
 insert into food_truck values(food_rownum.nextval, '아이스크림케이크', 85000, 8);
-
+--join
 select food_truck.name 음식명, price, food_category.name 분류 
 from food_truck join food_category on food_truck.foodcode=food_category.code;
 
