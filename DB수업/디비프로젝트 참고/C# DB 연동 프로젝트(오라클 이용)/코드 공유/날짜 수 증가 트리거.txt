@@ -1,0 +1,13 @@
+create or replace TRIGGER TRG_UpdateBDAY
+   BEFORE UPDATE of bstate ON BOOK
+   FOR EACH ROW
+   
+   BEGIN
+    if :new.bstate is not null then
+    :new.bday:= SYSDATE;
+    :new.breturn:=SYSDATE+15;
+    elsif :new.bstate is null then
+    :new.bday:=null;
+    :new.breturn:=null;
+    end if;
+   END;

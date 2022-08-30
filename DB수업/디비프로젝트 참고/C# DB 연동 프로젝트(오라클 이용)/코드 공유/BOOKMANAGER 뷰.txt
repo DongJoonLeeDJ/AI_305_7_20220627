@@ -1,0 +1,5 @@
+  CREATE OR REPLACE FORCE VIEW "BOOKMANAGER"."V_RESERVE" ("회원번호", "회원명", "도서명", "저자") AS 
+  SELECT C.CID AS "회원번호", C.CNAME AS "회원명",B.BNAME AS "도서명", B.BAUTHOR AS "저자" 
+    FROM CUSTOMER C 
+        INNER JOIN BOOK B 
+            ON C.CID = B.BBOOK;
