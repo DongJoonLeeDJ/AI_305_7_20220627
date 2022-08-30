@@ -1,7 +1,9 @@
+--in : 매개변수를 의미
+--myname, mypn에도 in이 붙어야 함
 create or replace procedure add_person
 (
-mynum in int,
-myname varchar2,
+mynum in int, 
+myname varchar2, 
 mypn varchar2
 )
 is begin 
