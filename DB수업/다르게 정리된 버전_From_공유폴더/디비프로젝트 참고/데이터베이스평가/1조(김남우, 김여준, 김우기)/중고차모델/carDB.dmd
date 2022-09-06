@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="carDB" id="17CBFD37-AA6C-0241-62F6-F119E795C9CF" version="3.5">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:06:07 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>17CBFD37-AA6C-0241-62F6-F119E795C9CF</designId>
+</OSDM_Design>

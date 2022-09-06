@@ -1,0 +1,9 @@
+create or replace trigger trg_BcountUP
+after update of bstate on book
+FOR EACH ROW
+begin 
+if :new.bstate is not null then
+update book
+set bcount = bcount+1;
+end if;
+end trg_BcountUP;

@@ -1,0 +1,25 @@
+-- 테이블 만들기
+-- 테이블 = 데이터베이스랑 유사한 말
+-- 참고로 데이터베이스란 여러 개의 테이블을 가지고 있는 것을 의미
+-- 실제 데이터를 저장하고 관리하는 건 테이블이다.
+
+-- primary key : 기본키
+-- varchar2 : 문자열(string같은 것)
+create table mytable
+(
+    hakbeon varchar2(100) primary key,
+    name varchar2(100),
+    birth varchar2(10),
+    age int
+);
+
+-- 데이터 삽입
+-- 문자열(=varchar2, varchar, char)은 따옴표로 감싸고
+-- 숫자는 따옴표없이 쓴다.
+insert into mytable (hakbeon, name, birth,age) values ('09038033','이동준','890430',34);
+insert into mytable (hakbeon, name, birth,age) values ('11123033','김진규','990430',24);
+insert into mytable (hakbeon, name, birth,age) values ('99999033','최호준','000430',23);
+
+-- 데이터 전체 조회
+select * from mytable;
+

@@ -1,0 +1,11 @@
+select * from mystudy_student;
+
+delete from mystudy_student where name='차승화';
+
+rollback;
+
+update mystudy_student set age=40 where name='김진규';
+
+commit;
+
+select * from mystudy_student where age>=30 and age<40;

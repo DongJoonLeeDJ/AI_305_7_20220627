@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FAB8F933-99DF-8D53-C698-9AC2CFFAFC2E" containerWithKeyObject="BB7D1532-00B3-47F3-04FF-A6495B305E20" localFKIndex="EBF0A8AF-C467-C814-4750-733C8B7CA8E7" name="tradetbl_customertbl_FK">
+<createdBy>KB</createdBy>
+<createdTime>2022-05-24 02:28:35 UTC</createdTime>
+<ownerDesignName>carDB</ownerDesignName>
+<referredTableLongName>customertbl</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>436F183F-65F4-6BDB-0514-AED01A8C6562</referredTableID>
+<keyObject>61C039BE-1692-6FE6-016A-130670E0630A</keyObject>
+<referredKeyID>61C039BE-1692-6FE6-016A-130670E0630A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>c_name</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

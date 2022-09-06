@@ -1,0 +1,41 @@
+
+-- 참조가 될 테이블을 보통 먼저 만든다.
+create table mystudy_major
+(
+  code int primary key,
+  name varchar2(100)
+);
+
+create table mystudy_stu_maj
+(
+   num int primary key,
+   name varchar2(500) not null,
+   code int,
+   foreign key(code) REFERENCES mystudy_major(code)  --mystudy_major의 code를 참조하겠다.
+);
+
+insert into mystudy_major(code,name) values(1,'컴공');
+insert into mystudy_major values(2,'화공');
+
+insert into mystudy_stu_maj values(1,'최호준',1);
+insert into mystudy_stu_maj values(2,'이현민',1);
+insert into mystudy_stu_maj values(3,'김진규',1);
+insert into mystudy_stu_maj values(4,'이동준',2);
+commit;
+select * from mystudy_major;
+select * from mystudy_stu_maj;
+
+
+
+-- 학과테이블에 있는 정보를 이용해서, 학생들이 무슨 과 다니는지 보여주는 방법 = join
+select mystudy_stu_maj.name 이름, mystudy_major.name 학과명, num 학번 from mystudy_major join 
+mystudy_stu_maj on mystudy_major.code = mystudy_stu_maj.code;
+
+
+
+insert into mystudy_stu_maj values(5,'차승화',null);
+insert into mystudy_major(code,name) values(3,'기계공학과');
+
+
+
+
