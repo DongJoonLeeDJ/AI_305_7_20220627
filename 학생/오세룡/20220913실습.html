@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+
+        .content {
+            width: 1080px;
+            background-color: white;
+            margin: auto;
+        }
+
+        .list {
+            display: block;
+            border: 1px solid black;
+            padding-right: 30px;
+            padding-left: 15px;
+            margin-top: 30px;
+            margin-left: 25px;
+            float: left;
+        }
+
+        .list::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .profile {
+            display: inline-block;
+            text-align: center;
+            margin-left: 270px;
+        }
+
+        .profile h2 {
+            border: 1px solid black;
+            height: 50px;
+            line-height: 50px;
+            color: brown;
+        }
+
+        table th, td{
+            border: 1px solid black;
+        }
+
+        table th {  
+            width: 130px;
+        }
+
+        table td {
+            width: 460px;
+        }
+
+        .list-content {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        .list-content h2 {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="list">
+            <p>목차</p>
+            <ol>
+                <a href="#list1"><li>소개</li></a>
+                <a href="#list2"><li>목차2</li></a>
+                <a href="#list3"><li>목차3</li></a>
+            </ol>
+        </div>
+        <div class="profile">
+            <h2>오세룡</h2>
+            <img src="https://picsum.photos/id/237/600/400" alt="">
+            <table>
+                <tr>
+                    <th>이름</th>
+                    <td>오세룡</td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>남자</td>
+                </tr>
+                <tr>
+                    <th>나이</th>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <th>생년월일</th>
+                    <td>1998.02.17</td>
+                </tr>
+            </table>
+        </div>
+        <div class="list-content">
+            <br>
+            <a href="#"><h2 id="list1">소개</h2></a>
+            <hr>
+            <p>경상북도 구미시 어딘가에 살고있는 25살 오세룡</p>
+            <br>
+            <a href="#"><h2 id="list2">목차2</h2></a>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquid asperiores non sapiente. Facere, assumenda voluptatum obcaecati excepturi ad quos quas a rem asperiores, nesciunt praesentium, corrupti quasi vero. Autem, itaque quae, eos sunt debitis saepe illum iure, eum dolorum cumque possimus blanditiis illo explicabo! Facilis sequi officiis vero aspernatur, deserunt accusamus reprehenderit tempora placeat nemo minima facere vitae eaque cupiditate ullam magni eligendi quas, omnis error fuga voluptates veritatis hic? Vero quia voluptate quaerat, voluptatem ad officia vitae quisquam nesciunt asperiores consequuntur necessitatibus possimus iusto inventore similique eos facere ducimus nihil eum reprehenderit sunt, quis quo numquam tempora aliquam.</p>
+            <br>
+            <a href="#"><h2 id="list3">목차3</h2></a>
+            <hr>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, ad labore quidem sapiente doloremque possimus iste quam unde hic delectus quas id, officiis excepturi qui aut, dolor illum dolore ducimus eaque temporibus at ipsum sint! Repudiandae maiores pariatur, voluptate ex eaque cumque vel obcaecati doloremque officia aliquam voluptas consectetur consequatur repellendus ducimus consequuntur quod in amet veniam exercitationem praesentium nisi ad reiciendis eligendi. Rerum voluptas nesciunt non vero et? Expedita quae, ipsa dolorum dolores voluptates eos mollitia, earum quod sit est, quos placeat quasi id hic voluptatibus! Id numquam hic et aliquam deserunt alias quo, autem eos modi molestias. Iusto!</p>
+            <br>
+            <h2 id="list4">동영상</h2>
+            <hr>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/E1Jvb3YK7Nw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>
