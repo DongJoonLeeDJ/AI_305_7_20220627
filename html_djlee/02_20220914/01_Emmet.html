@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmet(젠코딩) 해보기</title>
+</head>
+<body>
+    <!-- 한 번에 태그 여러 개 만들거나 좀 더 편하게 태그 만들기-->
+    
+    <!-- h1[title=Test] -->
+    <!--태그 만듦과 동시에 속성들 추가하는 것-->
+    <h1 title="Test">HellO~</h1>
+
+    <!-- h1[title=Test align=center] -->
+    <h1 title="Test" align="center">Bye</h1>
+
+    <!-- id속성이나 클래스 속성은 별도의 키워드가 있음-->
+    <!--h1#jiho-->
+    <h1 id="jiho">박지호</h1>
+    <!--h1.woman-->
+    <h1 class="woman">지호박</h1>
+
+    <!--h1#djlee{이동준}-->
+    <!--잘 안 만들어지면 ctrl+space한 다음 엔터하기-->
+    <h1 id="djlee">이동준</h1>
+
+
+    <!-- p.one+p.two -->
+    <p class="one"></p>
+    <p class="two"></p>
+
+    <!--h1#djlee_1+h1#djlee_1+h1-->
+    <h1 id="djlee_1"></h1>
+    <h1 id="djlee_2"></h1>
+    <h1></h1>
+
+    <!--h1*5-->
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+
+    <!-- h1*5{$} -->
+    <h1>1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+    <h1>4</h1>
+    <h1>5</h1>
+
+    <!-- p.name-$*3 -->
+    <p class="name-1"></p>
+    <p class="name-2"></p>
+    <p class="name-3"></p>
+
+    <!--div>h1*3-->
+    <div>
+        <h1></h1>
+        <h1></h1>
+        <h1></h1>
+    </div>
+
+    <!--ol>li*3-->
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+
+    <!-- (ol>li)*3 -->
+    <ol>
+        <li></li>
+    </ol>
+    <ol>
+        <li></li>
+    </ol>
+    <ol>
+        <li></li>
+    </ol>
+
+</body>
+</html>
