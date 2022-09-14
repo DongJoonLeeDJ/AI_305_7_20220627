@@ -4,23 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 정보_나무위키(ver)</title>
+    <title>자기소개2</title>
+    <style>
+        body 
+             {
+               background-color:antiquewhite;
+               height:100%;
+             }
+       h1
+       {
+        font-size: 40px;
+        font-family: '궁서체';
+       }
+       
+       form>p
+       {
+        width: 300px;
+        height: 20px;
+        font-size: 20px;
+        font-family: '궁서체';
+        border:5px solid red;
+        border-width: 5px;
+       }
+       
+
+       tr:first-child
+       {
+        background-color: blue;
+       
+       }
+
+       input[type=checkbox]:checked+div{
+         height:550px;
+        }
+
+        div{
+            overflow:hidden;
+            width:500px;
+            height:0;
+            transition-duration: 2s;
+        }
+       </style>
 </head>
+
 
 <body>
 
    
     <h1 >목차</h1>
     <ol>
-        <li><a href="#one">내 정보</a></li>
-        <li><a href="#two">소개</a></li>
-        <li><a href="#three">기타</a></li>
+        <li><p id ="1"><a href="#one">내 정보</a></p></li>
+        <li><p id ="2"></p><a href="#two">소개</a></li>
+        <li><p id ="3"></p><a href="#three">기타</a></li>
     </ol>
 
     <p id="one">
-        <h1>1.내 정보</h1>
+        <a href="#1"><h1>1.내 정보</h1></a>
     <table border ="1">
-        <tr bgcolor="blue" align ="center">
+        <tr align ="center">
             <p><td colspan = "3" span style="color:white">나의 정보</td></p>
         </tr>
       
@@ -49,7 +90,7 @@
     </p>
 
     <p id="two">
-        <h1>2.소개</h1>
+        <a href="#2"> <h1>2.소개</h1></a>
         <h3 style ="color:tomato;">
             안녕하세요.
             <br>
@@ -63,13 +104,25 @@
     </p>
 
     <p id="three">
-        <h1>3.기타</h1>
+        <a href="#3"> <h1>3.기타</h1></a>
       <h3  style ="color:red;"> 개복치는 생각보다 잘 안 죽어요 영상으로 확인하세요 </h3>
         <br>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2TkIvqUfmc0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
     </p>
+    <br>
+<h1>로그인해보세요.</h1>
+  <form action="https://smartstore.naver.com/seafishingmall?NaPm=ct%3Dl81wleky%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3D54e62c4221dd4c9ede334204015e6cbd46e4aaec">
+       <input type="ID" name="id" id=""><br>
+       <input type="password" name="pw" id=""><br>
+       <input type="submit" value="로그인">
+       <br>
+       <p>아래 버튼이 진짜 로그인 버튼</p>
+       <input type="checkbox" name="oo" id="park">
+       <div>
+        <img src="https://img2.quasarzone.com/editor/2021/06/08/0e18daaa2f2f2e1e3b8dd6fbaf11869a.png" alt="">
+       </div>
 
     <a href = "#">맨 위로 </a>
     
