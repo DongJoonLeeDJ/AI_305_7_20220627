@@ -62,6 +62,27 @@
             font-family: '휴먼고딕';
             padding:5px;
         }
+        p5{
+            background-color: white;
+            border:1px solid black ;
+            padding: 3px;
+        }
+
+        input[type=checkbox]:checked+div{
+            height: 100px;
+        }
+        div{
+            overflow:hidden;
+            width:650px;
+            height:0;
+            transition-duration: 5s;
+        }
+       h1:first-child{
+        border:2px solid yellow;
+       }
+       #monkey:active{
+        visibility: hidden;
+       }
 
 
     </style>
@@ -71,7 +92,7 @@
     
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F1906A53551033C962C"width="600" height="400" alt="">
+    <img id="monkey" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F1906A53551033C962C"width="600" height="400" alt="">
     
     <br><br>
     
@@ -109,7 +130,20 @@
     </table>
     <br>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/qJWKH5-s1C0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
+    <form action="http://www.kb.or.kr/">
+       <input type="text" name="pjh" id="jaehyeong"><br>
+       <input type="password" name="pw" id="jhpw"><br>
+       <input type="submit" value="개인정보">
+       <br>
+       <p>조회가 안된다면 아래 버튼을 누르시오</p>
+       <input type="checkbox" name="oo" id="park">
+       <div>
+        <h1>될 거라고 생각했냐</h1>
+       </div>
+       
+    </form>
+
+
     
     <br><br><br>
     <a href="#">맨위로</a>
