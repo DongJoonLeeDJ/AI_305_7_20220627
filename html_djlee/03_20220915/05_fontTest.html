@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* id가 button인 태그 */
+        #button {
+            width:150px;
+            height: 70px;
+            background-color: aquamarine;
+            border : 10px solid pink;
+            border-radius : 30px;
+        }
+        /* id가 button인 태그의 자손인 a 태그 */
+        #button>a
+        {
+            /* display를 block으로 하는 이유 */
+            /* 넓이 개념을 추가하려고 함 */
+            /* 원래 a태그는 inline이라서 넓이 개념이 없음 */
+            display: block;
+            line-height: 70px; /*height랑 같아야 함*/
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="button">
+        <a href="">내용</a>
+    </div>
+</body>
+</html>
