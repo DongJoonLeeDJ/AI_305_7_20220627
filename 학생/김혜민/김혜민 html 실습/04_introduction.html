@@ -5,12 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction</title>
-    <p style="font-size:50px;"><b>김혜민</b></p>
     <style>
-        table, tr, th, td {
-            border:1px solid #222; border-collapse:collapse;
+        table, tr, th, td 
+        {
+            border:1px solid #222; 
+            border-collapse:collapse;
+        }
+        input
+        {
+            float:right;
+        }
+        h3{
+            color:blue;
+            background-color: aquamarine;
+        }
+        a{
+            text-decoration:none;
         }
     </style>
+        <input type="reset" value="리셋">
+        <input type="submit" value="로그인">
+        <input type="text" name="name" id="myname">
+        <input type="password" name="pass" id="mypass">
+        <hr>
+        <p style="font-size:50px;"><b>김혜민</b></p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/U34kLXjdw90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <table width="1000" height="100">
         <td>
@@ -30,7 +48,7 @@
         </td>
     </table>
 </head>
-<body bgcolor="skyblue">
+<body style="background-color:skyblue;">
     <br>
     <br>
     <br>
@@ -55,7 +73,38 @@
     <p id="three"><p style="font-size:30px;"><b>3.취미-야구관람</b></p></p>
     <hr>
     <p>대구삼성라이온즈의 팬. 2015년도부터 야구에 관심을 가짐. 처음에는 이마트 새우튀김때문에 야구에 입문함.</p>
-    <p>돈 벌어서 야구에 탕진하는 타입. 야구볼 땐 쓸데없이 부지런하다. 최애선수는 <del><a href="https://www.segye.com/newsView/20220517519732?OutUrl=naver">윤성환</a>이었다가 현재</del> <a href="https://m.sports.naver.com/player/index.nhn?from=nx&tab=record&playerId=50449&category=kbo">허윤동</a>.</p>
+    <p>돈 벌어서 야구에 탕진하는 타입. 야구볼 땐 쓸데없이 부지런하다. 최애선수는 <del><a href="https://www.segye.com/newsView/20220517519732?OutUrl=naver">윤성환</a>이었다가 현재</del> <a href="https://m.sports.naver.com/player/index.nhn?from=nx&tab=record&playerId=50449&category=kbo">허윤동.</a></p>
+    <hr>
+    <h3>Q1) 괜찮다고 생각하는 현역선수는?</h3>
+    <form style="width:150px;">
+        <label for="best_1"><input type="checkbox" name="best" id="best_1">김상수</label> <br>
+        <label for="best_2"><input type="checkbox" name="best" id="best_2">우규민</label> <br>
+        <label for="best_3"><input type="checkbox" name="best" id="best_3">최충연</label> <br>
+        <label for="best_4"><input type="checkbox" name="best" id="best_4">이승현(좌)</label> <br>
+        <label for="best_5"><input type="checkbox" name="best" id="best_5">이승현(우)</label> <br>
+        <label for="best_6"><input type="checkbox" name="best" id="best_6">김승현</label> <br>
+        <label for="best_7"><input type="checkbox" name="best" id="best_7">양창섭</label> <br>
+        <label for="best_8"><input type="checkbox" name="best" id="best_8">오승환</label> <br>
+        <label for="best_9"><input type="checkbox" name="best" id="best_9">이상민</label> <br>
+        <label for="best_10"><input type="checkbox" name="best" id="best_10">이원석</label> <br>
+        <label for="best_11"><input type="checkbox" name="best" id="best_11">김지찬</label> <br>
+        <label for="best_12"><input type="checkbox" name="best" id="best_12">김현준</label> <br>
+        <label for="best_13"><input type="checkbox" name="best" id="best_13">김영웅</label> <br>
+        <label for="best_14"><input type="checkbox" name="best" id="best_14">이재현</label> <br>
+    </form>
+    <h3>Q2) 올해 가장 잘 했다고 생각하는 선수는?</h3>
+    <form style="width:100px">
+        <label for="mvp_1"><input type="radio" name="mvp" id="mvp_1">오승환</label> <br>
+        <label for="mvp_2"><input type="radio" name="mvp" id="mvp_2">이원석</label> <br>
+        <label for="mvp_3"><input type="radio" name="mvp" id="mvp_3">김지찬</label> <br>
+        <label for="mvp_4"><input type="radio" name="mvp" id="mvp_4">이재현</label> <br>
+        <label for="mvp_5"><input type="radio" name="mvp" id="mvp_5">김재성</label> <br>
+        <label for="mvp_6"><input type="radio" name="mvp" id="mvp_6">강민호</label> <br>
+        <label for="mvp_7"><input type="radio" name="mvp" id="mvp_7">피렐라</label> <br>
+        <label for="mvp_8"><input type="radio" name="mvp" id="mvp_8">이승현(좌)</label> <br>
+        <label for="mvp_9"><input type="radio" name="mvp" id="mvp_9">오재일</label> <br>
+        <label for="mvp_10"><input type="radio" name="mvp" id="mvp_10">김윤수</label> <br>
+    </form>
     <br>
     <br>
     <br>
