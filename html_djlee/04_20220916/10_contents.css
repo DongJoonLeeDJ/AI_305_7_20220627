@@ -55,3 +55,26 @@ section.buttons>label:nth-of-type(2) {
     background-color: black;
     color:pink;
 }
+
+.item {
+    overflow: hidden;
+    padding: 10px;
+    border: 1px solid black;
+    border-top: none; /*위쪽에는 선이 없다.*/
+}
+.thumbnail {
+    float:left;
+}
+.description {
+    float:left;
+    margin-left: 10px;
+}
+.description>strong {
+    display: block;
+    width: 120px;
+
+    /* 문자가 길어질 때 생략시키는 공식 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
