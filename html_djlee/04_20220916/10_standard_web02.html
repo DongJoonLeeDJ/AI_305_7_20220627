@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 어떤 웹브라우저에서도 동일하게 출력되게 하기 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif
+        }
+
+        /* 목록태그 옆에 숫자나 동그라미가 있는 데
+        그걸 없앤 것 */
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="main_header">
+        <div id="title">
+            <h1>Lorem, ipsum.</h1>
+            <h2>Lorem, ipsum dolor.</h2>
+        </div>
+        <nav id="main_gnb">
+            <!-- (ul>(li>a[href=#]{abcd})*5) -->
+            <ul>
+                <li><a href="#">abcd</a></li>
+                <li><a href="#">abcd</a></li>
+                <li><a href="#">abcd</a></li>
+                <li><a href="#">abcd</a></li>
+                <li><a href="#">abcd</a></li>
+            </ul>
+        </nav>
+        <nav id="main_lnb">
+            <ul>
+                <li><a href="#">qwer</a></li>
+                <li><a href="#">qwer</a></li>
+                <li><a href="#">qwer</a></li>
+                <li><a href="#">qwer</a></li>
+                <li><a href="#">qwer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="contents">
+        <section id="main_section">
+            <article class="main_article">
+                <h1>Lorem, ipsum.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore optio odio fugit sint corporis
+                    saepe soluta quidem itaque reiciendis molestias sapiente suscipit porro, quas aliquam quisquam
+                    debitis, commodi vel. Veniam!</p>
+            </article>
+            <article class="main_article">
+                <h1>Lorem, ipsum.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore optio odio fugit sint corporis
+                    saepe soluta quidem itaque reiciendis molestias sapiente suscipit porro, quas aliquam quisquam
+                    debitis, commodi vel. Veniam!</p>
+            </article>
+            <article class="main_article">
+                <h1>Lorem, ipsum.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore optio odio fugit sint corporis
+                    saepe soluta quidem itaque reiciendis molestias sapiente suscipit porro, quas aliquam quisquam
+                    debitis, commodi vel. Veniam!</p>
+            </article>
+        </section>
+        <aside id="main_aside">
+            <input id="first" type="radio" name="tab" checked>
+            <input id="second" type="radio" name="tab">
+            <section class="buttons">
+                <label for="first">First</label>
+                <label for="second">Second</label>
+            </section>
+            <div class="tab_item">
+                <ul>
+                    <!-- (li>a>.thumbnail>img)*4 -->
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://picsum.photos/id/1020/45/45" alt="">
+                            </div>
+                            <div class="description">
+                                <strong>HTML5</strong>
+                                <p>2022-09-16</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail"><img src="https://picsum.photos/id/1020/45/45" alt=""></div>
+                            <div class="description">
+                                <strong>HTML5</strong>
+                                <p>2022-09-16</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item"><a href="#">
+                            <div class="thumbnail"><img src="https://picsum.photos/id/1020/45/45" alt=""></div>
+                            <div class="description">
+                                <strong>HTML5</strong>
+                                <p>2022-09-16</p>
+                            </div>
+                        </a></li>
+                    <li class="item"><a href="#">
+                            <div class="thumbnail"><img src="https://picsum.photos/id/1020/45/45" alt=""></div>
+                            <div class="description">
+                                <strong>HTML5</strong>
+                                <p>2022-09-16</p>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="tab_item">
+                <ul>
+                    <!-- (li>a>.thumbnail>img)*4 -->
+                    <li class="item"><a href="#">
+                            <div class="thumbnail"><img src="https://picsum.photos/id/1020/45/45" alt=""></div>
+                            <div class="description">
+                                <strong>HTML5</strong>
+                                <p>2022-09-16</p>
+                            </div>
+                        </a></li>
+                    <li class="item"><a href="#">
+                            <div class="thumbnail"><img src="https://picsum.photos/id/1020/45/45" alt=""></div>
+                            <div class="description">
+                                <strong>HTML5</strong>
+                                <p>2022-09-16</p>
+                            </div>
+                        </a></li>
+                    <li class="item"><a href="#">
+                            <div class="thumbnail"><img src="https://picsum.photos/id/1020/45/45" alt=""></div>
+                            <div class="description">
+                                <strong>HTML5</strong>
+                                <p>2022-09-16</p>
+                            </div>
+                        </a></li>
+                    <li class="item"><a href="#">
+                            <div class="thumbnail"><img src="https://picsum.photos/id/1020/45/45" alt=""></div>
+                            <div class="description">
+                                <strong>HTML5</strong>
+                                <p>2022-09-16</p>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+
+</body>
+
+</html>
