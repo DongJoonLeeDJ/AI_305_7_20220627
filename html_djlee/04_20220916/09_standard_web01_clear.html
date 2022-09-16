@@ -23,14 +23,17 @@
             color:white
         }
 
-        /* aside와 section 감싸는 태그 */
-        /* footer가 aside나 section 밑에 붙어서 이상한데
-        이 2개 감싸는 거에 overflow:hidden주면 해결됨
-        일종의 공식처럼 생각하면 된다. */
-        #contents {
-            overflow: hidden;
-        }
-
+        /* 투명막같은 거 */
+        /* footer가 aside, section으로 올라오지 못 함 */
+        /* 옛날 웹브라우저에선 안 됨 */
+        .clear{clear: both;}
+    </style>
+    <style>
+        #demotext {
+text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 18px -15px 13px rgba(206,0,0,0.42);
+color: #123314;
+background: #FF48CE;
+}
     </style>
 </head>
 <body>
@@ -38,11 +41,11 @@
 <div id="wrap">
     <div id="header">
         <h1>Header</h1>
+        <div id="demotext">Edit this text</div>
     </div>
     <div id="navigation">
         <h1>Navi</h1>
     </div>
-    <div id="contents">
         <div id="aside">
             <h1>Aside</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae necessitatibus sapiente voluptatum eos rem expedita aliquam, hic illo repellendus ad, saepe iure cupiditate beatae. Dolorem obcaecati recusandae ullam a quae!</p>
@@ -51,7 +54,7 @@
             <h1>Section</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore architecto odit unde ut culpa, delectus omnis aut nulla sint earum error expedita dicta amet nisi distinctio, ab voluptate dolor fugit!</p>
         </div>
-    </div>
+    <div class="clear"></div>
     <div id="footer">
         <h1>footer</h1>
     </div>
