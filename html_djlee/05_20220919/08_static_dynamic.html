@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container>div {
+            border:1px solid black;
+            background-color: springgreen;
+            /* 글자 너무 길면 짜르기 */
+            overflow: hidden;
+        }
+        #container
+        {
+            display: grid;
+            /* cell별 여백 */
+            gap:10px;
+            grid-template-columns: 1fr 200px 1fr;
+            grid-template-rows: 50px 1fr;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>안녕하세요. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad accusamus nam dolore cumque tempore molestiae nisi, voluptatibus aperiam. Rem cupiditate ipsam facere minus et libero porro repudiandae error impedit nihil?</div>
+        <div>안녕하세요. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad accusamus nam dolore cumque tempore molestiae nisi, voluptatibus aperiam. Rem cupiditate ipsam facere minus et libero porro repudiandae error impedit nihil?</div>
+        <div>안녕하세요. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad accusamus nam dolore cumque tempore molestiae nisi, voluptatibus aperiam. Rem cupiditate ipsam facere minus et libero porro repudiandae error impedit nihil?</div>
+        <div>안녕하세요. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad accusamus nam dolore cumque tempore molestiae nisi, voluptatibus aperiam. Rem cupiditate ipsam facere minus et libero porro repudiandae error impedit nihil?</div>
+        <div>안녕하세요. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad accusamus nam dolore cumque tempore molestiae nisi, voluptatibus aperiam. Rem cupiditate ipsam facere minus et libero porro repudiandae error impedit nihil?</div>
+        <div>안녕하세요. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad accusamus nam dolore cumque tempore molestiae nisi, voluptatibus aperiam. Rem cupiditate ipsam facere minus et libero porro repudiandae error impedit nihil?</div>
+    </div>
+</body>
+</html>
