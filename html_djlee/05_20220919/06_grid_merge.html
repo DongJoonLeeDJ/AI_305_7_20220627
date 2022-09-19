@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container>div {background-color: aqua;
+        border: 1px solid black;}
+        #container
+        {
+            display: grid;
+            /* cell별 여백 */
+            gap:10px;
+            /* 가로(=열) 3칸의 각각의 크기 지정 */
+            grid-template-columns: 200px 400px 200px;
+            /* 세로(=행) 2칸의 각각의 크기 지정 */
+            grid-template-rows: 200px 200px;
+        }
+        #cell_one {
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="cell_one"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
