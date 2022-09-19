@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container>div {
+            border:1px solid black;
+            background-color: springgreen;
+            /* 글자 너무 길면 짜르기 */
+        }
+        #container
+        {
+            display: grid;
+            /* cell별 여백 */
+            gap:10px;
+            
+
+            
+            /* grid-template:  1fr 200px 1fr / 500px 1fr; */
+            
+            grid-template-columns: 500px 1fr;
+            grid-template-rows: 1fr 200px 1fr;
+            /* 참고사항: 아래와 같이 비율 나눠도 됨 */
+            /* grid-template : 1fr 200px 1fr / 50px 1fr */
+            
+            /* grid-area 값을 이용한 셀병합 등 하기 */
+            grid-template-areas: 
+            'Header Header'
+            'Aside Section'
+            'Footer Footer';
+        }
+        /* 따옴표 쓰지 마세요 T_T */
+        .Header{grid-area: Header;}
+        .Aside{grid-area: Aside;}
+        .Section{grid-area: Section;}
+        .Footer{grid-area:Footer}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="Header"><h1>Lorem, ipsum.</h1></div>
+        <div class="Aside"><h1>Lorem, ipsum.</h1></div>
+        <div class="Section"><h1>Lorem, ipsum.</h1></div>
+        <div class="Footer"><h1>Lorem, ipsum.</h1></div>
+    </div>
+</body>
+</html>
