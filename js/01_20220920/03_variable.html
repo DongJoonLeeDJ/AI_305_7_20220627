@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //var, let 둘 다 변수
+        //타입이 정해져 있지 않음
+        //대신 var가 더 옛날꺼이고 변수 중복 선언해도 ok
+        //하지만 let은 변수 중복 선언하면 브라우저 콘솔에서
+        //에러 메시지 찍어냄
+        var a = 100
+        var a = '안녕'
+        alert(a) //var는 중복선언해도 일단 동작은 함
+        let b = 200 //Identifier 'b' has already been declared
+        let bb = '200'
+        alert(b)
+
+
+        //상수
+        const 학교이름 = '경북산업직업전문학교'
+        alert(학교이름)
+    </script>
+    <script src="04_testjs.js"></script>
+</body>
+</html>
