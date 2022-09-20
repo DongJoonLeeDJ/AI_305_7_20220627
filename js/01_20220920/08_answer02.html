@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="">
+    <script>
+        let month = prompt('몇 월생?')
+        // month는 prompt의 값을 저장하고
+        // prompt는 기본적으로 문자열을 반환한다.
+        //아까 12지신문제는 반환받은 값을 12로 나누는 연산이
+        //있어서 따로 Number로 감쌀 필요가 없지만
+        //이건 month를 바로 숫자로써 써야하므로 Number로
+        //형변환해줘야 한다.
+        //참고로 if문으로 적게되면 이런 형변환이 필요없다.
+        //그 이유는 좀 따 설명할게요. 궁금하면 500원
+        let imageTag = document.querySelector('img')
+        switch(Number(month))
+        {
+            case 12:
+            case 1:
+            case 2:
+                imageTag.src = 'https://i.ytimg.com/vi/5hKM59FluUs/maxresdefault.jpg'
+                break
+            case 3:
+            case 4:
+            case 5:
+                imageTag.src ='https://cdn.crowdpic.net/detail-thumb/thumb_d_9058F99AB99BFC0349B1D542A74407CE.jpg'
+                break  
+            case 6:
+            case 7:
+            case 8:
+                imageTag.src ='https://t1.daumcdn.net/cfile/tistory/1909213E4FD817CD1F'
+                break
+            case 9:
+            case 10:
+            case 11:
+                imageTag.src = 'https://blog.kakaocdn.net/dn/cyCDw8/btrj9mi1SH6/Km8nhrr83C6OydbBk2wCOK/img.jpg'
+                break
+            default: //month가 1~12가 아닌 것
+                imageTag.src = 'https://thumb.mt.co.kr/06/2021/12/2021122909461777717_1.jpg/dims/optimize/'
+                break 
+        }
+    </script>
+</body>
+</html>
