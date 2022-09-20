@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Boolean, String, Number, Null
+        // undefined, object
+        //Symbol도 아주 최근에 추가 됨
+
+        //Boolean
+        //참 거짓
+        //숫자 0이나 null값, 공백은 false이고
+        //나머진 모두 true
+        console.log(Boolean(0))
+        console.log(Boolean(null))
+        console.log(Boolean(''))
+        //NaN : 문자를 숫자로 바꾸려고 할 때 생김
+        console.log(Boolean(NaN))
+        //잘못된 연산을 할 때 나옴
+        console.log(Boolean(undefined)) 
+        console.log(Boolean(' ')) //1칸이라도 있으면 t
+
+        let num = 12
+        num = String(num)
+        num += 14
+        console.log(num)
+
+        //문자열의 길이와 문자열 일부를 찾는 방법
+        let sentense = "안녕 잘 지내니 우워우어"
+        console.log(sentense.length) //13(공백포함)
+        console.log(sentense[0])//첫번째 글자 접근됨
+
+        //처음에 아무것도 없는 배열 만들고
+        //내가 추가하고 싶은 인덱스에 값을 넣는 방법
+        let arr1 = []
+
+        //처음부터 배열을 만드는 것도 있다.
+        //단, C나 Java처럼 크기 잡는 건 없다.
+        //보이는 것처럼 배열에는 어떤 값도 다 들어갈 수 있다.
+        let arr2 = [1,"안녕", arr1, null]
+
+
+
+
+
+    </script>
+</body>
+</html>
