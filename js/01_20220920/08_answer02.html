@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>이건 그냥 제목임</title>
 </head>
 <body>
     <img src="" alt="">
     <script>
+        // document.querySelector('title').textContent='skjdfl'
         let month = prompt('몇 월생?')
         // month는 prompt의 값을 저장하고
         // prompt는 기본적으로 문자열을 반환한다.
@@ -16,8 +17,6 @@
         //있어서 따로 Number로 감쌀 필요가 없지만
         //이건 month를 바로 숫자로써 써야하므로 Number로
         //형변환해줘야 한다.
-        //참고로 if문으로 적게되면 이런 형변환이 필요없다.
-        //그 이유는 좀 따 설명할게요. 궁금하면 500원
         let imageTag = document.querySelector('img')
         switch(Number(month))
         {
