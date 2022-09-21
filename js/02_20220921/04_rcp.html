@@ -37,24 +37,29 @@
             let pc_choice = Math.floor(Math.random()*3)
             pcresultimg.src = gbb[pc_choice]
         
+            //mychoice.target 이벤트를 불러온 태그
+            //id 그 태그의 id
             switch (mychoice.target.id) {
                 case 'gawi':
                     console.log('가위')
+                    myresultimg.src = gbb[GAWI]
                     break;
                 case 'bawi':
                     console.log('바위')
+                    myresultimg.src = gbb[BAWI]
                     break
                 case 'bo':
                     console.log('보')
+                    myresultimg.src = gbb[BO]
                     break
             
                 default:
-                    break;
+                    break
             }
         }
         document.querySelector('#gawi').onclick = fnc_result
-            document.querySelector('#bawi').onclick = fnc_result
-            document.querySelector('#bo').onclick = fnc_result
+        document.querySelector('#bawi').onclick = fnc_result
+        document.querySelector('#bo').onclick = fnc_result
         
     </script>
 
