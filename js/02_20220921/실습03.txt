@@ -1,0 +1,13 @@
+다이아몬드를
+실제 화면에서 
+띄워주세요
+
+document.write나
+document.writeln을 써도 되고
+textContent를 대신하여
+innerHTML을 써도 됨
+정답 
+1. <pre> <h1></h1></pre>
+pre라는 태그 안에 띄어쓰기하면 그대로 들어감
+
+2. &nbsp; <br> 그리고 innerHTML을 활용하면 됨
