@@ -10,9 +10,9 @@
     
     <script>
         let num = prompt('숫자 입력하기') //이 시점에선 문자열
-        num %= 12 // 이 때도 '문자열'
+        num %= 12 // 이 때 숫자가 됨
         num++ // 이 때는 숫자
-        num = Number(num) // 이 때에 되서야 숫자가 됨
+        num = Number(num) // 확실하게 숫자로 만드는 법
         console.log(num)
 
         //결론 : 입력받는 값은 기본적으로 문자다.
