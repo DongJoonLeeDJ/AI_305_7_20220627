@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,img {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const SIZE = 5 //다이아몬드 크기 5
+        const DIAMOND = 'https://e7.pngegg.com/pngimages/79/872/png-clipart-red-diamond-heart-heart-gemstone-image-file-formats.png'
+        for(let i = 1; i<=SIZE; i++)
+        {
+            //스페이스바
+            for(let j = SIZE; j>i; j--)
+            {
+                let space = document.createElement('div')
+                document.body.appendChild(space)
+            }
+            //별 찍는 부분
+            for(let k = 0; k<2*i-1; k++)
+            {
+                let star = document.createElement('img')
+                star.src=DIAMOND
+                document.body.appendChild(star)
+            }
+            let br = document.createElement('br')
+            document.body.appendChild(br)
+        }
+        for(let i = SIZE-1; i>0; i--)
+        {
+            for(let j = SIZE; j>i; j--)
+            {
+                let space = document.createElement('div')
+                document.body.appendChild(space)
+            }
+                
+            for(let k = 0; k<2*i-1; k++)
+            {
+            
+                let star = document.createElement('img')
+                star.src = DIAMOND
+                document.body.appendChild(star)
+            }
+
+            document.body.appendChild(document.createElement('br'))
+        
+           
+        }
+        
+    </script>
+</body>
+</html>
