@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //num - 매개변수
+        //return 값을 반환
+        //우리가 알던 함수와 다른 점은 반환형을 표시 안 해줌
+        function Abs(num)
+        {
+            if(num<0)
+                num *=-1
+            return num
+        }
+        console.log(Abs(-1))
+        //콜백함수라는 것이 굉장히 쓰기가 편하다.
+        //콜백함수 : 함수를 매개변수로 받는 함수
+        //특정메시지를 출력하는 함수를 특정 횟수 호출하기
+        function printConsole(func, count)
+        {
+            for(let i = 0; i<count; i++)
+                func()
+        }
+        function SayHello() 
+        {
+            console.log('안녕하세요.')
+        }
+        printConsole(SayHello, 5)
+        printConsole(function() {console.log('ldj')}, 
+        10)
+
+
+    </script>
+</body>
+</html>
