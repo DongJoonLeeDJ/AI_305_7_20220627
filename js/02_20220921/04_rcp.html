@@ -27,6 +27,8 @@
         const BAWI = 1
         const BO = 2
 
+        let result = document.querySelector('h1')
+
         //mychoice = 매개변수, 변수명은 자유롭게 적기
         //여기서는 어떻게 활용하냐면
         //이벤트를 호출한 태그를 가리킬 때 쓰임
@@ -43,14 +45,47 @@
                 case 'gawi':
                     console.log('가위')
                     myresultimg.src = gbb[GAWI]
+                    switch (pc_choice) {
+                        case GAWI:
+                            result.textContent = '비김'
+                            break
+                        case BAWI:
+                            result.textContent = '짐'
+                            break
+                        case BO:
+                            result.textContent = '이김'
+                            break
+                    }
                     break;
                 case 'bawi':
                     console.log('바위')
                     myresultimg.src = gbb[BAWI]
+                    switch (pc_choice) {
+                        case GAWI:
+                            result.textContent = '이김'
+                            break
+                        case BAWI:
+                            result.textContent = '비김'
+                            break
+                        case BO:
+                            result.textContent = '짐'
+                            break
+                    }
                     break
                 case 'bo':
                     console.log('보')
                     myresultimg.src = gbb[BO]
+                    switch (pc_choice) {
+                        case GAWI:
+                            result.textContent = '짐'
+                            break
+                        case BAWI:
+                            result.textContent = '이김'
+                            break
+                        case BO:
+                            result.textContent = '비김'
+                            break
+                    }
                     break
             
                 default:
