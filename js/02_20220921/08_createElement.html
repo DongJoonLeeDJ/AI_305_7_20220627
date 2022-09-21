@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {color:red}
+    </style>
+</head>
+<body>
+    <script>
+        // 스크립트를 통해서 태그 만들어내기
+        let h1Tag = document.createElement('h1')
+        h1Tag.textContent = "안녕하세요"
+        h1Tag.setAttribute('class', 'red')
+        // 스크립트를 통해서 태그에 클래스 추가하기
+        document.body.appendChild(h1Tag)
+        
+        let image = document.createElement('img')
+        image.src = 'https://image.newdaily.co.kr/site/data/img/2013/12/16/2013121610013_0.jpg'
+        document.body.appendChild(image)
+    </script>
+</body>
+</html>
