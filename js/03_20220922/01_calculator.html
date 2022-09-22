@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="one" type="text">
+    <input id="two" type="text">
+    <button id="add">더하기</button>
+    <button id="mul">곱하기 </button>
+    <h1></h1>
+    <script>
+        let o = document.querySelector('#one')
+        let t = document.querySelector('#two')
+        let add = document.querySelector('#add')
+        let mul = document.querySelector('#mul')
+
+        let result = document.querySelector('h1')
+
+        //add 클릭하면 function안에 있는 내용이 실행됨
+        add.onclick = function() {
+            let num1 = o.value
+            let num2 = t.value
+            // alert(Number(num1)+Number(num2))
+            result.textContent = Number(num1)+Number(num2)
+        }
+
+        mul.onclick = function() {
+            let num1 = o.value
+            let num2 = t.value
+            result.textContent = Number(num1)*Number(num2)
+        }
+
+    </script>
+</body>
+</html>
