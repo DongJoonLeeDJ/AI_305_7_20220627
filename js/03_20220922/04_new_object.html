@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        function Student(name, age, score) {
+            this.name = name
+            this.age = age
+            this.score = score
+            this.study = function() {
+                // ` <- 그레이브키(숫자 1의 왼쪽)
+                console.log
+                (`${this.name}학생은 
+                ${this.score}점 답게 공부해요`)
+            }
+        }
+        let students = []
+        students[0] = new Student('김진규',32,50)
+        students[1] = new Student('박지호',20,80)
+        students[2] = new Student('장태연',25,100)
+        for (const iterator of students) {
+            console.log(iterator)
+            console.log(iterator.name)
+            console.log(iterator.age)
+            console.log(iterator.score)
+            iterator.study()
+        }
+    </script>
+</body>
+</html>
