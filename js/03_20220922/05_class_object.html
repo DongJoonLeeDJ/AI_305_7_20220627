@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        class Student {
+            constructor(이름,나이,점수) {
+                this.이름 = 이름
+                this.나이 = 나이
+                this.점수 = 점수
+            }
+            toString() {
+                return `${this.이름}, ${this.나이}, 
+                ${this.점수} `
+            }
+        }
+        let s = new Student('최호준', 24, 85)
+        document.querySelector('h1').textContent
+        = s.toString()
+    </script>
+</body>
+</html>

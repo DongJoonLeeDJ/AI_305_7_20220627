@@ -13,13 +13,18 @@
             this.name = name
             this.age = age
             this.score = score
-            this.study = function() {
+            // this.study = function() {
+            //     // ` <- 그레이브키(숫자 1의 왼쪽)
+            //     console.log
+            //     (`${this.name}학생은 ${this.score}점 답게 공부해요`)
+            // }
+        }
+        Student.prototype.study = function() {
                 // ` <- 그레이브키(숫자 1의 왼쪽)
                 console.log
-                (`${this.name}학생은 
-                ${this.score}점 답게 공부해요`)
+                (`${this.name}학생은 ${this.score}점 답게 공부해요`)
             }
-        }
+
         let students = []
         students[0] = new Student('김진규',32,50)
         students[1] = new Student('박지호',20,80)
