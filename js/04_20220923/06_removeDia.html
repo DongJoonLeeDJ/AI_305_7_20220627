@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>모두 제거</button>
+    <br><br><br>
+<script>
+    function drawDia(SIZE)
+    {
+        for(let i = 1; i<=SIZE; i++)
+    {
+        //스페이스바
+        for(let j = SIZE; j>i; j--)
+        {
+            let space = document.createElement('span')
+            space.innerHTML = '&nbsp;'
+            document.body.appendChild(space)
+        }
+        //별 찍는 부분
+        for(let k = 0; k<2*i-1; k++)
+        {
+            let star = document.createElement('span')
+            star.innerHTML = '*'
+            document.body.appendChild(star)
+        }
+        let br = document.createElement('br')
+        document.body.appendChild(br)
+    }
+    for(let i = SIZE-1; i>0; i--)
+    {
+        for(let j = SIZE; j>i; j--)
+        {
+            let space = document.createElement('span')
+            space.innerHTML = '&nbsp;'
+            document.body.appendChild(space)
+        }
+            
+        for(let k = 0; k<2*i-1; k++)
+        {
+        
+            let star = document.createElement('span')
+            star.innerHTML = '*'
+            document.body.appendChild(star)
+        }
+
+        document.body.appendChild(document.createElement('br'))
+    
+       
+    }
+    }
+
+    drawDia(10)
+   
+    document.querySelector('button').onclick = 
+    () => {
+        document.querySelectorAll('span,br').forEach (
+            //배열요소의 의미 : 
+            //배열 안에 있는 값들 전부
+            //즉 span 태그와 br 태그 전부
+            //remove : 해당 태그 삭제
+            (배열요소)=>{배열요소.remove()}
+        )
+    }
+    
+</script>
+</body>
+</html>
