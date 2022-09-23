@@ -17,6 +17,7 @@
     <input class="blockTag" type="text" id="size">
     <button class="blockTag" id="add">다야 추가</button>
     <button class="blockTag" id="oneAdd">다야 무조건 하나만 추가</button>
+    <button class="blockTag" id="remove_and_add">추가제거</button>
     <br><br><br>
 <script>
     function drawDia(SIZE)
@@ -89,6 +90,15 @@
     () => {
         document.querySelector('#remove').click()
         document.querySelector('#add').click()
+    }
+    let count = 0
+    document.querySelector('#remove_and_add').onclick =
+    () => {
+        if(count%2==0)
+           document.querySelector('#add').click()
+        else 
+            document.querySelector('#remove').click()
+        count++
     }
     
 </script>
