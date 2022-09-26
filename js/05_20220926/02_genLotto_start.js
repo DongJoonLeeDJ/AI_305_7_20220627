@@ -2,6 +2,11 @@ function genLotto(startnum)
 {
     //startnum이 첫번째로 들어가고
     //그 뒤에 들어가는 값들은 무조건 이거보다 커야 한다.
+    
+    //확실하게 '숫자'로 형변환해주는 것
+    startnum=Number(startnum)
+    
+    
     let lotto = [startnum]
 
     //난수 생성 코드
@@ -22,7 +27,7 @@ function genLotto(startnum)
         //lotto.indexOf(num)!= -1 의 의미
         //num값이 lotto안에 있기는 하다.(어딨는진 알 필요없음)
 
-        if(lotto.indexOf(num)!= -1) {
+        if(lotto.indexOf(num)!= -1 || num<startnum) {
             i--
             continue
         }
