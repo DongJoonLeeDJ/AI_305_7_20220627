@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="test.js"></script>
+</head>
+<body>
+    <h1></h1>
+    <label for="start_num">시작번호</label>
+    <input type="text" id="start_num">
+    <button id="lotto_with_start_num">시작하기</button>
+    <br>
+    <button id="random_start">랜덤번호로 시작하기</button>
+    <button id="func_test">함수로해보기</button>
+    <script>
+        let lotto = []
+        let output = ''
+        for(let i = 0; i<7; i++)
+        {
+            let num = Math.floor(Math.random()*45)+1
+            if(i>0) //중복검사
+            {
+                //indexOf 함수 
+                //특정한 값이 배열안에서 어디있는지 찾음
+                //만약 그 값이 배열 안에 없으면 -1
+                if(lotto.indexOf(num) != -1)
+                {
+                    i--
+                    continue
+                }
+            }
+            lotto[i] = Number(num)
+            
+        }
+        lotto.sort((a,b)=>{return a-b})
+        for(let item of lotto)
+            output += item +' '
+        document.querySelector('h1').textContent = output
+    </script>
+    <script>
+        let lotto_with_start_num = 
+        document.querySelector('#lotto_with_start_num')
+
+        let start_num = 
+        document.querySelector('#start_num')
+
+        lotto_with_start_num.onclick = 
+        function() {
+            if(start_num.value==''){
+                alert('값을 입력해주세요.')
+                return;
+            }
+            //console.log(Number(start_num.value))
+            if(isNaN(Number(start_num.value))) {
+                alert('숫자 입력해주세요.')
+                return;
+            }
+
+            if(Number(start_num.value)>39)
+            {
+                alert('너무 큰 수입니다.')
+                return;
+            }
+
+            let lotto = []
+            lotto.push(Number(start_num.value))
+            for(let i = 1; i<7; i++)
+            {
+                let isduplicate = false
+                let num = Math.floor(Math.random()*45)+1
+                if(num <= Number(start_num.value))
+                {
+                    i--
+                    continue
+                }
+                for(let item of lotto)
+                {
+                    if(item==num)
+                    {
+                        i--
+                        isduplicate = true
+                        break
+                    }
+                }
+                if(isduplicate==false)
+                    lotto.push(num)
+            }
+            //정렬
+            for(let i=0; i<7; i++)
+            {
+                for(let j = 0; j<7-1-i; j++)
+                {
+                    if(lotto[j]>lotto[j+1])
+                    {
+                        let temp = lotto[j]
+                        lotto[j] = lotto[j+1]
+                        lotto[j+1] = temp
+                    }
+                }
+            }
+            let output = ''
+            for(let item of lotto)
+                output += item +' '
+            document.querySelector('h1').textContent = output
+ 
+        }
+
+    </script>
+    <script>
+        document.querySelector('#random_start').addEventListener('click',
+        function() {
+            console.log('let click')
+            let num = Math.floor(Math.random()*45)+1
+                console.log('1num='+num)
+            while(num>=40)
+                num = Math.floor(Math.random()*45)+1
+
+                console.log('2num='+num)
+                document.querySelector('h1').innerHTML 
+                = '시작번호는 '+(num)+'<br>'
+            let lotto = [num]
+
+            for(let i = 1; i<7; i++)
+            {
+                let mynum = Math.floor(Math.random()*45)+1
+                if(i>0) //중복검사
+                {
+                    if(lotto.indexOf(mynum) != -1
+                    || num>mynum)
+                    {
+                        i--
+                        continue
+                    }
+                }
+                lotto[i] = Number(mynum)
+            
+            }
+            lotto.sort((a,b) => {return a-b})
+            
+            console.log(lotto.toString())
+            document.querySelector('h1').innerHTML += lotto.toString()
+            
+
+
+        })
+    </script>
+    <script>
+        document.querySelector('#func_test').onclick = 
+        function()
+        {
+            let lotto = genLotto()
+            console.log(lotto.toString())
+            document.querySelector('h1').innerHTML = lotto.toString()
+        }
+    </script>
+</body>
+</html>
