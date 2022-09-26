@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem, ipsum dolor.</h1>
+    <button>이벤트 추가</button>
+    <button>이벤트 제거</button>
+    <button>이벤트 다시 추가</button>
+    <script>
+        //이벤트를 추가하는 방식은 on~~가 있고
+        //addEventListner에다가 이벤트명을 추가해서
+        //이벤트 추가하는 방식이 있다.
+        //우리가 여태 쓴 onclick은 on~~방식
+        //클릭이벤트도 addEventListner로 추가할 수 있다.
+
+        let h1 = document.querySelector('h1')
+        let count = 0
+
+        const buttons = 
+            document.querySelectorAll('button')
+        
+        //이벤트를 삭제하려면
+        //그 이벤트를 저장하는 변수가 있어야 함
+        const colorful = function()
+        {
+            count++
+            h1.style.color = `rgb(${(count*10)%255},0,0)`
+        }
+        buttons[0].addEventListener('click', colorful)
+        //두 번째 버튼 누르면 첫번째에 적용된 이벤트가 지워짐
+        buttons[1].addEventListener('click', function() {
+            buttons[0].removeEventListener('click',colorful)
+        })
+        //세 번째 버튼 누르면 첫번째에 이벤트를 추가
+        buttons[2].addEventListener('click', function()
+        {
+            buttons[0].addEventListener('click', colorful)
+        })
+    </script>
+</body>
+</html>

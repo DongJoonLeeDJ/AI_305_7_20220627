@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem, ipsum dolor.</h1>
+    <button>이벤트 추가</button>
+    <button>이벤트 제거</button>
+    <script>
+        let h1 = document.querySelector('h1')
+        let count = 0
+
+        const buttons = 
+            document.querySelectorAll('button')
+        
+        //이벤트를 삭제하려면
+        //그 이벤트를 저장하는 변수가 있어야 함
+        const colorful = function()
+        {
+            count++
+            h1.style.color = `rgb(${(count*10)%255},0,0)`
+        }
+        h1.addEventListener('click', colorful)
+        buttons[0].addEventListener('click', function()
+        {
+            h1.addEventListener('click', colorful)
+        })
+        //두 번째 버튼 누르면 첫번째에 적용된 이벤트가 지워짐
+        buttons[1].addEventListener('click', function() {
+            h1.removeEventListener('click',colorful)
+        })
+        
+    </script>
+</body>
+</html>
