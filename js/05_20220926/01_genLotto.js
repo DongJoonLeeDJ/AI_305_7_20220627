@@ -3,7 +3,7 @@ function genLotto()
     let lotto = []
 
     //난수 생성 코드
-    for(let i =0; i<7; i++)
+    for(let i =0; i<6; i++)
     {
         let num = Math.floor(Math.random()*45)+1
         let isDuplicate = false
