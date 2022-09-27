@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* 조건에 따라서 class값을 다르게 줘보기 */
+        .red {background-color: pink;}
+        .black{background-color: gainsboro;}
+    </style>
 </head>
 <body>
     <h1></h1>
@@ -15,7 +20,20 @@
         mytextarea.addEventListener('keyup',
         function() {
             const mylength = mytextarea.value.length
+            if(mylength>50) //50 초과시
+            {
+                //직접적으로 스타일을 바꾼 것
+                myh1.style.color='red'
+                //특정 클래스명을 추가할 것(간접적으로 바꿈)
+                myh1.setAttribute('class','red')
+            }
+            else
+            {
+                myh1.style.color='black'
+                myh1.setAttribute('class','black')
+            }
             myh1.textContent = `글자수 : ${mylength}`
+
         })
     </script>
 </body>
