@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 마우스를 딱 글자위에 올렸을 때만 hover되게 하기 */
+        h1{display: inline;}
+        h1:hover{cursor: pointer; color:violet;}
+    </style>
+</head>
+<body>
+    <h1>뒤로 가기</h1>
+    <script>
+        document.querySelector('h1').onclick = function()
+        {
+            history.go(-1)
+            //history.back()
+        }
+    </script>
+</body>
+</html>
