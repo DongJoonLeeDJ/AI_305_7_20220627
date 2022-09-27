@@ -187,6 +187,49 @@
                     },100
                 )
                 
+            } else //일치하지 않는 경우
+            {
+                //ball, strike 개수를 센다.
+                let arr = [output[0], output[1], output[2]]
+                let ball = 0
+                let strike = 0
+                //h1output : 내가 이번에 시도하는 숫자
+                //h1output.innerHTML.length = 3
+                for(let i = 0; i<h1output.innerHTML.length; i++)
+                {
+                    let test = arr.indexOf(h1output.innerHTML[i])
+                    if(test!=-1) //h1output의 i번째 글자가 정답에 포함된 경우
+                    {               //즉 내가 정답에 해당하는 숫자를 맞춘 것
+                                    //다만... 그게 자리수까지 맞는진 몰라             
+                        if(arr[i]==h1output.innerHTML[i])
+                            strike++
+                        else
+                            ball++
+                    }          
+                }                
+
+                
+                //h1Temp의 용도 : 맨 마지막에
+                //입력한 값 표시(9번 시도해도
+                // 다 틀렸을 때 마지막으로 시도한 값 표기)
+                let h1Temp = h1output.innerHTML
+                
+                //ball, strike에 따른 결과 표시
+                if(ball==0 && strike==0)
+                {
+                    h3input.innerHTML +=
+                    '['+h1output.innerHTML+'] out<br>'
+                    h1output.innerHTML=''
+                }
+                else {
+                    h3input.innerHTML+='['+h1output.innerHTML+'] '
+                    h3input.innerHTML+= strike+'S '+ball+'B<br>'
+                    h1output.innerHTML=''
+                }
+                //count값에 따른 css 변화
+
+                //9번 시도해도 안 됐을 경우
+
             }
 
         })
