@@ -83,6 +83,28 @@
             }, 100
         )
 
+        let buttons 
+        = document.getElementsByClassName('choiceValue')
+            //document.querySelectorAll('.choiceValue')
+        
+        //버튼 위의 글자 적기
+        for(let i = 0; i<buttons.length; i++)
+            buttons[i].textContent = i
+        
+        //버튼 눌렀을 때, 글자 나타나게 하기
+        for(let i = 0; i<buttons.length; i++)
+        {
+            buttons[i].addEventListener('click',
+            function(){
+                //i 값이 이 안에 이미 있다면 실행 안 함
+                if(h1output.innerHTML.includes(i)==false)
+                {
+                    //길이가 3이상이면 실행 안 함
+                    if(h1output.innerHTML.length<3)
+                        h1output.innerHTML+=i
+                }
+            })
+        }
     </script>
 </body>
 </html>
