@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let myarr = [1,2,'삼',4,()=>{console.log(5)},
+    [11,22,33], {이름:'이동준', 나이:34, 성별:'남'}]
+    myarr.push(function() {
+        console.log("Hello World")
+        alert("ㅎㅇ")
+    })
+    console.log(myarr.length)
+    for(let item of myarr)
+        console.log(item)
+    myarr[100] = 1234 //myarr길이에 상관없이
+                        //내가 원하는 위치에 값 넣기 가능
+    console.log('---------')
+    myarr.splice(0,1) //가장 첫번째꺼 하나 지움
+    for(let item of myarr)
+        console.log(item)
+    console.log('---------')
+    myarr.splice(1,3) //두번째([1])부터 시작해 3개 지움
+    for(let item of myarr)
+        console.log(item)
+    </script>          
+</body>
+</html>
