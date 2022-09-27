@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mynums = [10,20,30,40,50,99,101]
+        //매개변수에 따라서 동작이 달라지는 forEach
+        //매개변수가 3개일 때 
+        //value : 각 요소의 값
+        //index : 각 요소의 인덱스
+        //arr : 그 배열 자체
+        //forEach : 배열의 길이만큼 각각 호출되는 함수
+        
+        mynums.forEach(  (value,index,arr) => {
+            console.log('배열자체:'+arr)
+            console.log(`${index}번째 값 ${value}`)
+        }   )
+        //매개변수 개수가 줄어들게 되면 
+        //그만큼 활용할 수 있는 것도 적어진다.
+        //여기선 배열 자체는 활용 못 하고 값이랑 인덱스만
+        //활용 가능
+        mynums.forEach(  (v,i) => {
+            console.log(`${i}번째 값 ${v}`)
+        }   )
+        //여기선 배열 칸들 각각 안에 있는 값들만 활용이 가능
+        mynums.forEach(  (v) => {
+            console.log(`값 ${v}`)
+        }   )
+
+        //map
+        //배열에 있는 내용들을 재가공
+        //배열에 있는 값들을 이용해서 새로운 배열을 만듦
+        //power_numbers에 mynums에 있는 값들을
+        //각각 제곱한 걸 집어넣음
+        const power_numbers = mynums.map(
+            (v) => v*v
+        )
+        //forof 하고 tab키 누르기
+        for (const iterator of power_numbers) {
+            console.log(iterator)
+        }
+        //filter
+        //재가공인데, 내가 지정한 조건의 값만 가져오는 것
+        const odd_numbers = mynums.filter(
+            v => {return v%2==1}
+        )
+        for (const iterator of odd_numbers) {
+            console.log(iterator)
+        }
+
+        //복합적인 활용
+        console.log('복합 활용')
+        console.log('홀수만 가져와서 제곱시킨 다음 출력')
+        mynums.filter(v=>v%2==1).map(v=>v*v).forEach(
+            v=>console.log(v))
+        //계속 점을 찍어서 이어붙이는 것을
+        //채이닝 메소드라고 하며, jQuery에서 아주 많이 쓰임
+
+        //forEach, filter, map등은 원본은 건드리지 않음
+        //이런 걸 비파괴 메소드라고 함.
+
+
+    </script>
+</body>
+</html>
