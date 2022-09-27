@@ -5,6 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        button {
+            width: 30px;
+            height: 30px;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        #answer,#submit,#cancel {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+        #input {
+            position:fixed;
+            top:50px;
+            left:150px
+        }
+        #time {
+            position: fixed;
+            top:50px;
+            left:500px;
+        }
+    </style>
 </head>
 <body>
     <div style="height: 60px;">
@@ -40,5 +63,26 @@
         정답은 ?
     </button>
 
+    <script>
+        let cancel = document.querySelector('#cancel')
+        let submit = document.querySelector('#submit')
+        //querySelector랑 getElement 시리즈 모두
+        //알고 있어야 된다.
+        let h1output =document.getElementById('output')
+        let h3input = document.getElementById('input')
+
+        let answer = document.getElementById('answer')
+        let time = document.getElementById('time')
+        let count = 0
+        let timecount = 0
+        //실시간으로 숫자 올라가게 하기
+        let timeCountInterval =setInterval (
+            function() {
+                timecount++
+                time.innerText = timecount
+            }, 100
+        )
+
+    </script>
 </body>
 </html>
