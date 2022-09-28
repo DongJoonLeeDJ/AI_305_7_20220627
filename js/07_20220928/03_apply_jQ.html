@@ -5,8 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="jq.js"></script>
+    <style>
+        .myred{border: 3px solid red;}
+        .mycyan{background-color: cyan;}
+    </style>
 </head>
 <body>
-    
+    <h1 id="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sed voluptatum esse debitis nesciunt similique qui quas dolorum soluta voluptates, minus dolorem culpa perspiciatis, pariatur provident harum eveniet vel vero?</h1>
+    <h1 id="second">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae laudantium enim possimus amet asperiores quas perspiciatis unde vero, cupiditate soluta sint vel dolorem? Nemo iste, repudiandae facere necessitatibus molestias neque!</h1>
+
+    <script>
+        $('#first').css('color', 'red').addClass('myred')
+    </script>
 </body>
 </html>

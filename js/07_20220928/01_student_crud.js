@@ -5,6 +5,9 @@ function Student(name, age, number)
     this.number = number
 }
 //()=>{} 이건 this가 안 된다.
+//this가 안 되는 이유는 Arrow Function의 this가
+//document를 가리키기 때문이다.(자신을 감싸는 상위단 가리킴)
+//https://kim-solshar.tistory.com/57
 Student.prototype.regist = function() {
     alert(this.number+' '+this.name+'학생 등록 완료')
 }
