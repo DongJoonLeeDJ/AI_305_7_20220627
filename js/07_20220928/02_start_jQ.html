@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 id="one">Lorem, ipsum dolor.</h1>
+    <h1 id="two">Lorem, ipsum dolor.</h1>
+    <script>
+        let one = document.getElementById('one')
+        //$ = document
+        let two = $('#two')
+        one.style.color = 'red'
+        two.css('color','green')
+        //jQuery(=jQ)는 체이닝 메소드가 적용됨
+        $('#two').css('background','pink')
+        .css('border', '3px solid black')
+    </script>
+</body>
+</html>
