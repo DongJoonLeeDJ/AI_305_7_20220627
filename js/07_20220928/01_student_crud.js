@@ -84,4 +84,17 @@ window.onload = () => {
         }
     })
 
+    my_delete.addEventListener('click', function(){
+        for(let i = 0; i<my_students.length;i++) {
+            if(my_num.value==my_students[i].number)
+            {
+                my_students.splice(i,1) //i번째꺼 1개 제거
+                alert('학생 삭제 완료')
+                return
+            }
+        }
+        
+        alert('해당 번호의 학생 없음')
+    })
+
 }
