@@ -25,8 +25,8 @@ fetch('https://dongjoonleedj.github.io/testWebHosting/myjson.json')
      const jsonObj = result
      let h1 = document.querySelector('#result')
                 h1.textContent 
-                = jsonObj['price']
-                + jsonObj['Name']
+                = jsonObj.price //속성명적거나
+                + jsonObj['Name'] //배열연산형태로 적으면 됨
 }).catch(()=>{console.log("error")})
 
     </script>
