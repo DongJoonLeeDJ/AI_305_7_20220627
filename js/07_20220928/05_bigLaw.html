@@ -13,12 +13,36 @@
             function() {
                 //jQuery에서 text 불러오는 법과 text 바꾸는 법
                 //바꾸는 법
+               // $('h1:nth-child(2)').text('일')
                 $('h1:first').text('일')
                 //텍스트 받아오기
                 let mytext = $('h1:first').text()
                 console.log(mytext)
                     
                 $('h1:first').text('1')
+
+
+                //jquery 참고
+                //toArray, get, 혹은 선택자 바로 뒤에
+                //[0] 이렇게 적으면 DOM객체 반환(바닐라 js)
+                //eq 적으면 jQuery 객체를 반환해서
+                //jQuery 문법을 그대로 쓸 수 있다.
+                
+                //jQuery 선택자로 태그들 선택하고
+                //DOM객체 이용(=기존 js문법)해서
+                //태그 선택함
+                console.log($('h1').toArray()[0])
+                console.log($('h1').toArray())
+                console.log($('h1').get())
+                console.log($('h1').toArray()[1].textContent)
+                console.log($('h1').get()[0])
+                console.log($('h1')[0])
+                console.log($('h1')[1].textContent)
+
+                //eq : jQuery 배열
+                console.log($('h1').eq())
+                console.log($('h1').eq(0).val())
+                console.log($('h1').eq(0).text())
             }
             
         )
