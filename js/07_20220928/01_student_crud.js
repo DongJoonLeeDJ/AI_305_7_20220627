@@ -72,4 +72,16 @@ window.onload = () => {
 
     my_read.onclick = findStudent
 
+    my_update.addEventListener('click', () => {
+        const idx = my_students.findIndex(
+            function(item) {
+                return item.number==my_num.value
+            }
+        )
+        if(idx != -1) {
+            my_students[idx].name = my_name.value
+            my_students[idx].age = my_age.value
+        }
+    })
+
 }
