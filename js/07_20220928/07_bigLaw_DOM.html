@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.max {color:deepskyblue}</style>
+    <!-- <script src="jq.js"></script> -->
+    <script>
+        window.onload = (  
+            function() {
+                let bigCountLaw = prompt('주사위 시도 횟수')
+                let emptyArray  = [0,0,0,0,0,0]
+                for(let i = 0; i<bigCountLaw; i++) {
+                    let random = Math.floor(Math.random()*6)
+                    emptyArray[random]++
+                }
+                for(let i=1; i<=6; i++)
+                {
+                    //$('h1.a'+i) 
+                    //$('h1.a'+i).text(emptyArray[i-1])
+                    document.querySelector('h1.a'+i).textContent
+                    = emptyArray[i-1]
+                }
+                //최댓값, 최댓값의 위치
+                let max = 0
+                let maxIndex = 0
+                for(let i = 1; i<=6; i++)
+                {
+                    //h1태그이면서 클래스명이 a1인 것들
+                    //a1~a6인 것들의 값을 이용해서
+                    //최댓값과 퍼센트를 찾음
+                    //let percent = $('h1.a'+i).text()
+                    let percent 
+                    = document.querySelector('h1.a'+i).textContent
+                    
+                    if(max<Number(percent))
+                    {
+                        max=percent
+                        maxIndex = i
+                    }
+                    //몇퍼센트인지 표시하기 위한 값
+                    percent = (percent/bigCountLaw)*100
+                    
+                    //$('h2.a'+i)
+                    //.text(parseFloat(percent).toFixed(2)+'%')
+                    document.querySelector('h2.a'+i).textContent
+                    = parseFloat(percent).toFixed(2)+'%'
+                }
+                //maxIndex를 구했으므로 색칠할 때 이용하기
+                //$('h1.a'+maxIndex).addClass('max')
+                document.querySelector('h1.a'+maxIndex).setAttribute
+                ('class','max')
+                //$('h2.a'+maxIndex).addClass('max')
+                document.querySelector('h2.a'+maxIndex).setAttribute
+                ('class','max')
+
+
+            }
+
+              )
+    </script>
+</head>
+<body>
+    <h1>1</h1>
+    <h1 class="a1">0</h1>
+    <h2 class="a1">0</h2>
+    <h1>2</h1>
+    <h1 class="a2">0</h1>
+    <h2 class="a2">0</h2>
+    <h1>3</h1>
+    <h1 class="a3">0</h1>
+    <h2 class="a3">0</h2>
+    <h1>4</h1>
+    <h1 class="a4">0</h1>
+    <h2 class="a4">0</h2>
+    <h1>5</h1>
+    <h1 class="a5">0</h1>
+    <h2 class="a5">0</h2>
+    <h1>6</h1>
+    <h1 class="a6">0</h1>
+    <h2 class="a6">0</h2>
+</body>
+</html>
