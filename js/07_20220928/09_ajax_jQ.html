@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq.js"></script>
+</head>
+<body>
+    <h1>가격은 아래와 같아요!</h1>
+    <script>
+        $.ajax (
+            {
+                url:'https://dongjoonleedj.github.io/testWebHosting/myjson.json',
+                dataType:'json',
+                success : function(data) {
+                    //jQuery로 태그 만드는 법(createElement같은 거)
+                    let result = $('<h1></h1>')
+                    result.text('가격은 ' +data.price+'입니다.'+
+                    ' 그리고 담당자는'+data.Name+'입니다.')
+                    $('body').append(result)
+                },
+                error:function(r,s,e){
+                    alert('error!!!')
+                }
+            }
+        )
+    </script>
+</body>
+</html>
