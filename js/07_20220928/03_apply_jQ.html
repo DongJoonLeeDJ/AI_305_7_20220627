@@ -17,6 +17,11 @@
 
     <script>
         $('#first').css('color', 'red').addClass('myred')
+        
+        let first = document.getElementById('second')
+        first.setAttribute('class','myred')
+        first.style.color='blue'
+        first.className += ' mycyan' //클래스 추가
     </script>
 </body>
 </html>
