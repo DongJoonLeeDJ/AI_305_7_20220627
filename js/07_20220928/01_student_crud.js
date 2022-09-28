@@ -97,4 +97,11 @@ window.onload = () => {
         alert('해당 번호의 학생 없음')
     })
 
+    let allSelect = function() {
+        for (const iterator of my_students) {
+            console.log(iterator.toString())
+        }
+    }
+    my_console_log.addEventListener('click', allSelect)
+
 }
