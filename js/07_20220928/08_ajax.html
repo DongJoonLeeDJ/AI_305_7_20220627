@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>가격은 아래와 같습니다.</h1>
+    <h1 id="result"></h1>
+    <h1>위 결과 확인해보세요.</h1>
+    <script>
+        let ajax = new XMLHttpRequest()
+        //통신 준비
+        ajax.onreadystatechange = function() {
+            //통신 성공한 상태
+            if(this.readyState==4 && this.status==200)
+            {
+                let h1 = document.querySelector('#result')
+                h1.textContent 
+                = JSON.parse(ajax.responseText)['price']
+                + JSON.parse(ajax.responseText)['Name']
+                
+            }
+        }
+        ajax.open('GET', 'https://dongjoonleedj.github.io/testWebHosting/myjson.json')
+        ajax.send()
+    </script>
+    
+</body>
+</html>
