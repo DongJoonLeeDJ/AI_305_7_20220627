@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq.js"></script>
+    <script>
+        //$().ready(function(){}) 
+        //= window.onload=function(){}
+        //$().ready(function(){}) =
+        //$(function(){})
+        //$() != $
+        $().ready(
+            function( ) {
+                $('#hello')
+                .css('color','gold')
+                .on('click', function(){alert('헬로')})
+                
+                $('#world').click(function(){alert('안녕')})
+            } //이벤트추가. 클릭이벤트는 on 혹은 click쓰고
+        )     //다른 이벤트들은 on 함수 쓴다.
+    </script>
+</head>
+<body>
+    <h1 id="hello">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus blanditiis ad quod numquam dicta cumque quaerat ex voluptatem inventore ipsam saepe sint nisi repellat recusandae praesentium, incidunt eum, in quia?</h1>
+    <h1 id="world">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus blanditiis ad quod numquam dicta cumque quaerat ex voluptatem inventore ipsam saepe sint nisi repellat recusandae praesentium, incidunt eum, in quia?</h1>
+</body>
+</html>
