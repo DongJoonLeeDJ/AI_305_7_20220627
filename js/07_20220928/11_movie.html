@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq.js"></script>
+</head>
+<body>
+    <h1>박스오피스 탑 10</h1>
+    <p>최신 영화</p>
+    <div class="boxOffice">
+        <h2 class="boxOfficeType"></h2>
+        <p class="showRange"></p>
+        <ul class="boxOfficeList"></ul>
+    </div>
+    <script>
+        $(function(){
+            const key = "43acf2413769000d8f1218245a94a6ba"
+            const url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+            const apiurl = `${url}?key=${key}&targetDt=20220927`
+            console.log(apiurl)
+
+            const boxOfficeType = $('.boxOfficeType')
+            const showRange = $('.showRange')
+            const myUl = $('.boxOfficeList')
+
+            $.ajax(
+                {
+                    url:apiurl,
+                    dataType:'json',
+                    success:function(result) {
+                        console.log(result)
+                        const jsonObj = result
+                        const boxOfficeResult 
+                        = jsonObj['boxOfficeResult'] //boxOfficeResult 속성
+                        const movieList 
+                        = boxOfficeResult['dailyBoxOfficeList']
+
+                        boxOfficeType.text(boxOfficeResult['boxofficeType'])
+                        showRange.text(boxOfficeResult['showRange'])
+
+                        //each는 js의 forEach랑 똑같은 것
+                        $(movieList).each(function(index, element) {
+                            const myLi = $('<li></li>')
+                            const myDiv = $('<div></div>')
+                            const mh2 = $('<h2></h2>')
+                            const mp1 = $('<p></p>')
+                            const mp2 = $('<p></p>')
+                            const mp3 = $('<p></p>')
+                            mh2.text(element['movieNm'])
+                            mp1.text('개봉일:'+element['openDt'])
+                            mp2.text('누적관객수:'+element['audiAcc'])
+                            mp3.text('순위 변동:'+element['rankInten'])
+
+                            myLi.append(myDiv)
+                            myDiv.append(mh2)
+                            myDiv.append(mp1)
+                            myDiv.append(mp2)
+                            myDiv.append(mp3)
+                            myUl.append(myLi)
+                        })
+
+
+                    },
+                    error:()=>{console.log('error')}
+                }
+            )
+        })
+    </script>
+</body>
+</html>
