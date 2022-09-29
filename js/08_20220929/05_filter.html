@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="myjq.js"></script>
+    <script>
+        //window.onload랑 똑같은 거
+        //$(function(){})랑 똑같은 거
+        $().ready(
+            function() {
+                $('.box')
+                .css('width','100px')
+                .css('height','100px')
+                .css('background-color','pink')
+                .css('display','inline-block')
+
+                //클래스명이 box인 것들 중에서도
+                //border_box 클래스가 있는 것만 골라내는 거
+                //filter
+                $('.box').filter('.border_box')
+                .css('border', '4px solid green')
+            }
+        )
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box border_box"></div>
+    <div class="box"></div>
+    <div class="box border_box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box border_box"></div>
+</body>
+</html>
