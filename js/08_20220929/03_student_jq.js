@@ -64,24 +64,23 @@ $(
             })
 
             //정렬된 것을 print
-
-            //val = value = input태그의 value
-            const student = new Student(name.val(),
-            gender.val(),Number(beonho.val()))
-            
-            let newStuentInfo = $('<h1></h1>')
-            newStuentInfo.text(student.toString())
-            if(student.gender=='남')
+            for(let i = 0; i<students.length; i++)
             {
-                newStuentInfo
-                .css('background-color','springgreen')
-                .css('color', 'blue')
-            } else {
-                newStuentInfo
-                .css('background-color','black')
-                .css('color', 'pink')
+                let newStuentInfo = $('<h1></h1>')
+                newStuentInfo.text(students[i].toString())
+                if(students[i].gender=='남')
+                {
+                    newStuentInfo
+                    .css('background-color','springgreen')
+                    .css('color', 'blue')
+                } else {
+                    newStuentInfo
+                    .css('background-color','black')
+                    .css('color', 'pink')
+                }
+                information.append(newStuentInfo)
             }
-            information.append(newStuentInfo)
+           
         })
 
     }
