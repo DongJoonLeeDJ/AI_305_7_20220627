@@ -41,8 +41,15 @@ $(
                     sounds[index].src.split('sound/')
                     //sound/ 문자 기준으로 자름
 
-                    title.text(strArray[1])
+                    console.log(strArray[0])
+                    console.log(strArray[1])
+
+                    title.text(strArray[1].split('.')[0])
+                    //title.text(strArray[1])
+                    //title.text(strArray[1].split('.')[0])
+                    
                     //strArray[0]은 뭔지 확인해보기
+                    //strArray[0] 절대 경로
 
                 }
 
