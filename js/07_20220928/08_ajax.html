@@ -19,7 +19,7 @@
             {
                 let h1 = document.querySelector('#result')
                 h1.textContent 
-                = JSON.parse(ajax.responseText)['price']
+                = JSON.parse(ajax.responseText).price
                 + JSON.parse(ajax.responseText)['Name']
                 
             }
