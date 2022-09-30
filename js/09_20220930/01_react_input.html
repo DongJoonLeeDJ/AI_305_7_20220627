@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //참고 alt + z 누르면 url 길이 줄어듬 by 이현민
+        
+        let name = prompt('이름이 뭐에요?')
+        let imageUrl
+        let component
+        if(name=='개')
+        {
+            imageUrl='https://image-notepet.akamaized.net/seimage/20160907%2F1.jpg'
+        } else if(name=='토끼')
+        {
+            imageUrl = 'https://i.pinimg.com/236x/42/33/0f/42330f404d179afa98bbf77415094ff3.jpg'
+        } else {
+            imageUrl='http://www.mykhe2hotel.com/wp/wp-content/uploads/2014/01/%E9%A7%84%E7%9B%AE%E3%81%AA%E3%81%AE%E3%81%8B%EF%BC%9F-300x300.jpg'
+        }
+        component = <div>
+            <h1>리액트 시작 ({name})</h1>
+            <img src={imageUrl}/>
+        </div>
+        
+        const container = document.getElementById('root')
+        ReactDOM.render(component, container)
+    </script>
+    
+</body>
+</html>

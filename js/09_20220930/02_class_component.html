@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //name, imgUrl은 객체의 속성
+        //즉 원래 재공해주는 건 아님.
+        //Student 객체의 name, age와 같은 것들
+        //props = properties(속성)의 약자
+        class MyApp extends React.Component {
+            //container에 그릴 component를 리턴해줌
+            render() {
+                return <div>
+                    <h1>{this.props.name}</h1>
+                    <img src={this.props.imgUrl}/>
+                </div>
+            }
+        }
+        const container = document.getElementById('root')
+        ReactDOM.render(<MyApp name='이동준' imgUrl='https://i0.wp.com/issuemax.com/wp-content/uploads/2022/09/%EC%B6%94%EC%84%9D-%EC%9A%A9%EB%8F%88-1.jpg?resize=877.5%2C494&ssl=1'/>,
+        container)
+    </script>
+</body>
+</html>
