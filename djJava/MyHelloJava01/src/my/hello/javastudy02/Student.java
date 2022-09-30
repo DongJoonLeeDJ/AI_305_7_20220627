@@ -17,7 +17,7 @@ public class Student {
 	
 	//»ý¼ºÀÚ
 	public Student
-	(String name, int age, int score) {
+	(String name, int age, double score) {
 		this.name = name;
 		this.age = age;
 		this.score = score;
