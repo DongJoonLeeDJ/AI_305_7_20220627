@@ -23,19 +23,35 @@ public class HelloJava02 {
 			//2. 당첨 번호를 뽑아내면 된다.
 			for(int j = 0; j<lotto.length; j++) {
 				int num = (int)(Math.random()*45)+1;
-				boolean isDuplicate = 
-				Arrays.asList(lotto).contains(num);
-				if(isDuplicate)
+				
+				boolean isDuplicate = false;
+				//contain, indexOf는 객체대상임
+				for(int k = 0; k<j; k++)
 				{
-					j--;
-					continue;
+					if(lotto[k]==num)
+					{
+						isDuplicate = true;
+						j--;
+						break;
+					}
 				}
-				lotto[j]=num;
+				
+				//isDuplicate가 false가 되면 앞의 느낌표에
+				//의해서 true가 됨
+				//만약 isDuplicate가 true가 되면
+				//느낌표에 의해서 false가 됨
+				//! : not 연산
+				if(!isDuplicate)
+					lotto[j]=num;
 			}
 			int bns = (int)(Math.random()*45)+1;
-			while(Arrays.asList(lotto).contains(bns))
+			
+			for(int j = 0; j<lotto.length; j++)
 			{
-				bns = (int)(Math.random()*45)+1;
+				if(bns==lotto[j]) {
+					bns = (int)(Math.random()*45)+1;
+					j = -1;
+				}
 			}
 			Arrays.sort(lotto);
 			System.out.print((i+1)+"번째 번호 ");
