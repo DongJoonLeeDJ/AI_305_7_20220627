@@ -20,10 +20,26 @@ public class JavaStudy02_List_class {
 		
 		ArrayList<Student> mystudents
 		= new ArrayList<Student>();
+		
 		mystudents.add(new Student("김진규",30,5));
 		mystudents.add(new Student());
 		Student ss = new Student("도광현",25,4);
 		mystudents.add(ss);
+		
+		//new 키워드 + 생성자 
+		//인스턴스(Instance)라고 부름!!!
+		//Instance : 예시
+		//Student의 Instance = Student의 예시
+		//= 학생이라는 추상적 개념을 구체적인 예시로 보여준 것
+		
+		int ex; //ex에 기본적으로 숫자 0이 들어감
+		//s0랑 s1은 아무것도 가리키지 않음
+		//즉 null값이다.
+		Student s0;
+		Student s1 = null;
+		mystudents.add(s1);
+		students[0] =s1;
+		
 		
 	}
 
