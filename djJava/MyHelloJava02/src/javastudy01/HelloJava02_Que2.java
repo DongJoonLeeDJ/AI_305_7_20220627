@@ -22,7 +22,9 @@ public class HelloJava02_Que2 {
 		for (int i = 0; i < 5; i++) {
 			System.out.println(i + 1 + "번째 숫자 입력하기");
 			// 숫자 입력해서 바로 집어넣는다.
-			nums.add(s.nextInt());//자바스크립트의 push와 유사
+			//nums.add(s.nextInt());//자바스크립트의 push와 유사
+			int temp = s.nextInt();
+			nums.add(temp);
 		}
 		// foreach 적고 ctrl space
 		// 참고로 코드 정렬은 ctrl shift f 누르면 됨
@@ -35,12 +37,15 @@ public class HelloJava02_Que2 {
 		System.out.println("몇 미만의 숫자를 지울까요?");
 		int cutline = s.nextInt();
 		for(int i = nums.size()-1; i>=0; i--) {
-			if(cutline>nums.get(i))
-				nums.remove(i);
+			if(cutline>nums.get(i))//get(i), i번째 값 읽음
+				nums.remove(i); //remove(i), i번째를 지워버림
 		}
 		for (Integer integer : nums) {
 			System.out.println(integer);
 		}
+		
+		//가장 첫번째 값을 -1로 변경
+		nums.set(0, -1);
 		
 
 	}
