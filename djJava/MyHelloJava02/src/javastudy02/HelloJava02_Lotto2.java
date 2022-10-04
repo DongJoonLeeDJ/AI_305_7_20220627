@@ -28,14 +28,14 @@ public class HelloJava02_Lotto2 {
 				lotto.remove((Integer)num); //중복'값' 제거
 				lotto.add(num);
 			}
-			Collections.sort(lotto);
+			Collections.sort(lotto);//정렬
 			System.out.print(lotto.toString());
 			int bns = (int)(Math.random()*45)+1;
-			while(lotto.contains(bns)) {
+			while(lotto.contains(bns)) { //포함여부
 				bns=(int)(Math.random()*45)+1;
 			}
 			System.out.println(" 보너스 " + bns);
-			lotto.clear();
+			lotto.clear();//lotto 리셋하기
 		}
 		
 
