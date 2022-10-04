@@ -53,7 +53,28 @@ public class HelloJava01_Customer_Manager {
 		
 		//KBCustomer kb1 = new KBCustomer();
 		//kb1.age=100;
+		
+		KBCustomer k1 = new KBCustomer();
+		k1.setAge(34);
+		k1.setName("이동준");
+		k1.setcNum("00000");
+		
+		//sysout 누르고 ctrl space
+		System.out.println(k1.getAge());
+		System.out.println(k1.getName());
+		System.out.println(k1.getcNum());
+		
 
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
