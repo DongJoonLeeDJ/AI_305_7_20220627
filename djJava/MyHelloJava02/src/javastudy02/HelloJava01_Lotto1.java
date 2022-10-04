@@ -48,7 +48,9 @@ public class HelloJava01_Lotto1 {
 			Collections.sort(lotto); //정렬
 			System.out.print(lotto.toString());
 			System.out.println(" 보너스 " + bns);
-			lotto.clear(); //lotto 안에 있는 값을 전부 삭제(=Remove)
+			//참고로 lotto.clear() 안 해도 됨
+			//왜냐면 위쪽에 ArrayList를 새로 선언하기 때문
+			//lotto.clear(); //lotto 안에 있는 값을 전부 삭제(=Remove)
 		}
 
 	}
