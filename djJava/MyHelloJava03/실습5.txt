@@ -1,9 +1,10 @@
 1. Student 클래스에 study 메소드 추가하기
-
+	{"학생이면 공부를 해야지~ 등의 내용 추가"}
 2. Student 클래스를 상속받아서 KBStudent를 만들기
 	- gender
 	- education 추가
-	- attend 메소드 추가(출석하기) { 이름 나이 성별 학력 출력 하고 입실퇴실 출력 }
+	- attend 메소드 추가(출석하기) 
+		{ 이름 나이 성별 학력 출력 하고 입실퇴실 출력 }
 3. Main에서 테스트해보기 
 
 4. javastudy02에 있는 Circle 클래스를 상속받아서
