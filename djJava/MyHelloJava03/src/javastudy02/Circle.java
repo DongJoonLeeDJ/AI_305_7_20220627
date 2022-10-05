@@ -28,8 +28,19 @@ public class Circle {
 	public void setR(int r) {
 		this.r = r;
 	}
+	
+	//매개변수가 있는 생성자를 만들면서 디폴트 생성자는 지워졌다.
+	//디폴트 생성자 : 매개변수 없고 아무 동작도 안 하는 생성자
+	/*
+	  public Circle() { 
+	 
+	  }
+	  */
+	
+	//반드시 반지름값을 처음에 지정을 해줘야 함
+	//PI값은 기본적으로 3.14로 고정을 한다.
 	public Circle(int r) {
-		super();
+
 		this.r = r;
 		PI=3.14;
 	}
