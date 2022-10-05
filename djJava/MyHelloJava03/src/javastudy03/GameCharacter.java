@@ -56,6 +56,12 @@ public class GameCharacter {
 		}
 	}
 	
+	//캐릭터 정보 일괄 출력 가능
+	public void printInfo()
+	{
+		System.out.println(this.Id+"의 직업은 " + this._Class);
+		System.out.println("Lv : " + this.Level);
+	}
 	
 	
 }
