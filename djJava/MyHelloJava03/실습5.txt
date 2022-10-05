@@ -1,0 +1,21 @@
+1. Student 클래스에 study 메소드 추가하기
+
+2. Student 클래스를 상속받아서 KBStudent를 만들기
+	- gender
+	- education 추가
+	- attend 메소드 추가(출석하기) { 이름 나이 성별 학력 출력 하고 입실퇴실 출력 }
+3. Main에서 테스트해보기 
+
+4. javastudy02에 있는 Circle 클래스를 상속받아서
+sphere 클래스 만들기
+
+5. sphere 클래스에서 getvolume 메소드 추가(부피구하기)
+(4/3)*pi*r^3
+
+6. Main에서 테스트해보기 
+
+7 javastudy01에 있는 Rectangle 클래스를 상속 받아서 cuboid(직육면체) 클래스 만들기
+	- z 속성 추가
+	- getCuvoidVolumn 추가(w*h*z)
+
+8. Main에서 테스트해보기
