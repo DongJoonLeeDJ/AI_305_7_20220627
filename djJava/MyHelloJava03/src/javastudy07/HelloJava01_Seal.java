@@ -50,6 +50,7 @@ public class HelloJava01_Seal {
 
 		ArrayList<Novice> white_hands = new ArrayList<Novice>();
 		Novice n = new Novice();
+		//Novice nTest = new Novice();//("Xenoint","마법사");
 		n.setHp(30);
 		n.setId("가람타운백수");
 		n.setLevel(34);

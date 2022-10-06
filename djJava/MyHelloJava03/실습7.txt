@@ -1,0 +1,14 @@
+1. Worrior 클래스를 추가함(Novice를 상속받음)
+int power;
+public void punch() { 적당히 메시지 적기 }
+
+2. players에 Worrior 추가
+
+3. players에 GameCharacter 1개
+Magician 1개 Novice 1개 Worrior 1개씩 추가하고
+각 클래스 안의 메소드들 돌리기
+
+GameCharacter - Attack, printInfo
+Magician - Attack, printInfo,magicArrow
+Novice - Attack, printInfo,sleep
+Worrior - Attack, printInfo,sleep,punch

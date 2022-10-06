@@ -5,6 +5,11 @@ import javastudy03.GameCharacter;
 public class Novice extends GameCharacter {
 	private int hp;
 
+	//GameCharacter의 매개변수가 있는 생성자가
+	//여기에는 없다.
+	//Novice에는 그저 디폴트 생성자(매개변수랑 내용없는 생성자)
+	//이거만 있을 뿐이다!!
+	
 	public int getHp() {
 		return hp;
 	}
