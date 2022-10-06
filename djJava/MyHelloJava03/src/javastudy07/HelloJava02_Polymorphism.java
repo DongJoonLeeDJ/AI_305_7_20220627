@@ -60,9 +60,19 @@ public class HelloJava02_Polymorphism {
 		if(gg instanceof Novice) //이 조건문 없으면 에러남
 		{
 			//그래서 조건문으로 체크를 꼭 해줘야 함
+			
 			((Novice)gg).setHp(100);		
+			Novice ggg = (Novice)gg;
+			//ggg.sleep();
 			((Novice)gg).sleep();		
 		}
+		
+		
+//		System.out.println(gg.getId());
+//		Magician ggg = (Magician)gg;
+//		ggg.magicArrow();
+//		ggg.setId("조영탁");
+//		System.out.println(gg.getId());
 		
 	}
 }
