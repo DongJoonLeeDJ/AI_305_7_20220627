@@ -45,7 +45,7 @@ public class Rectangle {
 		setH(wh);
 	}
 	public Rectangle() {
-		
+		System.out.println("네모 클래스 생성~★");
 	}
 	
 	//인스턴스 메소드
