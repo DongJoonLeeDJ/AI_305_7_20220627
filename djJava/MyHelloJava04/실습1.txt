@@ -1,0 +1,9 @@
+Cat이랑 Dog 클래스를 완성한다.
+1. Animal 클래스를 상속
+2. Dog에는 String hairColor라는
+변수 추가하고
+void bark() 라는 메소드 추가
+(내용 : hairColor를 흩날리며 멍멍멍)
+3. Cat에는 String eyeColor라는 변수
+추가하고 void meow() 라는 메소드추가
+(내용 : eyeColor눈빛을 빛내며 야옹야옹)
