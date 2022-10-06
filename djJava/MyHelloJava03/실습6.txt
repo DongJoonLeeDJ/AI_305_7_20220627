@@ -1,0 +1,19 @@
+1. javastudy03에 있는
+GameCharacter를 상속받아서
+클래스를 만든다.
+Magician
+	mp 속성 추가
+	magicArrow 메소드 추가
+Novice
+	hp 속성 추가
+	sleep 메소드 추가
+
+2. ArrayList를 총 3개 만든다.
+GameCharacter, Magician, Novice에 대해서 ArrayList 만듦
+
+3. 이렇게 만든 ArrayList에서 각자가 가진 메소드들을 호출
+GameCharacter - Attack, printInfo
+Magician - Attack, printInfo,magicArrow
+Novice - Attack, printInfo,sleep
+
++) 학습목표 : 다형성과 오버라이딩에 대해서 설명할 것
