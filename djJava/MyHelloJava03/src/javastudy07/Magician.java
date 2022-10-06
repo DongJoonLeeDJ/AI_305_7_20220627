@@ -5,6 +5,11 @@ import javastudy03.GameCharacter;
 public class Magician extends GameCharacter {
 	private int mp;
 
+	public Magician(String id, String _Class, int mp) {
+		super(id, _Class);
+		this.mp = mp;
+	}
+
 	public int getMp() {
 		return mp;
 	}
