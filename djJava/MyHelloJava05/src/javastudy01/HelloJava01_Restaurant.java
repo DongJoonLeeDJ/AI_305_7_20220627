@@ -73,10 +73,10 @@ public class HelloJava01_Restaurant {
 			if(food instanceof Emokase)
 			{
 				((Emokase) food).sayEmo();
-				System.out.println("¸Þ´º¹ºµ¥?");
-				String menu = scan.nextLine();
-				System.out.println
-				(((Emokase) food).choiceMenu(menu));
+				//System.out.println("¸Þ´º¹ºµ¥?");
+				//String menu = scan.nextLine();
+				//System.out.println
+				//(((Emokase) food).choiceMenu(menu));
 			}
 		}
 		
