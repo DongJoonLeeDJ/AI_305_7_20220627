@@ -45,7 +45,20 @@ public class HelloJava01_PokemonWorld {
 				System.out.println("(좀더우렁차게) 이상해~~~꽃!!!");
 			}
 		};
+		pokemons.add(megaVenu);
 		
+		
+		for (Animalable animalable : pokemons) {
+			animalable.Charming();
+		}
 	}
 
 }
+
+
+
+
+
+
+
+
