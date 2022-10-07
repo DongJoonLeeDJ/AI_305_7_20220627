@@ -1,0 +1,15 @@
+1. Teacher 클래스를 만든다.(추상클래스)
+String Name
+String major
+public void Teach();
+
+2. Teacher에서 파생된 2개 이상의 클래스를 만든다.
+ex) ProgramingTeacher, MathTeacher
+
+3. 2번에서 만든 클래스 중 하나의 클래스를 Super 클래스로 하는
+새로운 클래스를 만든다.
+Ex) ProgramingTeacher를 상속한 JavaProgramingTeacher
+그리고 Teach 메소드를 오버라이드한다.
+
+4. Main에서 이 클래스들을 만들고 호출해본다.
+(ArrayList까진 쓰지 않음)
