@@ -42,7 +42,7 @@ public class HelloJava01_PCRoom {
 				System.out.println("날카로운 가시");
 			}
 		};
-		
+		//Lol l = new Lol();
 		chogas.Q();
 		chogas.W();
 		chogas.E();
