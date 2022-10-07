@@ -13,3 +13,6 @@ Ex) ProgramingTeacher를 상속한 JavaProgramingTeacher
 
 4. Main에서 이 클래스들을 만들고 호출해본다.
 (ArrayList까진 쓰지 않음)
+
+5. Teacher 이용해서 새로운 익명 클래슬 만들고, 그 클래스의
+Teach 메소드 호출하기

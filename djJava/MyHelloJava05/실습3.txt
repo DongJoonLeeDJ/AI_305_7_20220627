@@ -1,0 +1,20 @@
+1.LeagueOfLegends 클래스
+생성한다.
+(추상클래스)
+
+String Name//챔피언명
+String Runeterra//소속
+
+public void Q();
+public void W();
+public void E();
+public void R();
+
+2. 2개 이상의 챔프 클래스 생성
+Ex)DrMundo, Malphite
+
+3. Main에서 이들을 선언하고 
+q,w,e,r 호출
+
+4. 내가 만들어낸 새로운 챔프 생성
+(익명클래스 이용)
