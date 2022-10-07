@@ -8,10 +8,10 @@ public class Emokase extends Food{
 	}
 	
 	public void sayEmo() {
-		System.out.println(getName()+"이모님~");
+		System.out.println("이모님~ " + getName()+"주세요.");
 	}
 	public String choiceMenu(String menu) {
-		return getName()+"이모의 특성 메뉴 : " + menu;
+		return "이모의 특선 메뉴 : " + menu;
 	}
 
 }

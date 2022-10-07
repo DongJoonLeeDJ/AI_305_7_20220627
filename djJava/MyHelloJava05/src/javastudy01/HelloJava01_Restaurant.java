@@ -12,7 +12,8 @@ public class HelloJava01_Restaurant {
 		//e는 Food 대신 Emokase라고 해도
 		//Food타입 ArrayList나 배열에 들어감
 		//이걸 굳이 쓴 이유는 다형성 보여줄려고...
-		Food e = new Emokase("최미경", 20000);
+		Food e = new Emokase("곱창전골", 20000);
+			
 		
 		//Food()나 Sushi()나 Emokase() 이렇게 비어있는
 		//생성자를 못 만드는 이유는 Food에 매개변수가 없는 생성자는
@@ -42,9 +43,43 @@ public class HelloJava01_Restaurant {
 				String wasabi = scan.nextLine();
 				temp = new Sushi(Sushiname, price, wasabi);
 				foods.add(temp);
+			} else if(name.equals("이모카세") || name.equals("Emokase")) {
+				System.out.println("얼마야?");
+				int price = scan.nextInt();
+				scan.nextLine(); //hasNextLine 아님
+				System.out.println("메뉴명이 뭐야?");
+				String menu = scan.nextLine();
+				temp = new Emokase(menu, price);
+				foods.add(temp);
+			} else {
+				if(name.equals("exit")) {
+					System.out.println("추가 종료");
+					break;
+				} else {
+					System.out.println("얼마야?");
+					int price = scan.nextInt();
+					scan.nextLine(); //hasNextLine 아님
+					System.out.println("메뉴명이 뭐야?");
+					String menu = scan.nextLine();
+					temp = new Food(menu, price);
+					foods.add(temp);
+				}
 			}
 				
 		}
+		
+		for (Food food : foods) {
+			food.eat();
+			if(food instanceof Emokase)
+			{
+				((Emokase) food).sayEmo();
+				System.out.println("메뉴뭔데?");
+				String menu = scan.nextLine();
+				System.out.println
+				(((Emokase) food).choiceMenu(menu));
+			}
+		}
+		
 	}
 
 }
