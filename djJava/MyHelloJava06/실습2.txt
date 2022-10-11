@@ -5,7 +5,8 @@
 2. Fliable이라는 인터페이스를 만든다.
 	public void Fly();
 	public void FlapWing();
-3. Runsable 이라는 인터페이스를 만든다.(Runnable은 이미 있어서 일부러 이름 다르게 함)
+3. Runsable 이라는 인터페이스를 만든다.
+(Runnable은 이미 있어서 일부러 이름 다르게 함)
 	public void Run(); //뛰다
 	public void jog(); //조깅
 4. 1,2,3을 이용해 유니콘을 만들어 본다.
