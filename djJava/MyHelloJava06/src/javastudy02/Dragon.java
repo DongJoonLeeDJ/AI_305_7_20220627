@@ -1,6 +1,8 @@
 package javastudy02;
 
-public class Dragon extends Animal implements Fliable, Runsable{
+//Cryptid를 상속받음
+//환상종(=상상의 동물)이라는 별도의 클래스에 상속받음
+public class Dragon extends Cryptid implements Fliable, Runsable{
 
 	//종
 	private String species;

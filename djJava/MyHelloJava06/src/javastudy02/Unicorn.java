@@ -1,6 +1,8 @@
 package javastudy02;
 
-public class Unicorn extends Animal implements Fliable, Runsable {
+//Cryptid를 상속받음
+//환상종(=상상의 동물)이라는 별도의 클래스에 상속받음
+public class Unicorn extends Cryptid implements Fliable, Runsable {
 
 	//유니콘이므로 색깔 추가
 	private String Color;
