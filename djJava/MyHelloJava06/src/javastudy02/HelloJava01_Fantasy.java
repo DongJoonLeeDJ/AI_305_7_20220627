@@ -12,11 +12,7 @@ public class HelloJava01_Fantasy {
 		fantasies.add(new Dragon());
 		fantasies.add(new Unicorn());
 		fantasies.add(new Cryptid() {
-			@Override
-			public void sleep() {
-				// TODO Auto-generated method stub
-				super.sleep();
-			}
+
 		});
 	}
 
