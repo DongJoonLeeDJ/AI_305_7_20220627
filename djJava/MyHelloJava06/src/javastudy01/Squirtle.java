@@ -2,6 +2,10 @@ package javastudy01;
 
 public class Squirtle implements Pokemonable {
 
+//	@Override
+//	public void sleep() {
+//		System.out.println("µå¸£¸£·· Äí¾Æ¾Æ¾Æ");
+//	}
 	@Override
 	public void charming() {
 		System.out.println("²¿ºÏ²¿ºÏ~");

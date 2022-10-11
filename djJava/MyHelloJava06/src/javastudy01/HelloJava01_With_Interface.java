@@ -23,6 +23,7 @@ public class HelloJava01_With_Interface {
 				
 			}
 		};
+		//d.sleep();
 		
 		Plantable myp = new Plantable() {
 			
@@ -74,6 +75,22 @@ public class HelloJava01_With_Interface {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		
+		
+		
+		//람다
+		//간추린 것
+		//메소드가 하나 있는 인터페이스에 대해서 가능함
+		//익명 클래스를 줄인 것
+		
+		//Plantable의 grow를 오버라이딩한 것
+		//이걸 화살표 형태로 줄여버린 것 = 람다
+		//lambda
+		Plantable myFlower = () -> {
+			System.out.println("무럭무럭 자라나요");
+		};
+		myFlower.grow();
+		
 	}
 
 }

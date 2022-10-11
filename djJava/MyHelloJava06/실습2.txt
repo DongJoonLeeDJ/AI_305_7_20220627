@@ -1,0 +1,14 @@
+1. Animal이라는 추상 클래스를 만든다.
+	private String Name;
+	private int Age;
+	public void sleep();
+2. Fliable이라는 인터페이스를 만든다.
+	public void Fly();
+	public void FlapWing();
+3. Runsable 이라는 인터페이스를 만든다.(Runnable은 이미 있어서 일부러 이름 다르게 함)
+	public void Run(); //뛰다
+	public void jog(); //조깅
+4. 1,2,3을 이용해 유니콘을 만들어 본다.
+5. 혹시 만들 수 있는 생물이 있다면 또 만들어본다.(Dragon 등)
+6. Animal List에는 어떤 동물이 들어갈 수 있을지 생각해본다.
+7. 4,5에만 충족하는 동물이 있는지 생각해본다.
