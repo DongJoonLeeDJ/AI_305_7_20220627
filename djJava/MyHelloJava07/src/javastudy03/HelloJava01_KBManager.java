@@ -2,6 +2,7 @@ package javastudy03;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -63,9 +64,25 @@ public class HelloJava01_KBManager {
 		}
 		
 		Collections.sort(students);
+		
 		System.out.println("---나이순 출력(오름차순)---");
 		for (KBStudent kbStudent : students) {
-			System.out.println(kbStudent);
+			System.out.println(kbStudent.toString());
+		}
+		
+		//번호순 정렬
+		Collections.sort(students, new Comparator<KBStudent>() {
+
+			@Override
+			public int compare(KBStudent o1, KBStudent o2) {
+				// TODO Auto-generated method stub
+				return o1.getNumber()-o2.getNumber();
+			}
+			
+		});
+		System.out.println("---오름차순 출력(번호순)---");
+		for (KBStudent kbStudent : students) {
+			System.out.println(kbStudent.toString());
 		}
 	}
 
