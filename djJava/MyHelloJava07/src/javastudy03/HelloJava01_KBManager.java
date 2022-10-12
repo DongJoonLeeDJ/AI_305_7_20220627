@@ -1,5 +1,8 @@
 package javastudy03;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class HelloJava01_KBManager {
@@ -18,8 +21,12 @@ public class HelloJava01_KBManager {
 			return;
 		} finally {
 			//프로그램이 종료되도 무조건 실행을 함
-			System.out.println("프로그램을 재시작해주세요.");
+			if(count<=0)
+				System.out.println("프로그램을 재시작해주세요.");
 		}
+		
+		List<KBStudent> students 
+		= new ArrayList<KBStudent>();
 		
 		for(int i = 0; i<count; i++) {
 			String name="";
@@ -44,8 +51,21 @@ public class HelloJava01_KBManager {
 				e.printStackTrace(); //오류출력은 하고 프로그램은 계속 됨
 			}
 			KBStudent k = new KBStudent(name, gender, age, number);
-			
-			
+			if(students.contains(k)) {
+				System.out.println("중복!");
+				i--;
+				continue;
+			}
+			students.add(k);
+		}
+		for (KBStudent kbStudent : students) {
+			System.out.println(kbStudent);
+		}
+		
+		Collections.sort(students);
+		System.out.println("---나이순 출력(오름차순)---");
+		for (KBStudent kbStudent : students) {
+			System.out.println(kbStudent);
 		}
 	}
 
