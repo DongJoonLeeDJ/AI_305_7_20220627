@@ -1,0 +1,15 @@
+KBStudent 클래스작성하기
+생성자는 하나만 만들기(4개의 속성 다 입력받는 것)
+-String Name
+-String gender
+-int Age
+-int Number; 
+
+몇 명 추가할지 입력받기
+그에 따라서 ArrayList에 값 입력받아서 넣기
+단, Number는 겹치면 안 됨 (equals 사용하여 중복체크)
+(숫자 입력받을 경우 try catch 구문 이용하여 오류 메시지 출력)
+
+ArrayList에 있는 내용들 모두 출력(toString 이용)
+
+그 다음 ArrayList에 있는 내용들을 Age 순으로 정렬하기(구글링 필요함)
