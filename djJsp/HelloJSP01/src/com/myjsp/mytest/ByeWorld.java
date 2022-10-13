@@ -29,7 +29,9 @@ public class ByeWorld extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html;charset=UTF-8");
-		response.getWriter().append("잘가");
+		//response.getWriter().append("잘가");
+		String bye = request.getParameter("bye");
+		response.getWriter().append(bye);
 	}
 
 	/**

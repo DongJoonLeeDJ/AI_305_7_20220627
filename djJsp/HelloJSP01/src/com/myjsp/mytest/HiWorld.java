@@ -29,6 +29,8 @@ public class HiWorld extends HttpServlet {
 
 		response.setContentType("text/html;charset=UTF-8");
 		response.getWriter().append("¾È³ç");
+		String name = request.getParameter("hi");
+		response.getWriter().append(name);
 	}
 
 	/**
