@@ -1,0 +1,11 @@
+1. Student 클래스를 만든다. + toString 추가
+2. jsp 만들고
+이름,나이,번호 정보를 
+form 태그안에 받아옴
+3. servlet 에서 doGet과 doPost 모두
+doAction으로 응답받게 하기
+4. doAction의 내용 
+Student 클래스로 인스턴스 만들고 toString
+이용해서 내용 띄우기(h1태그로 띄워보기)
+
+3시 10분까지 풀기
