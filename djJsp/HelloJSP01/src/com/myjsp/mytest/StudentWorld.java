@@ -56,10 +56,12 @@ public class StudentWorld extends HttpServlet {
 			Student s = new Student(name, 
 					Integer.parseInt(age), 
 					Integer.parseInt(number));
-			response.getWriter().append(s.toString());
+			response.getWriter().append("<h1>"+s.toString()+"</h1>");
 		} catch (Exception e) {
 			System.out.println("잘못된 값!");
-			response.getWriter().append("학생 값 잘못됨");
+			//response.getWriter().append("학생 값 잘못됨");
+			//지정한 jsp 페이지로 이동하는 것!
+			response.sendRedirect("StudentJSP.jsp");
 		}
 		
 		
