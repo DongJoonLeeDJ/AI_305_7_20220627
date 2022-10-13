@@ -1,0 +1,40 @@
+@charset "EUC-KR";
+
+body {
+    background:rgba(0,0,0,0.8);
+}
+
+.temp {
+    background-color: #FFE271;
+    border-radius: 4px
+}
+.temp2 {
+    background-color: #fff500;
+    border-radius: 4px;
+}
+
+input {
+    border-radius: 4px;
+    border: none;
+}
+
+textarea{
+    border:none;
+    border-radius: 10px;
+    width:100%;
+}
+
+
+
+p {
+    color:white;
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+    color:rgba(130, 70, 201, 0.65);
+}
+
+

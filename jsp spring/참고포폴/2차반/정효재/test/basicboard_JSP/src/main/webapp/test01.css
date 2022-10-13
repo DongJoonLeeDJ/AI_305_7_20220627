@@ -1,0 +1,7 @@
+@charset "EUC-KR";
+input {
+    padding:20px;
+    font-size:20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}

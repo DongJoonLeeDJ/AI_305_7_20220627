@@ -1,0 +1,53 @@
+create database jsp_project;
+
+use jsp_project;
+
+회원
+create table jsp_member(
+	member_name varchar(30),
+	member_id varchar(30),
+	member_pw varchar(30),
+	member_address varchar(100)
+);
+
+insert into jsp_member values('송중기', 'asdf1234', 'asdf4321', '대구 수성구');
+insert into jsp_member values('정채연', 'qwer1234', 'qwer4321', '대구 중구');
+	
+메뉴
+create table jsp_cafe_menu(
+	name varchar(100),
+	detail text,
+	price int
+);
+
+insert into jsp_cafe_menu values('아이스 카페 아메리카노', '진한 에스프레소에 시원한 정수물과 얼음을 더하여 깔끔하고 강렬한 에스프레소를 가장 부드럽고 시원하게 즐길 수 있는 커피', '4100');
+insert into jsp_cafe_menu values('카페 아메리카노', '진한 에스프레소와 뜨거운 물을 섞어 스타벅스의 깔끔하고 강렬한 에스프레소를 가장 부드럽게 잘 느낄 수 있는 커피', '4100');
+insert into jsp_cafe_menu values('오늘의 커피', '신선하게 브루드되어 원두의 다양함이 살아있는 커피', '3800');
+insert into jsp_cafe_menu values('콜드브루', '콜드 브루 전용 원두를 차가운 물로 14시간 동안 추출한 실크같이 부드럽고 그윽한 초콜릿 풍미의 콜드 브루', '4500');
+insert into jsp_cafe_menu values('돌체콜드브루', '동남아 휴가지에서 즐기는 커피를 떠오르게 하는 베스트 조합', '5800');
+insert into jsp_cafe_menu values('에스프레소', '향기로운 크레마 층과 바디 층 and 하트 층으로 이루어져 있으며, 입안 가득히 커피와 달콤한 카라멜 향이 느껴지는 커피 음료', '3600');
+insert into jsp_cafe_menu values('제주 유기농 말차로 만든 크림 프라푸치노', '깊고 진한 말차 본연의 맛과 향을 시원하고 부드럽게 즐길 수 있는 프라푸치노', '6300');
+insert into jsp_cafe_menu values('자바 칩 프라푸치노', '커피와 모카 소스 그리고 진한 초콜릿 칩이 입안 가득 느껴지는 프라푸치노', '6100');
+insert into jsp_cafe_menu values('민트 초콜릿 칩 블렌디드', '입 안 가득 상쾌한 민트 초콜릿과 부드러운 돌체 소스가 어우러진 초콜릿 블렌디드', '6100');
+insert into jsp_cafe_menu values('딸기 딜라이트 요거트 블렌디드', '유산균이 살아있는 리얼 요거트와 풍성한 딸기 과육이 더욱 상큼하게 어우러진 과일 요거트 블렌디드', '6100');
+insert into jsp_cafe_menu values('쿨 라임 피지오', '그린 빈 추출액이 들어간 라임 베이스에 건조된 라임 슬라이스를 넣고 스파클링한 시원하고 청량감 있는 음료', '5900');
+insert into jsp_cafe_menu values('아이스 유자 민트 티', ' 달콤한 유자와 알싸하고 은은한 진저와 상쾌한 민트 티가 조화로운 유자 민트 티', '5600');
+insert into jsp_cafe_menu values('유자 민트 티', '달콤한 유자와 알싸하고 은은한 진저향의 우릴 수록 상쾌한 민트 티가 조화로운 유자 민트 티', '5600');
+insert into jsp_cafe_menu values('자몽 허니 블랙 티', '새콤한 자몽과 달콤한 꿀이 깊고 그윽한 풍미의 스타벅스 티바나 블랙 티의 조화', '5300');
+insert into jsp_cafe_menu values('아이스 자몽 허니 블랙 티', '새콤한 자몽과 달콤한 꿀이 깊고 그윽한 풍미의 스타벅스 티바나 블랙 티의 조화', '5300');
+insert into jsp_cafe_menu values('유기농 오렌지 주스', '프리미엄 유기농 오렌지 주스 당도 높은 스페인산 오렌지 착즙 주스', '4500');
+insert into jsp_cafe_menu values('스타 루비 자몽 스위트', '상큼 달콤한 자몽으로 채우기 과즙이 풍부하고 당도가 높은 스타 루비 자몽이 가득 들어간 상큼한 음료', '4100');
+insert into jsp_cafe_menu values('시그니처 핫 초콜릿', '깊고 진한 초콜릿과 부드러운 휘핑크림이 입안에서 사르르 녹는 프리미엄 초콜릿 음료', '5300');
+insert into jsp_cafe_menu values('잉글리쉬 브렉퍼스트 티', '인도 아삼과 제주도 유기농 홍차가 블렌딩되어 진한 벌꿀향과 그윽한 몰트향이 특징인 블랙 티', '4100');
+insert into jsp_cafe_menu values('아이스 잉글리쉬 브렉퍼스트 티', '인도 아삼과 제주도 유기농 홍차가 블렌딩되어 진한 벌꿀향과 그윽한 몰트향이 특징인 블랙 티', '4100');
+
+insert into  jsp_cafe_menu values('치즈 그린 어니언 브레드', '대파와 파마산 치즈 그리고 베이컨이 듬뿍 토핑된 쫄깃한 바게트 빵에 바질 마요네즈로 맛을 더한 이색적인 브레드', '5500');
+insert into  jsp_cafe_menu values('크런치 가나슈 레이어 케이크', '12겹의 다양한 크림과 시트가 진한 맛을 내고 크런치한 식감의 초콜릿 볼과 아몬드가 씹는 즐거움을 주는 진한 초콜릿 케이크', '6900');
+insert into  jsp_cafe_menu values('산타 벨벳 체커스 케이크', '레드벨벳 시트와 화이트 시트를 체크 형태로 번갈아 쌓고 진한 크림 치즈를 층층이 샌드한 크리스마스 무드의 케이크', '6100');
+insert into  jsp_cafe_menu values('부드러운 고구마 생크림 케이크', '부드러운 고구마 무스와 조각 형태의 고구마를 화이트 케이크 시트 사이에 듬뿍 넣고 생크림을 올린 달콤하고 고소한 케이크', '5900');
+insert into  jsp_cafe_menu values('딸기 크림 초콜릿 카스텔라', '코코아를 넣어 구운 촉촉한 카스텔라 시트에 상큼한 딸기 생크림을 듬뿍 넣은 카스텔라 케이크', '5500');
+insert into  jsp_cafe_menu values('바질 토마토 크림치즈 베이글', '바질과 썬드라이 토마토 그리고 크림치즈의 조합이 이색적인 베이글', '5300');
+insert into  jsp_cafe_menu values('리얼 블루베리 베이글', '블루베리의 상큼한 풍미가 매력적인 베이글', '3000');
+insert into  jsp_cafe_menu values('가나슈 품은 초콜릿 스콘', '진한 가나슈 필링과 달콤한 초콜릿 칩을 품은 초콜릿 스콘', '4200');
+insert into  jsp_cafe_menu values('쿠키 블루베리 잼 머핀', '블루베리 잼을 넣은 촉촉한 머핀 위에 쿠키를 더해 달콤 상큼하게 즐길 수 있는 머핀', '3800');
+insert into  jsp_cafe_menu values('우유 품은 초콜릿 크루아상', '부드럽고 고소한 우유 생크림을 가득 품고 달콤한 초콜릿 코팅을 더한 크루아상', '4900');

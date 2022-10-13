@@ -1,0 +1,1791 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- ----------------여기는 로그인 화면------------------------------------- -->
+<title>UNIVERS: 로그인</title>
+<!-- ----------------------------------------------------------------------------------------  -->
+<link href="Login_D.css" type="text/css" rel="stylesheet">
+<!-- --------------------------------------------------------------------------------------- -->
+</head>
+<body>
+	<div id = wrap >
+		
+	
+		<form action="./LoginAction.jsp" method="post">
+			<table>
+				<tr>
+					<td>
+						<h1>UNIVERS</h1>
+					</td>
+				</tr>
+				<tr>
+					<td><input class="Id" type="text" size="60" 
+					placeholder="아이디" onfocus="this.placeholder=''" 
+					onblur="this.placeholder='아이디'" name="userID"></td>
+				</tr>
+				<tr>
+					<td><input class="Password" type="password" size="60" 
+					placeholder="비밀번호" onfocus="this.placeholder=''" 
+					onblur="this.placeholder='비밀번호'" name="userPassword"></td>
+				</tr>
+				<tr>
+					<td><input class="log"  type="submit" value="로그인" size="60" style="border: 2px solid white;"></td>
+				</tr>
+			</table>
+		</form>	
+		
+		<div class="two_button">
+			<button class="find">ID/PW 찾기</button>
+			<button class="sign" onClick="window.open('Sign_W.jsp')">회원가입</button>
+		</div>
+		
+	</div>
+	
+	
+	
+		<footer>
+            <div class="boxalign">
+                <ul>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">FOLA</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">korea</a></li>
+                </ul>
+                <address>COPYRIGHT ⓒ 2021 UNIVERS. ALL RIGHTS RESERVED</address>
+            </div>
+        </footer>
+		
+		<!-- <form action="./useDB.jsp" method="post">
+			<input type="submit" value="조회">
+		</form> -->
+		
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="user.UserDto" %>
+<%@page import="user.UserDao" %>
+<%@page import="java.io.PrintWriter" %>
+<!-- ----------------여기는 로그인 입력 확인 코드------------------------------------- -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인실행</title>
+</head>
+<body>
+
+<%
+	request.setCharacterEncoding("EUC-KR");
+	//id와 비밀번호가 있는경우
+	UserDao userDao = new UserDao();
+	int result = userDao.login(request.getParameter("userID"),request.getParameter("userPassword"));
+	
+	//로그인 성공
+	if(result == 1)
+	{
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('환영합니다.')");
+		script.println("location.href='Main_W.jsp'");
+		script.println("</script>");
+		script.close();
+	}
+	
+	//로그인 실패
+	else if(result == 0)
+	{
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('비밀번호가틀립니다.')");
+		script.println("history.back()");
+		script.println("</script>");
+		script.close();
+	}
+	
+	else if(result == -1)
+	{
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('존재하지 않는 아이디 입니다.')");
+		script.println("history.back()");
+		script.println("</script>");
+		script.close();
+	}
+	
+	else if(result == -2)
+	{
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('DB오류')");
+		script.println("history.back()");
+		script.println("</script>");
+		script.close();
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+%>
+
+
+</body>
+</html>
+
+<%@page import="java.io.PrintWriter"%>
+<%-- <%@page import="user.BbsDAO"%> --%>
+<%@page import="user.Test" %>
+<%@page import="user.UserDao4" %>
+<%@page import="java.io.PrintWriter" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("utf-8"); %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP 게시판 웹 사이트</title>
+</head>
+<body>
+	<%
+			request.setCharacterEncoding("utf-8");
+			Test test = new Test();
+	
+			if(request.getParameter("Title")!=null)
+			{
+				/* NewUser.setUserID(request.getParameter("userID")); */
+				test.setTitle(request.getParameter("Title"));
+			}
+			if(test.getTitle().equals(""))
+			{
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('제목을 입력하세요.')"); 
+				script.println("location.href='Board.jsp'");  //확인 누르면 이동하는 페이지 
+				script.println("</script>");
+				script.close();
+				return;
+			}
+			
+			if(request.getParameter("Contents")!=null)
+			{
+				//NewUser.setUserPassword(request.getParameter("userPassword")); 
+				test.setContents(request.getParameter("Contents"));
+			}
+			
+			if(test.getContents().equals(""))
+			{
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('내용을 입력하세요.')"); 
+				script.println("location.href='Board.jsp'");  //확인 누르면 이동하는 페이지 
+				script.println("</script>");
+				script.close();
+				return;
+			}
+		
+			
+			UserDao4 userDao4 = new UserDao4();
+			int result = userDao4.join(test.getTitle(), test.getContents());
+			if(result == 1)
+			{
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('게시글이 등록 되었습니다.')");
+				script.println("location.href='useDB.jsp'");
+				script.println("</script>");
+				script.close();
+			}
+		
+	
+	%>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 화면 최적화 -->
+<meta name="viewport" content="width-device-width" , initial-scale="1">
+<!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
+<!-- <link href="2121.css" type="text/css" rel="stylesheet"> -->
+<title>JSP 게시판 웹 사이트</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	font-size: 12px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+	font-size: 100%;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+ul, ol {
+	list-style-type: none;
+}
+
+address {
+	font-style: normal;
+}
+
+/*  -----------------------------------------------------------------------*/
+#wrap {
+	width: 100%;
+	min-width: 1100px;
+	overflow: hidden;
+	background-color: #000;
+}
+
+header {
+	height: 70px;
+}
+
+.boxalign {
+	width: 1100px;
+	margin: auto;
+}
+
+#logo {
+	float: left;
+	margin: 1rem 0;
+	color: #fff;
+}
+
+#logo h1 {
+	
+}
+
+#logo a {
+	
+}
+
+#logo img {
+	color: #fff;
+}
+
+nav {
+	float: right;
+	background: #000;
+}
+
+nav ul {
+	overflow: hidden;
+}
+
+nav li {
+	float: left;
+	margin-left: 4rem;
+	color: #fff;
+}
+
+nav a {
+	display: block;
+	font-size: 1.3rem;
+	/* font-weight: bold; */
+	line-height: 65px;
+}
+
+nav li:hover {
+	border-bottom: 4px solid #fff;
+}
+
+.container {
+	width: 100%;
+	height: 560px;
+	background-image: url("./img/earth.jpg"); 
+	background-position: center;
+	background-size: cover;
+	padding: 5rem 0; 
+}
+
+.bbord {
+	width: 1200px; 
+	margin: auto;
+
+	/* border: 1px solid blue; */
+}
+
+th {
+	width: 1200px;
+	height: 50px;
+	font-size: 30px;
+	color:white;
+	text-align: center;
+	margin: auto;
+	background-color: transparent;
+} 
+
+
+
+footer {
+	background: #fff;
+	height: 200px;
+	width: 100%;
+}
+
+footer ul {
+	overflow: hidden;
+	padding: 2rem 0;
+	margin: auto;
+	width: 500px;
+}
+
+footer li {
+	float: left;
+	font-weight: bold;
+}
+
+footer li+li {
+	margin-left: 5.4rem;
+}
+
+footer a {
+	
+}
+
+footer address {
+	padding: 4rem 0;
+	text-align: center;
+	border-top: 2px solid;
+}
+</style>
+</head>
+<body>
+	<div id=wrap>
+
+			<header class="boxalign">
+				<div id="logo">
+					<h1>
+						<a href="#"> <img src="img/LOGO-img.jpg" alt="">
+						</a>
+					</h1>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#">사업소개</a></li>
+						<li><a href="#">갤러리</a></li>
+						<li><a href="#">프로젝트</a></li>
+						<li><a href="#">온라인몰</a></li>
+						<li><a href="#" onclick="location.href='Login_W.jsp'">로그인</a></li>
+						<li><a href="#" onclick="location.href='Sign_W.jsp'">회원가입</a></li>
+					</ul>
+				</nav>
+			</header>
+	
+			<!-- 게시판 글쓰기 양식 영역 시작 -->
+			<div class="container">
+				<div class="row">
+				
+					<form class="bbord" method="post" action="writeAction2.jsp">
+						<table>
+							<thead>
+								<tr>
+									<th colspan="2">게시글 작성</th>
+								</tr>
+							</thead>
+	
+							<tbody>
+								<tr>
+									<td><input type="text" class="form-control"
+										placeholder="제목" name="Title" maxlength="50" style="width: 1193px; height: 50px;"></td>
+								</tr>
+								<tr>
+									<td><textarea class="form-control" placeholder="내용"
+											name="Contents" maxlength="2000" style="width: 1193px; height: 300px;"></textarea></td>
+								</tr>
+							</tbody>
+						</table>
+	
+						<!-- 글쓰기 버튼 생성 -->
+						<input type="submit" class="btn btn-primary pull-right" value="등록" 
+						style="width: 300px; height: 60px; margin-left: 450px;">
+					</form>
+					
+				</div>
+			</div>
+			<!-- 게시판 글쓰기 양식 영역 끝 -->
+	
+			<footer>
+				<div class="boxalign">
+					<ul>
+						<li><a href="#">Site Map</a></li>
+						<li><a href="#">FOLA</a></li>
+						<li><a href="#">Terms of Use</a></li>
+						<li><a href="#">Legal</a></li>
+						<li><a href="#">korea</a></li>
+					</ul>
+					<address>COPYRIGHT ⓒ 2021 UNIVERS. ALL RIGHTS RESERVED</address>
+				</div>
+			</footer>
+	</div>
+</body>
+</html>
+
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.Statement"%>
+<%@ page import="java.sql.ResultSet"%>
+<%@ page import="java.sql.SQLException"%>
+<html>
+<head>
+<title>게시판 목록</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	font-size: 12px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+} 
+
+h1, h2, h3, h4, h5 {
+	font-size: 100%;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+ul, ol {
+	list-style-type: none;
+}
+
+address {
+	font-style: normal;
+}
+
+/*  -----------------------------------------------------------------------*/
+#wrap {
+	width: 100%;
+	min-width: 1100px;
+	overflow: hidden;
+	background-color: #000;
+}
+
+header {
+	height: 70px;
+}
+
+.boxalign {
+	width: 1100px;
+	margin: auto;
+}
+
+#logo {
+	float: left;
+	margin: 1rem 0;
+	color: #fff;
+}
+
+#logo h1 {
+	
+}
+
+#logo a {
+	
+}
+
+#logo img {
+	color: #fff;
+}
+
+nav {
+	float: right;
+	background: #000;
+}
+
+nav ul {
+	overflow: hidden;
+}
+
+nav li {
+	float: left;
+	margin-left: 4rem;
+	color: #fff;
+}
+
+nav a {
+	display: block;
+	font-size: 1.3rem;
+	/* font-weight: bold; */
+	line-height: 65px;
+}
+
+nav li:hover {
+	border-bottom: 4px solid #fff;
+}
+
+table {
+	margin: auto;
+	margin-top: 50px;
+	width: 90rem;
+}
+
+tr>td {
+	border: 1px solid black;
+	width: 100px;
+	height: 40px;
+}
+
+#contents {
+	background-color: silver;
+	padding: 5rem 0;
+	width: 100%;
+	height: 550px;
+}
+#w-btn{
+
+	
+	
+	width:250px;
+	height:30px;
+	
+	margin:auto;
+	margin-top:50px;
+	text-align:center;
+	font-size:20px;
+	border: 1px solid black;
+}
+
+
+/* .bbtn{
+	text-align:center;
+	width:400px;
+	height:200px;
+	margin:auto;
+	border: 1px solid black;
+} */
+/* .btn btn-danger {
+	margin: auto;
+	margin-top: 50px;
+}
+
+#table-primary2 {
+	margin: auto;
+	border: 1px;
+	width: 1000rem;
+} */
+footer {
+	background: #fff;
+	height: 200px;
+	width: 100%;
+}
+
+footer ul {
+	overflow: hidden;
+	padding: 2rem 0;
+	margin: auto;
+	width: 500px;
+}
+
+footer li {
+	float: left;
+	font-weight: bold;
+}
+
+footer li+li {
+	margin-left: 5.4rem;
+}
+
+footer a {
+	
+}
+
+footer address {
+	padding: 4rem 0;
+	text-align: center;
+	border-top: 2px solid;
+}
+</style>
+</head>
+
+<body>
+	<div id=wrap>
+
+		<header class="boxalign">
+			<div id="logo">
+				<h1>
+					<a href="#"> <img src="img/LOGO-img.jpg" alt="">
+					</a>
+				</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#">사업소개</a></li>
+					<li><a href="#">갤러리</a></li>
+					<li><a href="#">프로젝트</a></li>
+					<li><a href="#">온라인몰</a></li>
+					<li><a href="#" onclick="location.href='Login_W.jsp'">로그인</a></li>
+					<li><a href="#" onclick="location.href='Sign_W.jsp'">회원가입</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="contents" class="boxalign">
+			<h1 style="text-align: center; font-size: 50px; color: white;">게시판 목록</h1>
+			<table class="table-primary" width="1000rem" border="1">
+				<tr class="table-primary">
+					<td class="table-primary" width="100px;">제목</td>
+					<!-- <td class ="table-primary">Contents</td> -->
+					<td class="table-primary" width="100px">작성날짜</td>
+				</tr>
+
+				<%
+				// MySQL JDBC Driver Loading 
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection conn = null;
+				Statement stmt = null;
+				ResultSet rs = null;
+				try {
+					String jdbcDriver = "jdbc:mysql://localhost:3306/basicjsp?" + "useUnicode=true&characterEncoding=utf8";
+					//String jdbcDriver = "jdbc:mysql://localhost:3306/TUTORIAL?useSSL=false&serverTimezone=UTC";
+					//String jdbcDriver = "jdbc:mysql://localhost:3306/TUTORIAL?serverTimezone=UTC"; 
+
+					String dbUser = "root";
+					String dbPass = "1234";
+					String query = "select * from qwe0723"; // Create DB 
+					conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+					// Create Statement 
+					stmt = conn.createStatement();
+					// Run Qeury 
+					rs = stmt.executeQuery(query);
+					// Print Result (Run by Query) 
+					while (rs.next()) {
+				%>
+				<tr>
+					<td><%=rs.getString("Title")%></td>
+					<%-- <td><%= rs.getString("Contents") %></td> --%>
+					<td><%=rs.getString("Date")%></td>
+				</tr>
+				<%
+				}
+				} catch (
+
+				SQLException ex) {
+				out.println(ex.getMessage());
+				ex.printStackTrace();
+				} finally { // Close Statement 
+				if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ex) {
+				}
+				if (stmt != null)
+				try {
+					stmt.close();
+				} catch (SQLException ex) {
+				}
+				// Close Connection 
+				if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+				}
+				}
+				%>
+			</table>
+			<div id="w-btn">
+				<a href="Board.jsp"">글쓰기</a>
+			</div>
+			
+		</section>
+
+		<footer>
+			<div class="boxalign">
+				<ul>
+					<li><a href="#">Site Map</a></li>
+					<li><a href="#">FOLA</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Legal</a></li>
+					<li><a href="#">korea</a></li>
+				</ul>
+				<address>COPYRIGHT ⓒ 2021 UNIVERS. ALL RIGHTS RESERVED</address>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
+
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.Statement"%>
+<%@ page import="java.sql.ResultSet"%>
+<%@ page import="java.sql.SQLException"%>
+<html>
+<head>
+<title>게시판 목록</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	font-size: 12px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+} 
+
+h1, h2, h3, h4, h5 {
+	font-size: 100%;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+ul, ol {
+	list-style-type: none;
+}
+
+address {
+	font-style: normal;
+}
+
+/*  -----------------------------------------------------------------------*/
+#wrap {
+	width: 100%;
+	min-width: 1100px;
+	overflow: hidden;
+	background-color: #000;
+}
+
+header {
+	height: 70px;
+}
+
+.boxalign {
+	width: 1100px;
+	margin: auto;
+}
+
+#logo {
+	float: left;
+	margin: 1rem 0;
+	color: #fff;
+}
+
+#logo h1 {
+	
+}
+
+#logo a {
+	
+}
+
+#logo img {
+	color: #fff;
+}
+
+nav {
+	float: right;
+	background: #000;
+}
+
+nav ul {
+	overflow: hidden;
+}
+
+nav li {
+	float: left;
+	margin-left: 4rem;
+	color: #fff;
+}
+
+nav a {
+	display: block;
+	font-size: 1.3rem;
+	/* font-weight: bold; */
+	line-height: 65px;
+}
+
+nav li:hover {
+	border-bottom: 4px solid #fff;
+}
+
+table {
+	margin: auto;
+	margin-top: 50px;
+	width: 90rem;
+}
+
+tr>td {
+	border: 1px solid black;
+	width: 100px;
+	height: 40px;
+}
+
+#contents {
+	background-color: silver;
+	padding: 5rem 0;
+	width: 100%;
+	height: 550px;
+}
+#w-btn{
+
+	
+	
+	width:250px;
+	height:30px;
+	
+	margin:auto;
+	margin-top:50px;
+	text-align:center;
+	font-size:20px;
+	border: 1px solid black;
+}
+
+
+/* .bbtn{
+	text-align:center;
+	width:400px;
+	height:200px;
+	margin:auto;
+	border: 1px solid black;
+} */
+/* .btn btn-danger {
+	margin: auto;
+	margin-top: 50px;
+}
+
+#table-primary2 {
+	margin: auto;
+	border: 1px;
+	width: 1000rem;
+} */
+footer {
+	background: #fff;
+	height: 200px;
+	width: 100%;
+}
+
+footer ul {
+	overflow: hidden;
+	padding: 2rem 0;
+	margin: auto;
+	width: 500px;
+}
+
+footer li {
+	float: left;
+	font-weight: bold;
+}
+
+footer li+li {
+	margin-left: 5.4rem;
+}
+
+footer a {
+	
+}
+
+footer address {
+	padding: 4rem 0;
+	text-align: center;
+	border-top: 2px solid;
+}
+</style>
+</head>
+
+<body>
+	<div id=wrap>
+
+		<header class="boxalign">
+			<div id="logo">
+				<h1>
+					<a href="#"> <img src="img/LOGO-img.jpg" alt="">
+					</a>
+				</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#">사업소개</a></li>
+					<li><a href="#">갤러리</a></li>
+					<li><a href="#">프로젝트</a></li>
+					<li><a href="#">온라인몰</a></li>
+					<li><a href="#" onclick="location.href='Login_W.jsp'">로그인</a></li>
+					<li><a href="#" onclick="location.href='Sign_W.jsp'">회원가입</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="contents" class="boxalign">
+			<h1 style="text-align: center; font-size: 50px; color: white;">게시판 목록</h1>
+			<table class="table-primary" width="1000rem" border="1">
+				<tr class="table-primary">
+					<td class="table-primary" width="100px;">제목</td>
+					<!-- <td class ="table-primary">Contents</td> -->
+					<td class="table-primary" width="100px">작성날짜</td>
+				</tr>
+
+				<%
+				// MySQL JDBC Driver Loading 
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection conn = null;
+				Statement stmt = null;
+				ResultSet rs = null;
+				try {
+					String jdbcDriver = "jdbc:mysql://localhost:3306/basicjsp?" + "useUnicode=true&characterEncoding=utf8";
+					//String jdbcDriver = "jdbc:mysql://localhost:3306/TUTORIAL?useSSL=false&serverTimezone=UTC";
+					//String jdbcDriver = "jdbc:mysql://localhost:3306/TUTORIAL?serverTimezone=UTC"; 
+
+					String dbUser = "root";
+					String dbPass = "1234";
+					String query = "select * from qwe0723"; // Create DB 
+					conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+					// Create Statement 
+					stmt = conn.createStatement();
+					// Run Qeury 
+					rs = stmt.executeQuery(query);
+					// Print Result (Run by Query) 
+					while (rs.next()) {
+				%>
+				<tr>
+					<td><%=rs.getString("Title")%></td>
+					<%-- <td><%= rs.getString("Contents") %></td> --%>
+					<td><%=rs.getString("Date")%></td>
+				</tr>
+				<%
+				}
+				} catch (
+
+				SQLException ex) {
+				out.println(ex.getMessage());
+				ex.printStackTrace();
+				} finally { // Close Statement 
+				if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ex) {
+				}
+				if (stmt != null)
+				try {
+					stmt.close();
+				} catch (SQLException ex) {
+				}
+				// Close Connection 
+				if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+				}
+				}
+				%>
+			</table>
+			<div id="w-btn">
+				<a href="Board.jsp"">글쓰기</a>
+			</div>
+			
+		</section>
+
+		<footer>
+			<div class="boxalign">
+				<ul>
+					<li><a href="#">Site Map</a></li>
+					<li><a href="#">FOLA</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Legal</a></li>
+					<li><a href="#">korea</a></li>
+				</ul>
+				<address>COPYRIGHT ⓒ 2021 UNIVERS. ALL RIGHTS RESERVED</address>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
+
+@charset "UTF-8";
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body,
+html {
+	font-size: 12px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-size: 100%;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+ul,
+ol {
+	list-style-type: none;
+}
+address{
+    font-style: normal;
+}
+
+#wrap {
+	width: 100%;
+	min-width: 1100px;
+	overflow: hidden;
+	background-color: #000;
+}
+header{
+    
+}
+.boxalign {
+	width: 1100px;
+	margin: auto;
+}
+
+#logo {
+	float: left;
+	margin: 1rem 0;
+	color: #fff;
+}
+
+#logo h1 {}
+
+#logo a {}
+
+#logo img {
+	color: #fff;
+}
+
+nav {
+	float: right;
+    background: #000;
+}
+
+nav ul {
+	overflow: hidden;
+}
+
+nav li {
+	float: left;
+	margin-left: 4rem;
+	color: #fff;
+}
+
+nav a {
+	display: block;
+	font-size: 1.3rem;
+	/* font-weight: bold; */
+	line-height: 65px;
+}
+
+nav li:hover {
+	border-bottom: 4px solid #fff;
+}
+
+main {
+	width: 100%;
+	height: 600px;
+	position: relative;
+	overflow: hidden;
+    cursor: pointer;
+}
+
+.bgcover {
+	/*background: url(img/universemain.jpg) center;*/
+	/* background-image:url("img/l4.gif") ; */
+	
+	/* background-repeat: no-repeat; */
+	/* background-size: cover; */
+	/* background-position: bottom; */
+	height: 600px;
+	width: 100%;
+	font-size: 0;
+	line-height: 0;
+    transition: 0.5s;
+}
+.myMain{
+		width: 100%;
+		height: 610px;
+		/* object-fit: contain; */
+		object-fit: cover;
+		bottom: 0;
+		padding-bottom: 75%;
+	}
+main:hover .bgcover{
+    transform: scale(1.1);
+}
+
+.textcover {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 10%;
+	background: rgba(255, 255, 255, 0.63);
+	width: 350px;
+	padding: 5rem 2rem;
+	color: #fff;
+}
+
+.textcover h2 {
+	font-size: 3rem;
+}
+
+.textcover span {
+	display: block;
+	width: 50px;
+	height: 5px;
+	background-color: #fff;
+	margin: 3rem 0 1.5rem;
+}
+
+.textcover p {
+	font-size: 1.5rem;
+	line-height: 1.8rem;
+}
+
+.textcover a {
+	display: inline-block;
+	border: 1px solid #fff;
+	margin-top: 4rem;
+	padding: 1rem 2rem;
+}
+.textcover a:hover{
+    background-color: #fff;
+    color: #333;
+}
+
+#contents{
+/*    background-color: #fff;*/
+    padding: 5rem 0;
+}
+#contents ul{
+    overflow: hidden;
+}
+#contents li{
+    float: left;
+    width: 350px;
+}
+#contents li+li{
+    margin-left: 25px;
+}
+#contents li:first-child{
+    background-color:#eee;
+    width: 290px;
+    height: 350px;
+    padding: 30px;
+}
+#contents li h2{
+    font-size: 2rem;
+}
+#contents li>span{
+    width: 40px;
+    border-top: 4px solid #000;
+    margin: 3rem 0;
+}
+#contents span,#contents a{
+    display: block;
+}
+#contents li p{
+    font-size: 1.3rem;
+    line-height: 2;
+    letter-spacing: -1px;
+}
+#contents img{
+    display: block;
+}
+#contents .context{
+    background-color: #eee;
+    padding: 31px;
+/*    border-bottom: 5px solid #eee;*/
+}
+#contents .title{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 5rem;
+}
+#contents .btncover{}
+#contents .btn{}
+
+#contents li:hover .context{
+    background-color:rgb(72, 61, 139)
+	
+}
+footer{
+    background:#fff;
+    height: 200px;
+    width: 100%;
+}
+footer ul{
+    overflow: hidden;
+    padding: 2rem 0;
+    margin: auto;
+    width: 500px;
+}
+footer li{
+    float: left;
+    font-weight: bold;
+}
+footer li+li{
+    margin-left: 5.4rem;
+}
+footer a{}
+footer address{
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 2px solid;
+}
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UNIVERS</title>
+    <!-- ----------------------------------------------------------------------------------------  -->
+    <link href="Main_D.css" type="text/css" rel="stylesheet">
+    <!-- ----------------------------------------------------------------------------------------  -->
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="boxalign">
+            <div id="logo">
+                <h1>
+                    <a href="#">
+                        <img src="img/LOGO-img.jpg" alt="">
+                    </a>
+                </h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" >사업소개</a></li>
+                    <li><a href="#">갤러리</a></li>
+                    <li><a href="#">프로젝트</a></li>
+                    <li><a href="#">온라인몰</a></li>
+                    <li><a href="#" onclick="location.href='Login_W.jsp'">로그인</a></li>
+                    <li><a href="#" onclick="location.href='Sign_W.jsp'">회원가입</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="bgcover"><img class="myMain" alt="" src="./img/Main_bg.gif"></div>
+            <div class="textcover">
+                <h2>Where Do<br> We come<br> From?</h2>
+                <span></span>
+                <p>The story of fifteen billion years of cosmic evolution transforming matter and life into
+                    consciousness, of how science and civilization grew up together, and of the forces and
+                    individuals who helped shape modern science</p>
+                <a href="#">MORE</a>
+            </div>
+        </main>
+        
+        <section id="contents" class="boxalign">
+            <ul>
+                <li>
+                    <h2>The story of cosmic evolution,<br> science and civilisation</h2>
+                    <span></span>
+                    <p>Carl Sagan was the Director of the Laboratory<br> for Planetary studies and David Duncan<br>
+                        Professor of Astronomy and Space Sciences at Cornell University.</p>
+                </li>
+                <li>
+                    <a href="#"><img src="./img/Main_sub1.jpg" alt="">
+                        <span class="context">
+                            <span class="title">
+                                The Shores of the Cosmic Ocean
+                            </span>
+                            <span class="btncover">
+                                <span class="btn"></span>
+                                <span>CHAPTER I</span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="./img/Main_sub2.jpg" alt="">
+                        <span class="context">
+                            <span class="title">
+                                 the Cosmic to the Lord of the Worlds.
+                            </span>
+                            <span class="btncover">
+                                <span class="btn"></span>
+                                <span>CHAPTER II</span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        
+        
+        <footer>
+            <div class="boxalign">
+                <ul>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">FOLA</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">korea</a></li>
+                </ul>
+                <address>COPYRIGHT ⓒ 2021 UNIVERS. ALL RIGHTS RESERVED</address>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- ----------------여기는 로그인 화면------------------------------------- -->
+<title>UNIVERS: 로그인</title>
+<!-- ----------------------------------------------------------------------------------------  -->
+<link href="Login_D.css" type="text/css" rel="stylesheet">
+<!-- --------------------------------------------------------------------------------------- -->
+</head>
+<body>
+	<div id = wrap >
+		
+	
+		<form action="./LoginAction.jsp" method="post">
+			<table>
+				<tr>
+					<td>
+						<h1>UNIVERS</h1>
+					</td>
+				</tr>
+				<tr>
+					<td><input class="Id" type="text" size="60" 
+					placeholder="아이디" onfocus="this.placeholder=''" 
+					onblur="this.placeholder='아이디'" name="userID"></td>
+				</tr>
+				<tr>
+					<td><input class="Password" type="password" size="60" 
+					placeholder="비밀번호" onfocus="this.placeholder=''" 
+					onblur="this.placeholder='비밀번호'" name="userPassword"></td>
+				</tr>
+				<tr>
+					<td><input class="log"  type="submit" value="로그인" size="60" style="border: 2px solid white;"></td>
+				</tr>
+			</table>
+		</form>	
+		
+		<div class="two_button">
+			<button class="find">ID/PW 찾기</button>
+			<button class="sign" onClick="window.open('Sign_W.jsp')">회원가입</button>
+		</div>
+		
+	</div>
+	
+	
+	
+		<footer>
+            <div class="boxalign">
+                <ul>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">FOLA</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">korea</a></li>
+                </ul>
+                <address>COPYRIGHT ⓒ 2021 UNIVERS. ALL RIGHTS RESERVED</address>
+            </div>
+        </footer>
+		
+		<!-- <form action="./useDB.jsp" method="post">
+			<input type="submit" value="조회">
+		</form> -->
+		
+</body>
+</html>
+
+@charset "EUC-KR";
+* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	body,html {
+		font-size: 12px;
+	}
+	
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	
+	h1,h2,h3,h4,h5 {
+		font-size: 100%;
+	}
+	
+	img {
+		vertical-align: bottom;
+	}
+	
+	ul,
+	ol {
+		list-style-type: none;
+	}
+	address{
+	    font-style: normal;
+	}
+	
+	/*  -----------------------------------------------------------------------*/
+	#wrap {
+		width: 100%;
+		height: 800px;
+		min-width: 1100px;
+		overflow: hidden;
+		/* background-color: black; */ 
+		/* background: url("./img/sub1.jpg"); */
+		background-image: url("./img/sub1.jpg");
+	}
+	/* #wrap:hover{
+		background: url("./img/sub1.jpg");
+	} */
+	td>h1{
+		text-align: center;
+		font-size: 71px;
+		color: white;
+	}
+
+	table{
+		margin: auto;
+		margin-top: 250px;
+	}
+	tr>td{
+		width: 100px;
+		height: 60px;
+	}
+	
+	input {
+		width: 450px;
+		height: 40px;
+	}
+	input.log{
+		background-color: transparent;
+		font-size: 15px;
+		color:white;
+		width: 455px;
+		height: 45px;
+	}
+	
+	
+	.two_button{
+		text-align: center;
+		margin-bottom: 300rem;
+	}
+	
+	.find{
+		background-color: transparent;
+		border: 2px solid white;
+		text-align: center;
+		margin-right: 25px;
+		color:white;
+		width: 190px;
+		height: 30px;
+	}
+	
+	.sign{
+		background-color: transparent;
+		border: 2px solid white;
+		text-align: center;
+		color:white;
+		width: 190px;
+		height: 30px;
+	}
+	
+	.find:hover{
+		background-color: white;
+		color: black;
+	}
+	
+	.sign:hover{
+		background-color: white;
+		color: black;
+	}
+	
+	input.log:hover{
+		background-color: white;
+		color: black;
+	}
+	
+	footer{
+    background:#fff;
+    height: 200px;
+    width: 100%;
+}
+
+.boxalign{
+	width: 1100px;
+	margin: auto;
+}
+
+footer ul{
+    overflow: hidden;
+    padding: 2rem 0;
+    margin: auto;
+    width: 500px;
+}
+footer li{
+    float: left;
+    font-weight: bold;
+}
+footer li+li{
+    margin-left: 5.4rem;
+}
+footer a{}
+footer address{
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 2px solid;
+}
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UNIVERS: 회원가입</title>
+<!-- ----------------------------------------------------------------------------------------  -->
+<link href="2121.css" type="text/css" rel="stylesheet">
+<!-- --------------------------------------------------------------------------------------- -->
+</head>
+<body>
+	<div id = wrap  >
+		<form action="./usersignAction.jsp" method="post">
+			<table>
+				<tr>
+					<td>
+						<h1>UNIVERS</h1>
+						<!-- <a href="#"><img src="./img/LOGO-img.jpg "></a> -->
+					</td>
+				</tr>
+				<tr>
+					<td><input class="Id" type="text" size="60" 
+					placeholder="아이디" onfocus="this.placeholder=''" 
+					onblur="this.placeholder='아이디'" name="userID"></td>
+				</tr>
+				<tr>
+					<td><input class="Password" type="password" size="60" 
+					placeholder="비밀번호" onfocus="this.placeholder=''" 
+					onblur="this.placeholder='비밀번호'" name="userPassword"></td>
+				</tr>
+				<tr>
+					<td><input class="Name" type="text" size="60" 
+					placeholder="이름" onfocus="this.placeholder=''" 
+					onblur="this.placeholder='이름'" name="userName"></td>
+				</tr>
+				<tr>
+					<td><input class="Mail" type="email" size="60" 
+					placeholder="E-mail" onfocus="this.placeholder=''" 
+					onblur="this.placeholder='E-mail'" name="userEmail"></td>
+				</tr>
+			</table>
+			
+			<div class="one_button">
+				<button class="signin">가입하기</button>
+			</div>
+		</form>
+		
+		
+		
+		<footer>
+            <div class="boxalign">
+                <ul>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">FOLA</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">korea</a></li>
+                </ul>
+                <address>COPYRIGHT ⓒ 2021 UNIVERS. ALL RIGHTS RESERVED</address>
+            </div>
+        </footer>
+	
+		
+		
+		
+		<!-- <form action="./useDB.jsp" method="post">
+			<input type="submit" value="조회">
+		</form> -->
+	</div>	
+</body>
+</html>
+
+@charset "EUC-KR";
+* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	body,html {
+		font-size: 12px;
+	}
+	
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	
+	h1,h2,h3,h4,h5 {
+		font-size: 100%;
+	}
+	
+	img {
+		vertical-align: bottom;
+	}
+	
+	ul,ol {
+		list-style-type: none;
+	}
+	address{
+	    font-style: normal;
+	}
+/*  --------------------------------------------------------------------------------------------------------*/	
+	#wrap {
+		width: 100%;
+		height: 800px;
+		min-width: 1100px;
+		overflow: hidden;
+		background: url("./img/landing.gif") no-repeat;
+		background-color: black; 
+	}
+	#wrap:hover{
+		/* background: url("./img/rocket-launch-693215_1920.jpg"); */
+	}
+	td>h1{
+		text-align: center;
+		font-size: 71px;
+		color: white;
+	}
+
+	table{
+		margin: auto;
+		margin-top: 250px;
+	}
+	tr>td{
+		width: 100px;
+		height: 60px;
+	}
+	
+	input {
+		width: 450px;
+		height: 40px;
+	}
+	input.log{
+		background-color: transparent;
+		font-size: 15px;
+		color:white;
+		width: 455px;
+		height: 45px;
+	}
+	
+	
+	.one_button{
+		text-align: center;
+	}
+	
+	.signin{
+		background-color: transparent;
+		border: 2px solid white;
+		text-align: center;
+		color:white;
+		width: 450px;
+		height: 60px;
+	}
+	
+	
+	.signin:hover{
+		background-color: white;
+		color: black;
+	}
+	
+	input.log:hover{
+		background-color: white;
+		color: black;
+	}
+	
+	
+	footer{
+		position: absolute; 
+		left:0;
+		bottom:0; 
+		width: 100%;
+    	padding:10px 0;
+  		background-color: white;
+  		color:black;
+	}
+	footer ul{
+	    overflow: hidden;
+	    padding: 2rem 0;
+	    margin: auto;
+	    width: 500px;
+	}
+	footer li{
+	    float: left;
+	    font-weight: bold;
+	}
+	footer li+li{
+	    margin-left: 5.4rem;
+	}
+	footer a{}
+	footer address{
+	    padding: 4rem 0;
+	    text-align: center;
+	    border-top: 2px solid;
+	}
+	
+	
+	
+	
+	
+	
+
