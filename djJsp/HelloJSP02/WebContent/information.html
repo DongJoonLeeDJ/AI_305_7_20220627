@@ -5,6 +5,45 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form action="requestParam.jsp">
+	<label for="name">이름</label>
+	<input type="text" id="name" name="name"><br>
+	<label for="pw">비밀번호</label>
+	<input type="password" id="pw" name="pw"><br>
+	<p>취미</p>
+	<label for="cook">요리</label>
+	<input type="checkbox" name="hobby" value="cook" id="cook"><br>
+	<label for="run">달리기</label>
+	<input type="checkbox" name="hobby" value="run" id="run"><br>
+	<label for="swim">수영</label>
+	<input type="checkbox" name="hobby" value="swim" id="swim"><br>
+	<label for="sleep">잠자기</label>
+	<input type="checkbox" name="hobby" value="sleep" id="sleep"><br>
+	
+	<p>전공</p>
+	<label for="math">수학</label>
+	<input type="radio" name="major" value="math" id="math" checked><br>
+	<label for="eng">영어</label>
+	<input type="radio" name="major" value="eng" id="eng"><br>
+	<label for="kor">국어</label>
+	<input type="radio" name="major" value="kor" id="kor"><br>
+	
+	<label for="protocol">프로토콜</label>
+	<select name="protocol" id="protocol">
+		<option value="http" selected>http</option>
+		<option value="ftp" >ftp</option>
+		<option value="smtp" >smtp</option>
+		<option value="pop" >pop</option>
+	</select>
+	
+	<input type="submit" value="전송">
+	<input type="reset" value="초기화">
+	
+</form>
 
 </body>
 </html>
+
+
+
+
