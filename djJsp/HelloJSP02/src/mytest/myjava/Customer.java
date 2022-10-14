@@ -23,5 +23,19 @@ public class Customer {
 		else
 			return true;
 	}
+	//관리자여부 체크. 관리자 아이디가 바뀔 수 있으니 매개변수로 받는다.
+	public boolean isAdmin(String admin) {
+		if(this.id.equals(admin))
+			return true;
+		else 
+			return false;
+	}
 	
 }
+
+
+
+
+
+
+

@@ -1,6 +1,9 @@
 package mytest.myjava;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -53,6 +56,18 @@ public class CheckInfo extends HttpServlet {
 				Integer.parseInt(age), id);
 		
 		//다양한 처리들을 할 것
+		if(c.isAdmin("admin"))
+			response.sendRedirect("admin.jsp");
+		else {
+			RequestDispatcher dispatcher = 
+					getServletContext().getRequestDispatcher("/kid.jsp");
+			if(c.isAdult(20))
+				dispatcher 
+				= getServletContext().getRequestDispatcher("/adult.jsp");
+			request.setAttribute("result", c.toString());	
+			dispatcher.forward(request, response);
+		}
+			//response.getWriter().append(c.toString());
 	}
 
 }
