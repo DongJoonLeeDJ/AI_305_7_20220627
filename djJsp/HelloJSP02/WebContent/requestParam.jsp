@@ -14,6 +14,33 @@
 		String name, pw, major, protocol;
 		String[] hobbys;
 	%>
+	
+	<%! public String korHobby(String[] hobbys) {
+		
+			String hobby = "";
+			for(int i = 0; i<hobbys.length; i++) {
+				switch(hobbys[i]) {
+				case "cook":
+					hobby+="요리";
+					break;
+				case "run":
+					hobby+="달리기";
+					break;
+				case "swim":
+					hobby+="수영";
+					break;
+				case "sleep":
+					hobby+="잠자기";
+					break;
+				}
+				if(i!=hobbys.length-1)//마지막인덱스아닐때
+					hobby+=",";
+			}
+			return hobby;
+		
+		}
+
+	%>
 	<%
 		request.setCharacterEncoding("UTF-8");
 		name=request.getParameter("name");
@@ -27,8 +54,7 @@
 	비번 : <%=pw %><br>
 	전공 : <%=major %><br>
 	규약 : <%=protocol %><br>
-	취미 : <%=Arrays.toString(hobbys) %>
-	
+	취미 : <%=korHobby(hobbys) %>
 </body>
 </html>
 
