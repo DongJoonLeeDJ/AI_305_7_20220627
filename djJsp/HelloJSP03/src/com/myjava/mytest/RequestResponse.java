@@ -52,12 +52,11 @@ public class RequestResponse extends HttpServlet {
 		String str = request.getParameter("birth");
 		try {
 			int year = Integer.parseInt(str);
-			Date now = new Date(); //ì§€ê¸ˆ ì‹œê°„ ê°€ì ¸ì˜´
+			Date now = new Date();  //Áö±Ý ½Ã°£ °¡Á®¿È
 			
 			SimpleDateFormat formatter = 
 					new SimpleDateFormat("yyyy");
-			//ì˜¬í•´ë¥¼ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë°”ê¾¼ ê²ƒ 2022 ë¼ëŠ” ë¬¸ìžì—´ì´ ë‚˜ì˜¨ë‹¤.
-			String NowYear = formatter.format(now);
+			String NowYear = formatter.format(now);//¿ÃÇØ¸¦ ½ºÆ®¸µÀ¸·Î ¹Ù²Û °Í 2022 ¶ó´Â ¹®ÀÚ¿­ÀÌ ³ª¿Â´Ù.
 			int age = Integer.parseInt(NowYear)-year+1;
 			
 			if(age>=20)
@@ -68,10 +67,6 @@ public class RequestResponse extends HttpServlet {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(str+"@@@");
-			//System.out.println(str);
-			//response.encodeRedirectUrl("fail.jsp?birth="+str);
-			response.encodeURL("fail.jsp?birth="+str);
-			response.setCharacterEncoding("UTF-8");
 			response.sendRedirect("fail.jsp?birth="+str);
 			
 		}
