@@ -1,3 +1,4 @@
+<%@page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,8 +16,8 @@ h1{color:violet; background:pink}</style>
 
 //request.setCharacterEncoding("UTF-8");//post방식일 때 한글깨짐 방지
 //response.setCharacterEncoding("UTF-8");
-
-birth = request.getParameter("birth");
+//System.out.println();
+birth = URLDecoder.decode(request.getParameter("birth"), "UTF-8");
 
 System.out.println(birth+"값은 이상함");
 %>

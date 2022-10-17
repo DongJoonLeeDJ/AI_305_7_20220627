@@ -1,6 +1,7 @@
 package com.myjava.mytest;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -67,6 +68,7 @@ public class RequestResponse extends HttpServlet {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(str+"@@@");
+			str = URLEncoder.encode(str, "UTF-8");
 			response.sendRedirect("fail.jsp?birth="+str);
 			
 		}
