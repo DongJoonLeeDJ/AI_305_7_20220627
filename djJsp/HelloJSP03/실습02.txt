@@ -1,0 +1,9 @@
+RequestResponse 서블릿 이용하기
+1. 한국식나이로
+20살 이상이면 pass.jsp로 이동
+단, 아까처럼 age에 값 넘기기
+2. 20살 미만이면 ng.jsp로 이동
+단, 아까처럼 age에 값 넘기기
+3. 엉뚱한 값일 경우 try catch로
+fail.jsp에 값을 넘기기
+(fail.jsp는 만들기)

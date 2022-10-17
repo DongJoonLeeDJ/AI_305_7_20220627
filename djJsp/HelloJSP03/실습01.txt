@@ -1,3 +1,5 @@
 1. pass jsp 만들어보세요 단, age값 받아오기
 2. ng jsp 만들어보세요 단, ng값 받아오기
 3. age가 숫자로 변환되지 않을 때 예외처리 해보기
+	- error 페이지 등록
+	- try catch 사용
