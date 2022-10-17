@@ -25,6 +25,10 @@ while(enumeration.hasMoreElements()) {
 }
 
 %>
+
+<a href="logout_session.jsp">로그아웃</a>
+<a href="session_test.jsp">세션테스트페이지</a>
+
 </body>
 </html>
 
