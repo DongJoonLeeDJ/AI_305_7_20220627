@@ -12,7 +12,7 @@
 pw=request.getParameter("pw");
 //id는 aaa pw는 1234라고 가정
 if(id.equals("aaa") && pw.equals("1234")) {
-	Cookie cookie = new Cookie("id", id);
+	Cookie cookie = new Cookie("id", id);//"id" 키, id는 value
 	cookie.setMaxAge(60); //쿠키 보관 시간 1분이라고 지정
 	response.addCookie(cookie);
 	response.sendRedirect("welcome.jsp");

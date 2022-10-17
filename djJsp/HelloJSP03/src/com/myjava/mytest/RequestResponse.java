@@ -45,14 +45,18 @@ public class RequestResponse extends HttpServlet {
 	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.setContentType("text/html;charset=UTF-8");
+		
+		//request.setCharacterEncoding("UTF-8");
+		//response.setCharacterEncoding("UTF-8");
 		String str = request.getParameter("birth");
 		try {
 			int year = Integer.parseInt(str);
-			Date now = new Date(); //Áö±İ ½Ã°£ °¡Á®¿È
+			Date now = new Date(); //ì§€ê¸ˆ ì‹œê°„ ê°€ì ¸ì˜´
 			
 			SimpleDateFormat formatter = 
 					new SimpleDateFormat("yyyy");
-			//¿ÃÇØ¸¦ ½ºÆ®¸µÀ¸·Î ¹Ù²Û °Í 2022 ¶ó´Â ¹®ÀÚ¿­ÀÌ ³ª¿Â´Ù.
+			//ì˜¬í•´ë¥¼ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë°”ê¾¼ ê²ƒ 2022 ë¼ëŠ” ë¬¸ìì—´ì´ ë‚˜ì˜¨ë‹¤.
 			String NowYear = formatter.format(now);
 			int age = Integer.parseInt(NowYear)-year+1;
 			
@@ -63,11 +67,13 @@ public class RequestResponse extends HttpServlet {
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println(str);
-//			response.setContentType("text/html;charset=UTF-8");
-//			request.setCharacterEncoding("UTF-8");//post¹æ½ÄÀÏ ¶§ ÇÑ±Û±úÁü ¹æÁö
-			
+			System.out.println(str+"@@@");
+			//System.out.println(str);
+			//response.encodeRedirectUrl("fail.jsp?birth="+str);
+			response.encodeURL("fail.jsp?birth="+str);
+			response.setCharacterEncoding("UTF-8");
 			response.sendRedirect("fail.jsp?birth="+str);
+			
 		}
 		
 	
