@@ -15,6 +15,7 @@
 	<!-- modifyOk에서 update를 할 것 -->
 	<!-- modifyResult.jsp에서 결과 확인할 것 -->
 	<%! String strName, strID, strPW, strPhone, strGender; %>
+	<%! String p1,p2,p3; //010,2940,1613 3개로 나눠서 저장 %>
 	<%
 		try {
 		Class.forName("com.mysql.cj.jdbc.Driver"); //jar에 있는 db 연결 소스를 참조하는 것
@@ -57,6 +58,15 @@
 		System.out.println(strPW);
 		System.out.println(strPhone);
 		System.out.println(strGender);
+		
+		p1 = strPhone.split("-")[0];
+		p2 = strPhone.split("-")[1];
+		p3 = strPhone.split("-")[2];
+
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p3);
+		
 
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -69,5 +79,50 @@
 		}
 	}
 	%>
+	<form action="ModifyOk" method="post">
+		이름 : <input type="text" name="name" 
+				value=<%=strName %> /> <br />
+		ID : <%=strID %> <br />
+		PW : <input type="password" name="pw" 
+				value=<%=strPW %>> <br />
+		전화번호 :
+		<select name="phone">
+			<% if(p1.equals("010")) { %>
+				<option value="010" selected>010</option>
+				<option value="011">011</option>
+				<option value="007">007</option>
+			<% } else if(p1.equals("011")) {%>
+				<option value="010">010</option>
+				<option value="011" selected>011</option>
+				<option value="007">007</option>
+			<%} else { %>
+				<option value="010">010</option>
+				<option value="011">011</option>
+				<option value="007" selected>007</option>
+			<%} %>
+		</select>
+		
+		
+		
+	
+		
+	</form>
+	
+	
+	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
