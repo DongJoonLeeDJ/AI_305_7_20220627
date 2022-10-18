@@ -53,7 +53,7 @@ public class JoinOk extends HttpServlet {
 		String strGender = request.getParameter("gender");
 		
 		String[] hobbys = request.getParameterValues("hobby");
-		String strHobby = Arrays.deepToString(hobbys);
+		String strHobby = Arrays.toString(hobbys);
 		
 		System.out.println("Insert에 삽입될 값들");
 		System.out.println(strName);
@@ -62,6 +62,8 @@ public class JoinOk extends HttpServlet {
 		System.out.println(strPhone);
 		System.out.println(strGender);
 		System.out.println(strHobby);
+		
+		
 	}
 	
 	
