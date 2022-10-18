@@ -81,7 +81,7 @@ public class LogInOk extends HttpServlet {
 			
 			rs = stmt.executeQuery(strQuery);
 			
-			rs.next(); //처음 위치로 이동
+			rs.next(); //한 줄 읽어들임
 			
 			//테이블에서 값을 읽어옴
 			String strName = rs.getString("name");//getNString 아님

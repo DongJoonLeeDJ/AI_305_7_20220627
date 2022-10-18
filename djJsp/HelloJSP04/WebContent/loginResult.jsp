@@ -1,3 +1,5 @@
+<%@page import="java.util.Base64"%>
+<%@page import="java.nio.charset.StandardCharsets"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,6 +15,7 @@
 	Phone = (String)session.getAttribute("phone");
 	Gender = (String)session.getAttribute("gender");
 	Hobby = (String)session.getAttribute("hobby");
+
 %>
 <%=Name%>
 <%=Phone %>
