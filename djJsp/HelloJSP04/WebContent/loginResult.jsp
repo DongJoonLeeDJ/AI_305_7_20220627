@@ -21,6 +21,8 @@
 <%=Phone %>
 <h1><%=Gender %></h1>
 <h2><%=Hobby %></h2>
+
+<a href="modify.jsp">회원정보수정</a>
 </body>
 </html>
 

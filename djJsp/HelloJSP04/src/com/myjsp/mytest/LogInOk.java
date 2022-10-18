@@ -96,6 +96,7 @@ public class LogInOk extends HttpServlet {
 				httpsession.setAttribute("phone", strPhone);
 				httpsession.setAttribute("gender", strGender);
 				httpsession.setAttribute("hobby", strHobby);
+				httpsession.setAttribute("id", strID);
 				response.sendRedirect("loginResult.jsp");
 			}
 				
