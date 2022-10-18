@@ -100,8 +100,21 @@
 				<option value="011">011</option>
 				<option value="007" selected>007</option>
 			<%} %>
-		</select>
+		</select>-
+		<input type="text" name="phone2" value=<%=p2 %>> -
+		<input type="text" name="phone3" value=<%=p3 %>>
+		<br />
+		성별구분 : 
+		<%if(strGender.equals("man")) { %>
+			<input type="radio" name="gender" value="man" checked/>남
+			<input type="radio" name="gender"value="woman" />여
+		<%} else { %>
+			<input type="radio" name="gender" value="man" />남
+			<input type="radio" name="gender"value="woman" checked/>여
+		<%} %>
 		
+		<input type="submit" value="정보수정" /><br />
+		<input type="reset" value="취소"/>
 		
 		
 	
