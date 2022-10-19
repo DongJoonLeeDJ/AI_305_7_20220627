@@ -22,6 +22,21 @@
 
 %>
 
+<table border="1">
+	<tr>
+		<th>이름</th>
+		<th>아이디</th>
+		<th>성별</th>
+	</tr>
+	<%for(int i =0; i<list.size(); i++) { %>
+		<tr>
+			<td><%=list.get(i).getName() %></td>
+			<td><%=list.get(i).getId() %></td>
+			<td><%=list.get(i).getGender() %></td>
+		</tr>
+	<% } %>
+</table>
+
 
 </body>
 </html>

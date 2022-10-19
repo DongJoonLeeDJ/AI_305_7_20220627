@@ -1,0 +1,7 @@
+1. login.html로 로그인하기
+2. loginOk.jsp로 아이디,성별,이름 출력
+	성별이 man이면 파란색 글자
+	성별이 woman이면 hotpink글자
+3. 비밀번호 틀리면 loginFail로 가고
+아이디만 나오게 함
+(ex) hero430의 비밀번호를 잘못입력했습니다.)
