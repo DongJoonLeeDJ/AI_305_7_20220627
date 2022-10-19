@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 /**
  * Servlet implementation class JoinOk
  */
@@ -45,7 +48,22 @@ public class JoinOk extends HttpServlet {
 		MemberDTO m = new MemberDTO();
 		m.setName(request.getParameter("name"));
 		m.setId(request.getParameter("id"));
-		m.setPw(request.getParameter("pw"));
+		String Password=null,cPassword=null;
+		try {
+
+			PasswordEncoder p = new BCryptPasswordEncoder();
+			Password = "1234abcd";
+			cPassword = p.encode(Password);
+			System.out.println(cPassword);
+			System.out.println(Password);
+			System.out.println(p.matches(Password, cPassword));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	        
+		//m.setPw(request.getParameter("pw"));
+		m.setPw(cPassword);
 		m.setGender(request.getParameter("gender"));
 		memberDAO.memberInsert(m);
 		response.sendRedirect("memberInsert.jsp");
