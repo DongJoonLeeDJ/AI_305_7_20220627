@@ -47,23 +47,31 @@ public class JoinOk extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		MemberDTO m = new MemberDTO();
 		m.setName(request.getParameter("name"));
-		m.setId(request.getParameter("id"));
-		String Password=null,cPassword=null;
-		try {
-
-			PasswordEncoder p = new BCryptPasswordEncoder();
-			Password = "1234abcd";
-			cPassword = p.encode(Password);
-			System.out.println(cPassword);
-			System.out.println(Password);
-			System.out.println(p.matches(Password, cPassword));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	        
+		m.setId(request.getParameter("id")); 
+		
 		//m.setPw(request.getParameter("pw"));
-		m.setPw(cPassword);
+		String password = request.getParameter("pw");
+		PasswordEncoder p = new BCryptPasswordEncoder();
+		String cPassWord = p.encode(password);
+		System.out.println(p.matches(password, cPassWord));
+		m.setPw(cPassWord);
+		
+		//PasswordEncoder 인터페이스라서 익명클래스화 가능
+//		PasswordEncoder c = new PasswordEncoder() {
+//			
+//			@Override
+//			public boolean matches(CharSequence rawPassword, String encodedPassword) {
+//				// TODO Auto-generated method stub
+//				return false;
+//			}
+//			
+//			@Override
+//			public String encode(CharSequence rawPassword) {
+//				// TODO Auto-generated method stub
+//				return null;
+//			}
+//		};
+		
 		m.setGender(request.getParameter("gender"));
 		memberDAO.memberInsert(m);
 		response.sendRedirect("memberInsert.jsp");

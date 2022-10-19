@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class MemberDAO {
 	
@@ -26,6 +27,37 @@ public class MemberDAO {
 			e1.printStackTrace();
 		}
 	}
+	
+	public ArrayList<MemberDTO> memberSelect() {
+		ArrayList<MemberDTO> dtos = new ArrayList<MemberDTO>();
+		conn = null;
+		stmt = null;
+		try {
+			conn = DriverManager.getConnection(url,uid,upw);
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery("select * from memberdto");
+			while(rs.next()) {
+				MemberDTO dto = new MemberDTO();
+				dto.setName(rs.getString("name"));
+				dto.setId(rs.getString("id"));
+				dto.setPw(rs.getString("pw"));
+				dto.setGender(rs.getString("gender"));
+				dtos.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace(); //혹시 모를 에러 출력
+		} finally { 
+			try {
+				rs.close();
+				stmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return dtos;
+	}
+	
 	
 	public int memberInsert(MemberDTO m) {
 		int result = -1;
