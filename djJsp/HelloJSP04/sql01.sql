@@ -12,6 +12,8 @@ create table member (
 alter table member add hobby varchar(50);
 
 select * from member;
+select * from member where id='ldjgood12' and pw='1234asdf';
+-- update member set name='이동준', hp='010-1234-4321', gender='man, pw='1234asdf' where id='ldjgood12'
 
 
 
