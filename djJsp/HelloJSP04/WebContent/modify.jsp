@@ -82,6 +82,10 @@
 	<form action="ModifyOk" method="post">
 		이름 : <input type="text" name="name" 
 				value=<%=strName %> /> <br />
+<%-- readonly : input태그 수정 불가능 --%>			
+<%-- 참고사항 : disabled를 추가하면 비활성화됨. 근데 파라메터로 전송이 안 됨
+이 경우엔 readonly만 추가해주면 됨 --%>				
+<%-- ID : <input type="text" name="id" value=<%=strID %> readonly></input> <br /> --%>
 		ID : <%=strID %> <br />
 		PW : <input type="password" name="pw" 
 				value=<%=strPW %>> <br />
