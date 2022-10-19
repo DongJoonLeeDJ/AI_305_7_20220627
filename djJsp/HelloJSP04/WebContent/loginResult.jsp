@@ -23,6 +23,7 @@
 <h2><%=Hobby %></h2>
 
 <a href="modify.jsp">회원정보수정</a>
+<a href="MWOk">회원탈퇴</a>
 </body>
 </html>
 
