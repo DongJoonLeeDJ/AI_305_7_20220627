@@ -1,0 +1,5 @@
+memberSelect.jsp 만들기
+DAO에 select문 활용하는 거 추가
+모든멤버가 나오면 된다.
+참고로 서블릿은 필요없고
+jsp에서 dao dto 호출하면 됨
