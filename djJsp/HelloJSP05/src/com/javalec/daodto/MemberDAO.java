@@ -84,7 +84,41 @@ public class MemberDAO {
 			}
 		}
 		return result;
+		
 	}
+	
+	//memberdto 테이블의 값을 하나 갖고 옴. '하나' 가지고 온다.
+	public MemberDTO checkMember(MemberDTO m) {
+		MemberDTO dto = new MemberDTO();
+		conn = null;
+		pstmt = null; //preparestatement
+		try {
+			conn = DriverManager.getConnection(url,uid,upw);
+			String query = "select * from memberdto where id=?";
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, m.getId());
+			rs = pstmt.executeQuery();
+			rs.next(); //1줄 읽어들임
+			dto.setName(rs.getString("name"));
+			dto.setId(rs.getString("id"));
+			dto.setPw(rs.getString("pw"));
+			dto.setGender(rs.getString("gender"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+			
+		}
+		return dto;
+	}
+	
+	
 
 }
 
