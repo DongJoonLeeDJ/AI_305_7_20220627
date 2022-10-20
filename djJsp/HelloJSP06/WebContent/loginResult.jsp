@@ -24,6 +24,7 @@
 <h1 class=<%=Gender %>><%=Id %></h1>
 <h1 class=<%=Gender %>><%=Gender %></h1>
 
+<a href="modify.jsp">회원정보수정</a>
 </body>
 </html>
 

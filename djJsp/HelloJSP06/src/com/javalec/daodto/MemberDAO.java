@@ -121,6 +121,36 @@ public class MemberDAO {
 		}
 		return dto;
 	}
+
+	public int memberUpdate(MemberDTO m) {
+		int result = -1;
+		conn = null;
+		pstmt = null;
+		try {
+			conn= ds.getConnection();
+			String query = 
+					"update memberdto set name=?, gender=? where id=?";
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, m.getName());
+			pstmt.setString(2, m.getGender());
+			pstmt.setString(3, m.getId());
+			result=pstmt.executeUpdate();//孽府荐青己傍咯何
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return result;
+		
+	
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

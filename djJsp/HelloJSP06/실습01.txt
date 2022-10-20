@@ -3,5 +3,6 @@
 
 비밀번호 찾기 기능해보기(=비밀번호 재발급 기능)
 
-loginResult에서 id가 admin일 경우에만 memberSelect 보이게 하기
+loginResult에서 id가 admin일 경우에만 
+memberSelect 보이게 하기
 
