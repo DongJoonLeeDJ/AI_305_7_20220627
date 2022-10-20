@@ -53,7 +53,8 @@ public class LogInOk extends HttpServlet {
 			response.sendRedirect("loginResult.jsp");
 		} else {
 			System.out.println("실패");
-			hs.setAttribute("id", m.getId());//login창에서 로그인시도한 id
+			hs.setAttribute("id", compareM.getId());//db에 저장된 거
+			hs.setAttribute("tryid", m.getId());//login창에서 로그인시도한 id
 			response.sendRedirect("loginFail.jsp");
 		}
 	}
