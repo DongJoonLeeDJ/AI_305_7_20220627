@@ -153,8 +153,8 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="HelloJSP01" path="/HelloJSP01" reloadable="true" source="org.eclipse.jst.jee.server:HelloJSP01"/>
-      <Context docBase="HelloJSP02" path="/HelloJSP02" reloadable="true" source="org.eclipse.jst.jee.server:HelloJSP02"/><Context docBase="HelloJSP03" path="/HelloJSP03" reloadable="true" source="org.eclipse.jst.jee.server:HelloJSP03"/><Context docBase="HelloJSP04" path="/HelloJSP04" reloadable="true" source="org.eclipse.jst.jee.server:HelloJSP04"/><Context docBase="HelloJSP05" path="/HelloJSP05" reloadable="true" source="org.eclipse.jst.jee.server:HelloJSP05"/><Context docBase="HelloJSP06" path="/HelloJSP06" reloadable="true" source="org.eclipse.jst.jee.server:HelloJSP06"/><Context docBase="HelloJSP07" path="/HelloJSP07" reloadable="true" source="org.eclipse.jst.jee.server:HelloJSP07"/></Host>
+      
+      <Context docBase="HelloJSP08" path="/HelloJSP08" reloadable="true" source="org.eclipse.jst.jee.server:HelloJSP08"/></Host>
     </Engine>
   </Service>
 </Server>
