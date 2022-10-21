@@ -11,6 +11,9 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 public class MemberDAO {
 	
 	private Connection conn = null;
@@ -148,7 +151,36 @@ public class MemberDAO {
 		return result;
 		
 	
-		// TODO Auto-generated method stub
+		
+	}
+
+	public int changePw(String id, String pw) {
+		int result = -1;
+		conn = null;
+		pstmt = null;
+		try {
+			conn= ds.getConnection();
+			String query = 
+					"update memberdto set pw=? where id=?";
+			
+			PasswordEncoder p = new BCryptPasswordEncoder();
+			pw = p.encode(pw);//암호화 시켜서 집어넣음
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, pw);
+			pstmt.setString(2, id);
+			result=pstmt.executeUpdate();//쿼리수행성공여부
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return result;
 		
 	}
 	
