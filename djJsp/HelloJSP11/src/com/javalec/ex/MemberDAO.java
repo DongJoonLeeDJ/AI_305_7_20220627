@@ -142,7 +142,7 @@ public class MemberDAO {
 			String query = 
 					"delete from memberdto where id=?";
 			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, m.getName());
+			pstmt.setString(1, m.getId());
 			result=pstmt.executeUpdate();//孽府荐青己傍咯何
 		} catch (Exception e) {
 			// TODO: handle exception
