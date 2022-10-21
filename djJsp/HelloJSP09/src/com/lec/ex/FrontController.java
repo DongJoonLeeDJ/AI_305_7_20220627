@@ -28,7 +28,24 @@ public class FrontController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		//요청 uri
+		String uri = request.getRequestURI();
+		//localhost명+프로젝트명
+		String conPath = request.getContextPath(); 
+		//슬래시 뒤에 오는 것들. insert.do 등
+		//substring : 자르는 것. 즉 conPath만큼 자름
+		String command = uri.substring(conPath.length());
+		System.out.println(uri);
+		System.out.println(conPath);
+		System.out.println(command);
+		if(command.equals("/insert.do")) {
+			response.getWriter().println("My Insert");
+		} else if(command.equals("/test.do")) {
+			response.getWriter().println("T E  S T");
+		} else {
+			response.getWriter().println("cmd : " + command);
+		}
 	}
 
 	/**
@@ -40,3 +57,15 @@ public class FrontController extends HttpServlet {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
