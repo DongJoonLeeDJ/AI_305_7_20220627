@@ -111,11 +111,14 @@ public class MemberDAO {
 		try {
 			conn= ds.getConnection();
 			String query = 
-					"update memberdto set name=?, gender=? where id=?";
+					"update memberdto set name=?, gender=?,pw=? where id=?";
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, m.getName());
 			pstmt.setString(2, m.getGender());
-			pstmt.setString(3, m.getId());
+			PasswordEncoder p = new BCryptPasswordEncoder();
+			m.setPw(p.encode(m.getPw()));
+			pstmt.setString(3, m.getPw());
+			pstmt.setString(4, m.getId());
 			result=pstmt.executeUpdate();//孽府荐青己傍咯何
 		} catch (Exception e) {
 			// TODO: handle exception
