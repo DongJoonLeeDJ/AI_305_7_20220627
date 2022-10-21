@@ -1,6 +1,8 @@
 package com.lec.ex;
 
 import java.io.IOException;
+import java.util.Random;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,13 +14,13 @@ import javax.servlet.http.HttpServletResponse;
  */
 //끝에 do만 있으면 다 이리로 이동한다.
 @WebServlet("*.do")
-public class FrontController extends HttpServlet {
+public class CommandController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FrontController() {
+    public CommandController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,6 +41,9 @@ public class FrontController extends HttpServlet {
 		System.out.println(uri);
 		System.out.println(conPath);
 		System.out.println(command);
+		
+		//원래 기본적인 클래스 모양
+		Random r = new Random();
 		
 		ExecutePrintable ex;
 		if(command.equals("/insert.do")) {

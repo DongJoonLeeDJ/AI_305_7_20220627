@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- memberDTO에 접근할 것 -->
+<!-- select 정보를 모두 뿌리고
+insert 추가, update 수정, delete 삭제 -->
+<a href="select.do">회원 전체 출력</a>
+<h1>회원추가</h1>
+<form action="insert.do" method="post" >
+	이름 : <input type="text" name="name"><br>
+	ID : <input type="text" name="id"><br>
+	pw : <input type="text" name="pw"><br>
+	성별 <br>
+	남<input type="radio" name="gender" value="man"><br>
+	녀<input type="radio" name="gender" value="woman">
+	<input type="submit" value="회원추가" />
+</form>
+<hr />
+<h1>회원수정</h1>
+<form action="update.do" method="post" >
+	이름 : <input type="text" name="name"><br>
+	ID : <input type="text" name="id"><br>
+	pw : <input type="text" name="pw"><br>
+	성별 <br>
+	남<input type="radio" name="gender" value="man"><br>
+	녀<input type="radio" name="gender" value="woman">
+	<input type="submit" value="회원수정" />
+</form>
+<hr />
+<h1>회원삭제</h1>
+<form action="insert.do" method="post" >
+	ID : <input type="text" name="id"><br>
+	<input type="submit" value="회원삭제" />
+</form>
+<hr />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
