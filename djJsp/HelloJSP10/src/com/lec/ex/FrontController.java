@@ -39,13 +39,23 @@ public class FrontController extends HttpServlet {
 		System.out.println(uri);
 		System.out.println(conPath);
 		System.out.println(command);
+		
+		ExecutePrintable ex;
 		if(command.equals("/insert.do")) {
-			response.getWriter().println("My Insert");
+			ex = new InsertPrint();
 		} else if(command.equals("/test.do")) {
-			response.getWriter().println("T E  S T");
+			ex = new TestPrint();
 		} else {
-			response.getWriter().println("cmd : " + command);
+			ex = new ExecutePrintable() {
+				
+				@Override
+				public void execute() {
+					// TODO Auto-generated method stub
+					System.out.println(command);
+				}
+			};
 		}
+		ex.execute();
 	}
 
 	/**
