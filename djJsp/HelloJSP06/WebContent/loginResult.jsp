@@ -25,6 +25,9 @@
 <h1 class=<%=Gender %>><%=Gender %></h1>
 
 <a href="modify.jsp">회원정보수정</a>
+<% if(Id.equals("admin")) { %>
+	<a href="memberSelect.jsp">멤버 목록 열람</a>
+<%} %>
 </body>
 </html>
 
