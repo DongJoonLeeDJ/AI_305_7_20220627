@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.javalec.ex.command.BCommand;
+import com.javalec.ex.command.BContentCommand;
 import com.javalec.ex.command.BListCommand;
 
 /**
@@ -63,7 +64,16 @@ public class Controller extends HttpServlet {
 			command = new BListCommand();
 			command.execute(request, response);
 			viewPage = "list.jsp";
+		} else if(com.equals("/content_view.do")) {
+			command = new BContentCommand();
+			command.execute(request, response);
+			viewPage="content_view.jsp";
 		}
+		
+		
+		
+		
+		
 		//viewPage로 이동함
 		RequestDispatcher dispatcher =
 				request.getRequestDispatcher(viewPage);
