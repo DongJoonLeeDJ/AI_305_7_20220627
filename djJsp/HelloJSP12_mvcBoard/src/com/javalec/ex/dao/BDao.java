@@ -277,6 +277,7 @@ public class BDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, Integer.parseInt(bGroup));
 			pstmt.setInt(2, Integer.parseInt(bStep));
+			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
