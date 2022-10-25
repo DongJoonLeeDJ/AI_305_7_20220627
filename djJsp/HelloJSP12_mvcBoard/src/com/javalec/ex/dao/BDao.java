@@ -179,6 +179,25 @@ public class BDao {
 		}
 	}
 	
+	public void delete(String bId) {
+		try {
+			conn = ds.getConnection();
+			String sql = 
+			"delete from mvc_board where bId=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,bId);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
 	
 	
 }

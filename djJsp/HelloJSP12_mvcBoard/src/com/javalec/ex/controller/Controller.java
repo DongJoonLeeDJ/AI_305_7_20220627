@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.javalec.ex.command.BCommand;
 import com.javalec.ex.command.BContentCommand;
+import com.javalec.ex.command.BDeleteCommand;
 import com.javalec.ex.command.BListCommand;
 import com.javalec.ex.command.BModifyCommand;
 import com.javalec.ex.command.BWriteCommand;
@@ -78,6 +79,10 @@ public class Controller extends HttpServlet {
 			viewPage="write_view.jsp";
 		} else if(com.equals("/write.do")) {
 			command = new BWriteCommand();
+			command.execute(request, response);
+			viewPage="list.do";
+		} else if(com.equals("/delete.do")) {
+			command = new BDeleteCommand();
 			command.execute(request, response);
 			viewPage="list.do";
 		}
