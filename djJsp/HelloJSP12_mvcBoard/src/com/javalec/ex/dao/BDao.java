@@ -198,6 +198,75 @@ public class BDao {
 			}
 		}
 	}
+	//답장하기 위해서 해당 글을 본 것
+	public BDto reply_view(String strID) {
+		BDto dto = null;
+		try {
+			conn = ds.getConnection();
+			String sql = "select * from mvc_board where bId=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, Integer.parseInt(strID));
+			rs=pstmt.executeQuery();
+			//해당 글이 존재하면 dto에 값을 넣음
+			if(rs.next()) {
+				int bId = rs.getInt("bId");
+				String bName = rs.getString("bName");
+				String bTitle = rs.getString("bTitle");
+				String bContent = rs.getString("bContent");
+				Timestamp bDate = rs.getTimestamp("bDate");
+				int bHit = rs.getInt("bHit");
+				int bGroup = rs.getInt("bGroup");
+				int bStep = rs.getInt("bStep");
+				int bIndent = rs.getInt("bIndent");
+				
+				dto = new BDto(bId, bName, bTitle, bContent, bDate, bHit, bGroup, bStep, bIndent);
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return dto;
+	}
+	public void reply 
+	(String bId, String bName, String bTitle, 
+			String bContent, String bGroup, 
+			String bStep, String bIndent) {
+		try {
+			conn = ds.getConnection();
+			String sql = "insert into mvc_board("
+					+ "bId, bName,bTitle, bContent,"
+					+ "bGroup, bStep, bIndent) values "
+					+ "(nextval('mvc_board'), ?,?,?,?,"
+					+ "?,?)";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,bName);
+			pstmt.setString(2,bTitle);
+			pstmt.setString(3,bContent);
+			pstmt.setInt(4,Integer.parseInt(bGroup));
+			pstmt.setInt(5,Integer.parseInt(bStep)+1);
+			pstmt.setInt(6,Integer.parseInt(bIndent)+1);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+	
 	
 	
 }

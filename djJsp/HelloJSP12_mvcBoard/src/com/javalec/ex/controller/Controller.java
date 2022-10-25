@@ -66,35 +66,38 @@ public class Controller extends HttpServlet {
 		if(com.equals("/list.do")) {
 			command = new BListCommand();
 			command.execute(request, response);
-			viewPage = "list.jsp";
+			viewPage = "/list.jsp";
 		} else if(com.equals("/content_view.do")) {
 			command = new BContentCommand();
 			command.execute(request, response);
-			viewPage="content_view.jsp";
+			viewPage="/content_view.jsp";
 		} else if (com.equals("/modify.do")) {
 			command = new BModifyCommand();
 			command.execute(request, response);
-			viewPage = "list.do"; //db에서 수정하고 select 재 호출
+			viewPage = "/list.do"; //db에서 수정하고 select 재 호출
 		} else if (com.equals("/write_view.do")) {
-			viewPage="write_view.jsp";
+			viewPage="/write_view.jsp";
 		} else if(com.equals("/write.do")) {
 			command = new BWriteCommand();
 			command.execute(request, response);
-			viewPage="list.do";
+			viewPage="/list.do";
 		} else if(com.equals("/delete.do")) {
 			command = new BDeleteCommand();
 			command.execute(request, response);
-			viewPage="list.do";
+			viewPage="/list.do";
 		}
 		
 		
 		
-		
-		
-		//viewPage로 이동함
-		RequestDispatcher dispatcher =
-				request.getRequestDispatcher(viewPage);
-		dispatcher.forward(request, response);
+		//sendRedirect 하면 url이 바뀜
+		if(viewPage.equals("/list.do")) {
+			response.sendRedirect(conPath+viewPage);
+		} else {
+			//viewPage로 이동함
+			RequestDispatcher dispatcher =
+					request.getRequestDispatcher(viewPage);
+			dispatcher.forward(request, response);
+		}
 	}
 	
 
