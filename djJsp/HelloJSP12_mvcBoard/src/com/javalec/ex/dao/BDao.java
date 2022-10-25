@@ -128,6 +128,30 @@ public class BDao {
 		}
 	}
 	
+	public void modify 
+	(String bId, String bName, String bTitle,
+			String bContent) {
+		try {
+			conn = ds.getConnection();
+			String sql = "update mvc_board set bName=?,bTitle=?,"
+					+ "bContent=? where bId=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,bName);
+			pstmt.setString(2,bTitle);
+			pstmt.setString(3,bContent);
+			pstmt.setString(4,bId);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
 	
 	
 	

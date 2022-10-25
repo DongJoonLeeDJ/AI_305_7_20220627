@@ -36,9 +36,9 @@
 		</tr>
 		<tr>
 			<td colspan=2><input type="submit" value="수정"></td>
-			<a href="list.do">목록보기</a>
-			<a href="delete.do?bId=${content_view.bId}">삭제</a>
-			<a href="reply_view.do?bId=${content_view.bId}">답변</a>
+			<a href="list.do">목록보기</a>&nbsp;&nbsp;
+			<a href="delete.do?bId=${content_view.bId}">삭제</a> &nbsp;&nbsp;
+			<a href="reply_view.do?bId=${content_view.bId}">답변</a> &nbsp;&nbsp;
 		</tr>
 	</form>
 </table>
