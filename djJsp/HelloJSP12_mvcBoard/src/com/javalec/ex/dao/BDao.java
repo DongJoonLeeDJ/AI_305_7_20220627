@@ -239,6 +239,7 @@ public class BDao {
 	(String bId, String bName, String bTitle, 
 			String bContent, String bGroup, 
 			String bStep, String bIndent) {
+		replyShape(bGroup, bStep);
 		try {
 			conn = ds.getConnection();
 			String sql = "insert into mvc_board("
@@ -265,6 +266,28 @@ public class BDao {
 				e2.printStackTrace();
 			}
 		}
+	}
+
+	//기존 글들의 Step을 하나씩 증가... 여기선 최신 답글이 위쪽으로 달릴 것
+	private void replyShape(String bGroup, String bStep) {
+		try {
+			conn = ds.getConnection();
+			String sql = "update mvc_board set bStep=bStep+1 "
+					+ "where bGroup=? and bStep>?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, Integer.parseInt(bGroup));
+			pstmt.setInt(2, Integer.parseInt(bStep));
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
 	}
 	
 	
