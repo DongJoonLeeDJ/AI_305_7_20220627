@@ -239,6 +239,7 @@ public class BDao {
 	(String bId, String bName, String bTitle, 
 			String bContent, String bGroup, 
 			String bStep, String bIndent) {
+		
 		replyShape(bGroup, bStep);
 		try {
 			conn = ds.getConnection();
