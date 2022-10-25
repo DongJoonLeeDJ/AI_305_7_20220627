@@ -157,13 +157,15 @@ public class BDao {
 	(String bName, String bTitle, String bContent) {
 		try {
 			conn = ds.getConnection();
-			String sql = "update mvc_board set bName=?,bTitle=?,"
-					+ "bContent=? where bId=?";
+			String sql = "insert into mvc_board("
+					+ "bId, bName,bTitle, bContent,bHit,"
+					+ "bGroup, bStep, bIndent) values "
+					+ "(nextval('mvc_board'), ?,?,?,0,"
+					+ "currval('mvc_board'),0,0)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,bName);
 			pstmt.setString(2,bTitle);
 			pstmt.setString(3,bContent);
-			pstmt.setString(4,bId);
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

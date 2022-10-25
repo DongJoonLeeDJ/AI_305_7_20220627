@@ -13,6 +13,7 @@ import com.javalec.ex.command.BCommand;
 import com.javalec.ex.command.BContentCommand;
 import com.javalec.ex.command.BListCommand;
 import com.javalec.ex.command.BModifyCommand;
+import com.javalec.ex.command.BWriteCommand;
 
 /**
  * Servlet implementation class Controller
@@ -73,6 +74,12 @@ public class Controller extends HttpServlet {
 			command = new BModifyCommand();
 			command.execute(request, response);
 			viewPage = "list.do"; //db에서 수정하고 select 재 호출
+		} else if (com.equals("/write_view.do")) {
+			viewPage="write_view.jsp";
+		} else if(com.equals("/write.do")) {
+			command = new BWriteCommand();
+			command.execute(request, response);
+			viewPage="list.do";
 		}
 		
 		
