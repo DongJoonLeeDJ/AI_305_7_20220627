@@ -73,11 +73,12 @@ public class BookController {
 				this.bookService.detail(map);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("data", detailMap);
+		System.out.println(detailMap);
 		mav.setViewName("/book/update");
 		return mav;
 	}
 	
-	@RequestMapping(value="update",
+	@RequestMapping(value="/update",
 			method=RequestMethod.POST)
 	public ModelAndView updatePost
 	(@RequestParam Map<String, Object> map) {
@@ -90,6 +91,25 @@ public class BookController {
 			("redirect:/detail?bookId="+bookId);
 		} else {
 			mav = this.update(map); //get방식으로 다시 접근
+		}
+		return mav;
+	}
+	
+	@RequestMapping(value="/delete",
+			method= RequestMethod.POST) 
+	public ModelAndView deletePost
+	(@RequestParam Map<String,Object> map) {
+		ModelAndView mav = new ModelAndView();
+		boolean isDeleteSuccess =
+				this.bookService.remove(map);
+		if(isDeleteSuccess) {
+			mav.setViewName("redirect:/list");
+		} else {
+			String bookId 
+			= map.get("bookId").toString();
+			mav.setViewName
+			("redirect:/detail?bookId="
+			+bookId);
 		}
 		return mav;
 	}

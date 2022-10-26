@@ -35,6 +35,12 @@ category=#{category},price=#{price} where
 ]]>
 </update>
 
+<delete id="delete" parameterType="hashMap">
+<![CDATA[
+delete from book where book_id=#{bookId}
+]]>
+</delete>
+
 </mapper>
 
 

@@ -37,6 +37,12 @@ public class BookDao {
 		this.sqlSessionTemplate.update
 		("book.update", map);
 	}
+	
+	public int delete(Map<String, Object> map) {
+		return 
+		this.sqlSessionTemplate.delete
+		("book.delete",map);
+	}
 }
 
 
