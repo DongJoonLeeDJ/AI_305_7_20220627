@@ -122,6 +122,12 @@ public class BookController {
 				this.bookService.list(map);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("data",list);
+		
+		//검색시 파라메터 더 추가함
+		//검색 아무 것도 입력 안 하면 원래의 목록보기 처럼 동작
+		if(map.containsKey("keyword"))
+			mav.addObject("keyword", map.get("keyword"));
+		
 		mav.setViewName("/book/list");
 		return mav;
 		
