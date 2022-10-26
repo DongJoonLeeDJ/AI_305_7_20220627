@@ -1,5 +1,6 @@
 package com.lecspring.myspring;
 
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -42,6 +43,14 @@ public class BookDao {
 		return 
 		this.sqlSessionTemplate.delete
 		("book.delete",map);
+	}
+	
+	//java.util을 import : List
+	//여러 개의 Map<String,Object>을 반환함
+	public List<Map<String,Object>> selectList
+	(Map<String, Object> map) {
+		return this.sqlSessionTemplate.selectList
+				("book.select_list",map);
 	}
 }
 
