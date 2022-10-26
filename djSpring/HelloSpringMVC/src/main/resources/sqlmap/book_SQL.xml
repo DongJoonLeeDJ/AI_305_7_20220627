@@ -27,6 +27,14 @@ resultType="hashMap">
 
 </select>
 
+<update id="update" parameterType="hashMap">
+<![CDATA[
+update book set title=#{title}, 
+category=#{category},price=#{price} where 
+ book_id=#{bookId}
+]]>
+</update>
+
 </mapper>
 
 

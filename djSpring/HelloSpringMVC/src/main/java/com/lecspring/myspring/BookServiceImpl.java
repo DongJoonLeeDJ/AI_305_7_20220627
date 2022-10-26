@@ -25,6 +25,15 @@ public class BookServiceImpl implements BookService{
 		(Map<String,Object> map) {
 		return this.bookDao.selectDetail(map);
 	}
+
+	@Override
+	public boolean edit(Map<String, Object> map) {
+		int afftectRowCount = 
+				this.bookDao.update(map);
+		//afftectRowCount가 1일 때 true리턴
+		//즉 update 성공시 true리턴
+		return afftectRowCount==1;
+	}
 	
 }
 
