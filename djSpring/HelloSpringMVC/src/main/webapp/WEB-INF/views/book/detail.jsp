@@ -9,8 +9,10 @@
   <p>제목 : ${ data.title } </p>
   <p>카테고리 : ${ data.category }</p>
   <p>가격 : <fmt:formatNumber type="number" maxFractionDigits="3" value="${data.price}" /></p> 
-  <p>입력일 : <fmt:formatDate value="${data.insert_date}" pattern="yyyy.MM.dd HH:mm:ss" /></p>
+<%--   <p>입력일 : <fmt:formatDate value="${data.insert_date}" pattern="yyyy.MM.dd HH:mm:ss" /></p> --%>
 
+	<fmt:parseDate value="${data.insert_date}" pattern="yyy-MM-dd'T'HH:mm:ss" var="parsedDateTime" type="both"/>
+	<p>입력일 : <fmt:formatDate pattern="dd.MM.yyy HH:mm:ss" value="${parsedDateTime}"/> </p>
   <p>
    <a href="/update?bookId=${bookId}">수정</a>
   </p>
