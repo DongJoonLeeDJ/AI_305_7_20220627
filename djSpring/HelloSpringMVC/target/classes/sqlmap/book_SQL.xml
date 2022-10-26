@@ -3,6 +3,10 @@
 <mapper namespace="book">
 <!-- useGeneratedKeys="true" keyProperty="book_id"
 자동증가시 쓰이는 조합 -->
+
+<!-- title,category,price = 파라메터 -->
+<!-- title, category, price : 키 -->
+<!-- #{title} 등 : 그 파라메터의 값(=value) -->
 <insert id="insert" parameterType="hashMap" useGeneratedKeys="true" keyProperty="book_id">  
     <![CDATA[
     insert into book
@@ -11,4 +15,27 @@
     (#{title}, #{category}, #{price})
     ]]>
 </insert>
+
+<select id="select_detail" 
+parameterType="hashMap" 
+resultType="hashMap">
+<![CDATA[
+	select title,category,price,insert_date
+	 from 
+	book where book_id=#{bookId}
+]]>
+
+</select>
+
 </mapper>
+
+
+
+
+
+
+
+
+
+
+

@@ -25,6 +25,12 @@ public class BookDao {
 		this.sqlSessionTemplate.insert
 		("book.insert",map);
 	}
+	
+	public Map<String,Object> selectDetail
+	(Map<String,Object> map) {
+		return this.sqlSessionTemplate.
+				selectOne("book.select_detail",map);
+	}
 }
 
 
