@@ -49,6 +49,13 @@ public class BookServiceImpl implements BookService{
 	(Map<String,Object> map) {
 		return this.bookDao.selectList(map);
 	}
+
+	@Override
+	public int countBookBoard(Map<String, Object> map) {
+		return this.bookDao.countBookBoard(map);
+	}
+
+
 	
 }
 

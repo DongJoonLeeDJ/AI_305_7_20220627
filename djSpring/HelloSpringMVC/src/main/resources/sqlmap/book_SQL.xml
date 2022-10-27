@@ -40,14 +40,20 @@ category=#{category},price=#{price} where
 delete from book where book_id=#{bookId}
 ]]>
 </delete>
-<!-- resultType="hashMap" : 한 행(=줄)의 타입 -->
-<!-- <select id="select_list"  -->
-<!-- parameterType="hashMap"  -->
-<!-- resultType="hashMap"> -->
-<!-- <![CDATA[ -->
-<!-- select book_id,title,category,price,insert_date  -->
-<!-- from book order by insert_date desc -->
-<!-- ]]> -->
+
+<!-- 게시판 글의 총 개수 or 검색된 글의 총 개수 -->
+<select id="countBookBoard" parameterType="hashMap" 
+ resultType="int">
+ select count(*) from book 
+ where 1=1 
+ <if test="keyword!=null and keyword!=''">
+and (title like CONCAT('%',#{keyword},'%') 
+ </if>
+
+</select>
+
+
+
 <select id="select_list" 
 parameterType="hashMap" 
 resultType="hashMap">
@@ -60,7 +66,15 @@ select book_id,title,category,price,insert_date
  and (title like CONCAT('%',#{keyword},'%') 
  or category like CONCAT('%',#{keyword},'%'))
  </if>
- order by insert_date desc
+ order by insert_date desc 
+ <choose>
+ 	<when test="skipCount==null">
+ 		limit 0,3
+ 	</when>
+ 	<when test="skipCount!=null">
+ 		limit ${skipCount}, 3
+ 	</when>
+ </choose>
 
 </select>
 

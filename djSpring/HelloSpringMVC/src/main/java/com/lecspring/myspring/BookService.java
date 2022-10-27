@@ -15,4 +15,21 @@ public interface BookService {
 
 	List<Map<String, Object>> list(Map<String, Object> map);
 
+	int countBookBoard(Map<String, Object>map);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

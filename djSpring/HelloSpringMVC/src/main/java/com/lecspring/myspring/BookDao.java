@@ -52,7 +52,23 @@ public class BookDao {
 		return this.sqlSessionTemplate.selectList
 				("book.select_list",map);
 	}
+	
+	public int countBookBoard(Map<String,Object> map) {
+		return this.sqlSessionTemplate.selectOne
+				("book.countBookBoard",map);
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
