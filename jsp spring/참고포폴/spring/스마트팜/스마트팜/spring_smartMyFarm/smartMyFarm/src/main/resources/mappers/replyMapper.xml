@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="replyMapper">
+<!-- 댓글작성 -->
+	<insert id="writeReply" parameterType="kr.co.yj.vo.Reply">
+		Insert Into Reply(bno, content, userid, date) Values ( #{bno}, #{content}, #{userid},now())
+	</insert>
+<!-- 댓글 조회-->
+	<select id="selectRelyList" resultType="kr.co.yj.vo.Reply" parameterType="int">
+   		<!-- select bno, title,userid,redate from board order by bno desc -->
+   		SELECT * FROM reply where bno = #{bno};
+   </select>
+<!-- 댓글 수정 -->
+	<update id="updateReply" parameterType="kr.co.yj.vo.Reply">
+		Update Reply Set Content = #{content} Where Rno = #{rno}
+	</update>
+<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="kr.co.yj.vo.Reply">
+		Delete From Reply Where Rno = #{rno}
+	</delete>
+<!-- 선택된 댓글 조회 -->
+	<select id="selectReply" resultType="kr.co.yj.vo.Reply">
+		Select Bno, Rno, Content, Userid, Date		 
+		From REPLY
+		Where Rno = #{rno}
+	</select>
+</mapper>

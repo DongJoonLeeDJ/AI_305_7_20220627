@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+<!-- member 회원가입 -->
+	<insert id="insert" parameterType="kr.co.yj.vo.Member">
+		insert into member(id,pw,name,phone,address,signup_date)
+		values(#{id},#{pw},#{name},#{phone},#{address},now())
+	</insert>
+<!-- 로그인 -->
+	<select id="login" resultType="kr.co.yj.vo.Member">
+		Select * From member 
+		Where id = #{id}  And pw = #{pw} 
+	</select>
+<!-- 회원정보 수정 -->
+	<update id="memberUpdate" >
+		Update member Set
+		 pw = #{pw}, 
+		name=#{name}, phone=#{phone},address=#{address}
+		Where id=#{id}
+	</update>
+<!-- 회원 탈퇴 -->
+	<delete id="memberDelete">
+		Delete From member
+		Where id = #{id}  And pw = #{pw}
+	</delete>
+	<!-- 패스워드 체크 -->
+	<select id="pwChk" resultType="int">
+		Select count(*) From member
+		Where id= #{id} And pw= #{pw}
+	</select>
+<!-- 아이디 중복 체크 -->
+	<select id="idChk" resultType="int">
+		SELECT COUNT(*) FROM member
+		WHERE iD = #{id}
+	</select>
+</mapper>

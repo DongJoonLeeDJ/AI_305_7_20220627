@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+	<insert id="insert" parameterType="kr.co.yj.vo.Board">
+   		insert into board(title, content, userid, redate, available) 
+   		values (#{title},#{content},#{userid},now(),1)
+   </insert>
+   <select id="select_list" resultType="kr.co.yj.vo.Board" parameterType="kr.co.yj.vo.SearchCriteria">
+   		<!-- select bno, title,userid,redate from board order by bno desc -->
+   		SELECT * FROM BOARD
+   		<where>
+		      <include refid="search"></include> <!-- 중복쿼리 대체 -->
+		</where>
+		order by bno desc
+ 		limit #{rowStart},#{rowEnd}; 
+   </select>
+   <select id="listCount" parameterType="kr.co.yj.vo.SearchCriteria" resultType="int">
+   <!-- 비교연산자 사용시 태그로 인식하는 에로 방지  CDATA는 전부 문자열로 차환-->
+   		select count(bno) from board 
+   		<where>
+   			<include refid="search"></include>
+   			AND bno > 0
+   		</where>   
+   </select>
+   <sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">AND TITLE LIKE CONCAT( '%',#{keyword},'%')</if>
+			<if test="searchType == 'c'.toString()">AND CONTENT LIKE CONCAT('%',#{keyword},'%')</if>
+			<if test="searchType == 'w'.toString()">AND USERID LIKE CONCAT('%',#{keyword},'%')</if>
+			<if test="searchType == 'tc'.toString()">AND (TITLE LIKE CONCAT('%',#{keyword},'%')) or (CONTENT LIKE CONCAT('%',#{keyword},'%'))</if>
+		</if>
+	</sql>
+   <select id="read" parameterType="int" resultType="kr.co.yj.vo.Board">
+   		select bno, title, content, userid, redate
+   		from board
+   		where bno = #{bno}
+   </select>
+   <update id="update" parameterType="kr.co.yj.vo.Board">
+   		update board
+   		set title = #{title},
+   			content = #{content},
+   			redate = now()
+   		where bno = #{bno} 
+   </update>
+   <delete id="delete" parameterType="int">
+   		delete from board
+   		where bno = #{bno}
+   </delete>
+   <insert id="insertFile" parameterType="hashMap">
+		INSERT INTO FILE(
+			BNO,
+			ORG_FILE_NAME,
+			STORED_FILE_NAME,
+			FILE_SIZE,
+			REDATE
+		)VALUES(
+			#{BNO},
+			#{ORG_FILE_NAME},
+			#{STORED_FILE_NAME},
+			#{FILE_SIZE},
+			now()
+		)
+    </insert> 
+</mapper>

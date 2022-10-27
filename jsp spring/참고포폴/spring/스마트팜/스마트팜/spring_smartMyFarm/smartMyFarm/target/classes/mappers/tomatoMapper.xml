@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tomatoMapper">
+	<insert id="insert" parameterType="kr.co.yj.vo.Tomato">
+   		insert into tomato(length, height, width, leaf_len, leaf,Fruit_group,flower,fruit,week,date) 
+   		values (#{length},#{height},#{width},#{leaf_len},#{leaf},#{Fruit_group},#{flower},#{fruit},#{week},now())
+   </insert>
+   <select id="select_list" resultType="kr.co.yj.vo.Tomato" parameterType="kr.co.yj.vo.SearchCriteria">
+   		<!-- select bno, title,userid,redate from board order by bno desc -->
+   		SELECT * FROM tomato
+   		<where>
+		      <include refid="search"></include> <!-- 중복쿼리 대체 -->
+		</where>
+		order by no desc
+ 		limit #{rowStart},#{rowEnd}; 
+   </select>
+   <select id="listCount" parameterType="kr.co.yj.vo.SearchCriteria" resultType="int">
+   <!-- 비교연산자 사용시 태그로 인식하는 에로 방지  CDATA는 전부 문자열로 차환-->
+   		select count(no) from tomato
+   		<where>
+   			<include refid="search"></include>
+   			AND no > 0
+   		</where>   
+   </select>
+   <sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">AND TITLE LIKE CONCAT( '%',#{keyword},'%')</if>
+			<if test="searchType == 'c'.toString()">AND CONTENT LIKE CONCAT('%',#{keyword},'%')</if>
+			<if test="searchType == 'w'.toString()">AND USERID LIKE CONCAT('%',#{keyword},'%')</if>
+			<if test="searchType == 'tc'.toString()">AND (TITLE LIKE CONCAT('%',#{keyword},'%')) or (CONTENT LIKE CONCAT('%',#{keyword},'%'))</if>
+		</if>
+	</sql>
+   <select id="read" parameterType="int" resultType="kr.co.yj.vo.Tomato">
+   		select *
+   		from tomato
+   		where no = #{no}
+   </select>
+   <update id="update" parameterType="kr.co.yj.vo.Tomato">
+   		update tomato
+   		set length=#{length}, height=#{height}, width=#{width}, leaf_len=#{leaf_len},
+   		 leaf=#{leaf},Fruit_group=#{Fruit_group},flower=#{flower},fruit=#{fruit}
+   		where no = #{no} 
+   </update>
+   <delete id="delete" parameterType="int">
+   		delete from tomato
+   		where no = #{no}
+   </delete>
+<!--    <insert id="insertFile" parameterType="hashMap">
+		INSERT INTO FILE(
+			BNO,
+			ORG_FILE_NAME,
+			STORED_FILE_NAME,
+			FILE_SIZE,
+			REDATE
+		)VALUES(
+			#{BNO},
+			#{ORG_FILE_NAME},
+			#{STORED_FILE_NAME},
+			#{FILE_SIZE},
+			now()
+		)
+    </insert> --> 
+</mapper>
