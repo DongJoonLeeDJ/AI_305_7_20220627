@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>책 목록</title>
+<style>
+/* 밑줄 없앰 */
+a{text-decoration: none}</style>
 </head>
 <body>
 	<h1>책 목록</h1>
