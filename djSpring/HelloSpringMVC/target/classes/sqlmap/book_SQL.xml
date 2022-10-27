@@ -44,11 +44,14 @@ delete from book where book_id=#{bookId}
 <!-- 게시판 글의 총 개수 or 검색된 글의 총 개수 -->
 <select id="countBookBoard" parameterType="hashMap" 
  resultType="int">
+ <![CDATA[
  select count(*) from book 
  where 1=1 
+ ]]> 
  <if test="keyword!=null and keyword!=''">
-and (title like CONCAT('%',#{keyword},'%') 
+and (title like CONCAT('%',#{keyword},'%') )
  </if>
+ order by insert_date desc 
 
 </select>
 
