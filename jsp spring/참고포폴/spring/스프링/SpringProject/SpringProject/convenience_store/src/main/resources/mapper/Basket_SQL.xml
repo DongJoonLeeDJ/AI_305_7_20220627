@@ -1,0 +1,23 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BasketSQL">
+
+	<insert id="insert" parameterType = "com.store.gdgd.basket.BasketVO">
+		insert into shopping_basket ( c_id, pd_code, quantity)
+		values
+		( #{c_id}, #{pd_code}, #{quantity} )
+		<!-- 장바구니 담기 버튼을 누를때 실행되는 쿼리문 -->
+	</insert>
+	
+	<select id="select"  parameterType = "com.store.gdgd.basket.BasketVO" resultType="com.store.gdgd.basket.BasketVO">
+		select c_id,id,pd_name,pd_price,quantity,(pd_price*quantity)as money
+		<!-- 회원의 이름과, 상품의 이름,물건 한개의 가격, 장바구니에 담은 개수, 총 물건의 가격을 검색한다. -->
+		from member m, product p, shopping_basket b
+		<!-- //member테이블과, product테이블과, cart테이블로부터 검색 -->
+		where m.id=b.c_id and p.pd_code=b.pd_code;
+		<!-- 즉, 회원의 아이디와 상품을 사려는 회원이 같을때 -->
+	</select>
+
+</mapper>

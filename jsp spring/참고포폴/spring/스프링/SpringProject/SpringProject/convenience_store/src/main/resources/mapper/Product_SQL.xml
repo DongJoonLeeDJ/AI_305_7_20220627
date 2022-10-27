@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="Product">
+<select id="selectProduct" resultType="com.store.gdgd.product.Product">
+	select * from product
+</select>
+<select id="selectProductSearch" resultType="com.store.gdgd.product.Product">
+	select * from product where name like \"%" + prod_name + "%\"
+</select>
+<select id="selectShop_grid" resultType="com.store.gdgd.product.Product">
+	select * from product
+</select>
+</mapper>

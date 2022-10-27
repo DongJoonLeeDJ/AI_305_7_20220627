@@ -1,0 +1,53 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="Sale">
+	<select id="selectSales" resultType="com.store.gdgd.sale.Sales1">
+		select payment.sales_number as sales_number,payment.cid as cid,(product.pd_price*orda.quantity) as totalprice,payment.payment_method_type as payment_method_type,payment.date as date
+		from product,orda,payment
+		where product.pd_code=orda.item_name and payment.sales_number=orda.sales_number
+		group by sales_number
+	</select>
+	<select id="selectSalesByNumber" parameterType="int"  resultType="com.store.gdgd.sale.Sales1">
+		select payment.sales_number as sales_number,payment.cid as cid,(product.pd_price*orda.quantity) as totalprice,payment.payment_method_type as payment_method_type,payment.date as date
+		from product,orda,payment
+		where product.pd_code=orda.item_name and payment.sales_number=orda.sales_number and payment.sales_number=#{sales_number}
+		group by sales_number
+	</select>
+	<select id="selectSalesByDate" parameterType="String"  resultType="com.store.gdgd.sale.Sales1">
+		SELECT payment.sales_number,payment.cid,sum(product.pd_price*orda.quantity) as total_price,payment.payment_method_type,payment.date 
+		from product,orda,payment
+		where product.pd_code=orda.item_name and DATE_FORMAT(date, "%Y-%m-%d")=#{time_select}
+		group by payment.sales_number;
+	</select>
+	<select id="selectSalesByWeek" parameterType="String"  resultType="com.store.gdgd.sale.Sales1">
+		SELECT payment.sales_number,payment.cid,sum(product.pd_price*orda.quantity) as total,payment.payment_method_type,payment.date 
+		from product, orda,payment
+		where product.pd_code=orda.item_name and (#{time_select} between DATE_FORMAT(DATE_SUB(`date`, INTERVAL (DAYOFWEEK(`date`)-1) DAY), '%Y/%m/%d') and DATE_FORMAT(DATE_SUB(`date`, INTERVAL (DAYOFWEEK(`date`)-7) DAY), '%Y/%m/%d'))
+		group by payment.sales_number;
+	</select>
+	<select id="selectSalesByMonth" parameterType="String"  resultType="com.store.gdgd.sale.Sales1">
+		SELECT payment.sales_number,payment.cid,sum(product.pd_price*orda.quantity) as total,payment.payment_method_type,payment.date 
+		from product,orda,payment
+		where product.pd_code=orda.item_name and DATE_FORMAT(date, "%Y-%m")=#{time_select}
+		group by payment.sales_number;
+	</select>
+	<select id="selectedSales" parameterType="String"  resultType="com.store.gdgd.sale.Sales2">
+		select product.pd_name,product.pd_price,orda.quantity,orda.quantity*product.pd_price as totalPrice
+		from orda,product
+		where orda.sales_number=#{sales_number} and orda.item_name=product.pd_code;
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

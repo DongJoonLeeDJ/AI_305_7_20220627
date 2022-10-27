@@ -1,0 +1,12 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="Stock">
+<select id="selectStock" resultType="com.store.gdgd.stock.Stock">
+	select * from stock
+</select>
+<select id="selectStockSearch" resultType="com.store.gdgd.stock.Stock">
+	select * from stock where name like \"%" + pd_name + "%\"
+</select>
+</mapper>

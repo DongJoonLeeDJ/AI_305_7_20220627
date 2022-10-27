@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="Member">
+<insert id="SingUp" parameterType="com.store.gdgd.member.MemberVO">
+	insert into 
+	member(id,pw,name,addr,email) 
+	values(#{id},#{pw},#{name},#{addr},#{email})
+	
+</insert>
+
+<select id="LogIn" parameterType = "com.store.gdgd.member.MemberVO" resultType="com.store.gdgd.member.MemberVO">
+	select * from member where id = #{id} and pw = #{pw}
+</select>
+<select parameterType="String" id="checkId" resultType="int">select count(*) from member where id = #{id} </select>
+</mapper>
