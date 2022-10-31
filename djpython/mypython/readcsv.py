@@ -37,6 +37,8 @@ for item in mydata:
                 sql % ( int(item[0]), item[1],
                         (int)(item[6].strip().replace(",","")))
             )
-            print(sql % ( int(item[0]), item[1],
-                          (int)(item[6].strip().replace(",",""))))
+            # strip() : 양옆 공백 제거
+            # replace : 특정 문자를 대체함. 여기선 콤마를 제거함
+            #print(sql % ( int(item[0]), item[1],
+            #              (int)(item[6].strip().replace(",",""))))
             conn.commit()
