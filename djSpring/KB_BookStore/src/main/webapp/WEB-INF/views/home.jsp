@@ -6,6 +6,15 @@
 	<title>Home</title>
 </head>
 <body>
+<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+
+				<input type="file" id="gdsImg" name="file" />
+<%-- 				<%=request.getRealPath("/") %> 			 --%>
+<img src="${data.fileName }">
+<input type="submit" />
+</form>
+
+
  <table>
         <tr>
             <th>name1</th>
