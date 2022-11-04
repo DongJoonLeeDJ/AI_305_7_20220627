@@ -65,6 +65,11 @@ a{text-decoration: none}</style>
 	<p>
 		<a href="/create">생성</a>
 	</p>
+<%-- 	<p>
+	 <a href="javascript:void(window.open('/detail?bookId=1', 'test','width=#, height=#'))">새창</a> 
+	
+	</p>
+	--%>
 </body>
 </html>
 
