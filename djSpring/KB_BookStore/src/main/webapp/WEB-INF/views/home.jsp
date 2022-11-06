@@ -9,8 +9,12 @@
 <form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
 
 				<input type="file" id="gdsImg" name="file" />
-<%-- 				<%=request.getRealPath("/") %> 			 --%>
+ 				<%=request.getRealPath("/") %> 			 
 <img src="${data.fileName }">
+<img src="img/booktest.png">
+<img src="/img/booktest.png">
+<img src="resources/img/booktest.png">
+<img src="/resources/img/booktest.png">
 <input type="submit" />
 </form>
 

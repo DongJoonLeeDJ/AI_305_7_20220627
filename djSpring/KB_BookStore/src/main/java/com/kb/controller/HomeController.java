@@ -1,15 +1,9 @@
 package com.kb.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.UUID;
-
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -29,7 +23,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -53,41 +46,41 @@ public class HomeController {
 		//System.out.println(map);
 		System.out.println(file.getOriginalFilename());
 		
-		ServletContext application = request.getSession().getServletContext();
-		String realPath = application.getRealPath("/resources/imgUpload");
-		System.out.println(realPath);
-		File uploadPath = new File(realPath);
-		System.out.println(uploadPath.exists());
-		if(uploadPath.exists()==false)
-			uploadPath.mkdir();
+//		ServletContext application = request.getSession().getServletContext();
+//		String realPath = application.getRealPath("/resources/imgUpload");
+//		System.out.println(realPath);
+//		File uploadPath = new File(realPath);
+//		System.out.println(uploadPath.exists());
+//		if(uploadPath.exists()==false)
+//			uploadPath.mkdir();
+//		
+//		String uploadFileName = file.getOriginalFilename();
+//		UUID uuid = UUID.randomUUID();
+//		uploadFileName = uuid.toString()+"_"+uploadFileName;
+//		
+//		try {
+//			file.transferTo(new File(uploadPath, uploadFileName));
+//			System.out.println(uploadPath+"\\"+uploadFileName);
+//		} catch (IllegalStateException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		
+//		
+//		ModelAndView mav = new ModelAndView();
+//		mav.setViewName("home");
+//		Map<String,Object> attributeValue = new HashMap<String,Object>();
+//		attributeValue.put("fileName", "/filePath/"+uploadFileName);
+//		System.out.println(attributeValue.get("fileName"));
+//		mav.addObject("data", attributeValue);
 		
-		String uploadFileName = file.getOriginalFilename();
-		UUID uuid = UUID.randomUUID();
-		uploadFileName = uuid.toString()+"_"+uploadFileName;
-		
-		try {
-			file.transferTo(new File(uploadPath, uploadFileName));
-			System.out.println(uploadPath+"\\"+uploadFileName);
-		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		
-		
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("home");
-		Map<String,Object> attributeValue = new HashMap<String,Object>();
-		attributeValue.put("fileName", "/filePath/"+uploadFileName);
-		System.out.println(attributeValue.get("fileName"));
-		mav.addObject("data", attributeValue);
-		
-		return mav;
+		return null;
 		
 		
 		
