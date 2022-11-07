@@ -16,7 +16,7 @@ create table customer
 (custid varchar(50) primary key, /*회원 ID*/
 name varchar(40), /* 회원명 */
 address varchar(50), /* 회원 주소*/
-phone varchar(20)); /* 회원 연락처 */
+phone varchar(20) unique); /* 회원 연락처 */
 
 -- fk가 2개, book, customer에서 가져옴
 create table orders 
