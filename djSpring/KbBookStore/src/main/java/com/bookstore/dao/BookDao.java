@@ -35,6 +35,12 @@ public class BookDao {
 		return this.sqlSessionTemplate.
 				selectOne("book.select_detail",map);
 	}
+
+	public int insert(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+
+		return this.sqlSessionTemplate.insert("book.insert",map);
+	}
 	
 }
 

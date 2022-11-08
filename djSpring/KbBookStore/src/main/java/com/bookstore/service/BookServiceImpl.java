@@ -32,6 +32,14 @@ public class BookServiceImpl implements BookService{
 	public Map<String,Object> detail
 		(Map<String,Object> map) {
 		return this.bookDao.selectDetail(map);
+	}	
+	
+	@Override
+	public String create(Map<String, Object> map) {
+		int affectRowCount = this.bookDao.insert(map);
+		if(affectRowCount==1)
+			return map.get("bookid").toString();
+		return null;
 	}
 	
 }

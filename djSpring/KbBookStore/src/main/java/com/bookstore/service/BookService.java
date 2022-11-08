@@ -9,6 +9,8 @@ public interface BookService {
 
 	int countBookBoard(Map<String, Object>map);
 	Map<String, Object> detail(Map<String, Object> map);
+
+	String create(Map<String, Object> map);
 }
 
 

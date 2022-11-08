@@ -13,7 +13,7 @@
 <img src="${data.fileName }">
 <img src="resources/imgUpload/booktest.png">
 
-<img src="resources/imgUpload/1.jpg">
+<img src="resources/imgUpload/b.jpg">
 <img src="resources/imgUpload/f3393049-02b4-4451-b793-04080d2f096b_3.jpg">
 <input type="submit" />
 </form>

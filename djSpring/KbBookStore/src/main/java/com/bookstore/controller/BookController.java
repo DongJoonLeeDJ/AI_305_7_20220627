@@ -30,6 +30,7 @@ import com.bookstore.service.BookService;
 /**
  * Handles requests for the application home page.
  */
+@RequestMapping("/book/*") //앞에 book을 붙여야 이 컨트롤러로 이동한다.
 @Controller
 public class BookController {
 	
@@ -99,7 +100,7 @@ public class BookController {
 		}
 		
 		
-		@RequestMapping(value="/detail", 
+		@RequestMapping(value="detail", 
 				method=RequestMethod.GET)
 		public ModelAndView detail
 		(@RequestParam Map<String,Object> map) {
@@ -115,7 +116,7 @@ public class BookController {
 			return mav;
 		}
 		
-		@RequestMapping(value="/create", 
+		@RequestMapping(value="create", 
 				method=RequestMethod.GET)
 		public ModelAndView create() {
 			//book 폴더의 create.jsp를 리턴함
@@ -123,41 +124,79 @@ public class BookController {
 			return new ModelAndView("book/bookCreate");
 		}
 		
+		@RequestMapping(value="create", 
+				method = RequestMethod.POST) 
+		public ModelAndView createPost
+		(@RequestParam Map<String,Object>map, MultipartFile bookImg) {
+
+			System.out.println(map.toString());
+			String uploadFileName="";
+			try {
+				String uploadPath = "D:\\study\\mywork\\AI_305_7_20220627\\djSpring\\KbBookStore\\src\\main\\webapp\\resources\\imgUpload";
+				uploadFileName = bookImg.getOriginalFilename();
+				System.out.println(uploadFileName);
+				bookImg.transferTo(new File(uploadPath, uploadFileName));
+				System.out.println(new File(uploadPath, uploadFileName).canExecute());
+				System.out.println(new File(uploadPath, uploadFileName).getName());
+				System.out.println(uploadPath+"\\"+uploadFileName);
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			ModelAndView mav = new ModelAndView();
+			map.put("bookImg", "../resources/imgUpload/"+uploadFileName);
+			String bookId = this.bookService.create(map);
+			
+			System.out.println("bkid="+bookId);
+			System.out.println(map.toString());
+			if(bookId==null)
+				mav.setViewName("redirect:/book/create");
+			else
+				mav.setViewName
+				("redirect:/book/detail?bookid="+bookId);
+			return mav;
+		}
+		
 	
-//	@RequestMapping(value = "/", method = RequestMethod.GET)
-//	public String home(Locale locale, Model model) {
-//		
-//		return "book/bookList";
-//	}
-//	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		System.out.println("?");
+		return "home";
+	}
 	
-//	@RequestMapping(value = "/", method = RequestMethod.POST)
-//	public ModelAndView home2(@RequestParam Map<String, Object> map, MultipartFile file, HttpServletRequest request) {
-//
-//		String uploadPath = "D:\\study\\mywork\\AI_305_7_20220627\\djSpring\\KbBookStore\\src\\main\\webapp\\resources\\imgUpload";
-//		String uploadFileName = file.getOriginalFilename();
-//		
-//		try {
-//			file.transferTo(new File(uploadPath, uploadFileName));
-//			System.out.println(new File(uploadPath, uploadFileName).canExecute());
-//			System.out.println(new File(uploadPath, uploadFileName).getName());
-//			System.out.println(uploadPath+"\\"+uploadFileName);
-//		} catch (IllegalStateException e) {
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//	
-//		ModelAndView mav = new ModelAndView();
-//		mav.setViewName("home");
-//		Map<String,Object> attributeValue = new HashMap<String,Object>();
-//		attributeValue.put("fileName", "resources/imgUpload/"+uploadFileName);
-//		System.out.println(attributeValue.get("fileName"));
-//		mav.addObject("data", attributeValue);
-//		
-//		return mav;
-//	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public ModelAndView home2(@RequestParam Map<String, Object> map, MultipartFile file, HttpServletRequest request) {
+
+		System.out.println("!");
+		String uploadPath = "D:\\study\\mywork\\AI_305_7_20220627\\djSpring\\KbBookStore\\src\\main\\webapp\\resources\\imgUpload";
+		String uploadFileName = file.getOriginalFilename();
+		
+		try {
+			file.transferTo(new File(uploadPath, uploadFileName));
+			System.out.println(new File(uploadPath, uploadFileName).canExecute());
+			System.out.println(new File(uploadPath, uploadFileName).getName());
+			System.out.println(uploadPath+"\\"+uploadFileName);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("home");
+		Map<String,Object> attributeValue = new HashMap<String,Object>();
+		attributeValue.put("fileName", "resources/imgUpload/"+uploadFileName);
+		System.out.println(attributeValue.get("fileName"));
+		mav.addObject("data", attributeValue);
+		
+		return mav;
+	}
 	
 }

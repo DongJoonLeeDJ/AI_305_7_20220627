@@ -78,25 +78,48 @@
 
 	<%@ include file="../footer.jsp"%>
 	<script>
+
 		let registBookForm = document.querySelector("#registBookForm")
 		let isbn = document.querySelector('input[name=bookisbn]')
 		let bookname  = document.querySelector('input[name=bookname]')
 		let price = document.querySelector('input[name=bookprice]')
 		let publisher  = document.querySelector('input[name=publisher]')
 		let bookImg  = document.querySelector('input[name=bookImg]')
+	
+	
+		function isEmpty(tag) {
+			return tag.value==''
+		}
+		
 		registBookForm.addEventListener("submit", function (event) {
 			
 			//빈 값 있으면 안 됨
 			// price는 반드시 숫자 들어가야 함
+			let tags = [isbn,bookname,price,publisher,bookImg]
+			for(let item of tags) {
+				if(isEmpty(item)) {
+					event.preventDefault()
+					alert('빈 칸이 있습니다. 데이터를 입력해주세요.')
+					return
+				}
+			}
+			if(isbn.value.length != 10 && isbn.value.length!=13) {
+				event.preventDefault()
+				alert('isbn은 10자리 혹은 13자리입니다.')
+				return
+			} else {
+				if(isNaN(isbn.value)) {
+					event.preventDefault()
+					alert('isbn은 숫자여야 합니다.')
+					return
+				}
+			}
+			if(isNaN(price.value)) {
+				event.preventDefault()
+				alert('가격은 숫자를 입력하세요.')
+				
+			}
 			
-			
-			
-			//console.log(bookname.value)
-			console.log(isbn.value.length)
-			console.log(price.value)
-			console.log(isNaN(price.value))
-			console.log(isbn.value=='')
-			event.preventDefault()
 		})
 	</script>
 </body>

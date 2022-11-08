@@ -57,7 +57,7 @@ a {
 					<c:forEach var="row" items="${data}">
 						<tr>
 							<td>${row.bookid}</td>
-							<td><a href="/detail?bookid=${row.bookid}">${row.bookname}</a></td>
+							<td><a href="/book/detail?bookid=${row.bookid}">${row.bookname}</a></td>
 							<td>${row.bookisbn}</td>
 							<td>${row.publisher}</td>
 							<td><fmt:formatNumber type="number" maxFractionDigits="3"
@@ -70,12 +70,12 @@ a {
 	<div class="row">&nbsp;</div>
 			<div class="text-center">
 				<c:if test="${startPage!=1}">
-					<a class="btn btn-outline-primary" href="/list?nowPage=${startPage-1}&keyword=${keyword}">이전</a>
+					<a class="btn btn-outline-primary" href="/book/list?nowPage=${startPage-1}&keyword=${keyword}">이전</a>
 				</c:if>
 				<c:forEach var="idx" begin="${startPage}" end="${endPage}">
 					<c:choose>
 						<c:when test="${nowPage!=idx}">
-							<a class="btn btn-warning" href="/list?nowPage=${idx}&keyword=${keyword}">
+							<a class="btn btn-warning" href="/book/list?nowPage=${idx}&keyword=${keyword}">
 								${idx}</a>
 						</c:when>
 						<c:when test="${nowPage==idx}">
@@ -85,13 +85,13 @@ a {
 					</c:choose>
 				</c:forEach>
 				<c:if test="${endPage!=totalCount}">
-					<a class="btn btn-outline-danger"  href="/list?nowPage=${endPage+1}&keyword=${keyword}">다음</a>
+					<a class="btn btn-outline-danger"  href="/book/list?nowPage=${endPage+1}&keyword=${keyword}">다음</a>
 				</c:if>
 			</div>
 
 
 			<p>
-				<a  class="btn btn-outline-info" href="/create">책 추가</a>
+				<a  class="btn btn-outline-info" href="/book/create">책 추가</a>
 			</p>
 			<%-- 	<p>
 	 <a href="javascript:void(window.open('/detail?bookId=1', 'test','width=#, height=#'))">새창</a> 

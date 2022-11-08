@@ -18,7 +18,7 @@ a{
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="list">도서 목록</a></li>
+					aria-current="page" href="/book/list">도서 목록</a></li>
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="../customer/list">회원 목록</a></li>
 				<li class="nav-item"><a class="nav-link active"

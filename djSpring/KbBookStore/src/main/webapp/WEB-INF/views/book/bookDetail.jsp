@@ -27,11 +27,11 @@
 
 			<div class="row">&nbsp;</div>
 			<div class="text-center">
-				<form method="POST" action="/delete">
-					<input type="hidden" name="bookId" value="${bookid}" /> <input
-						type="submit" value="삭제" class="btn btn-outline-primary" /> <a
-						class="btn btn-outline-primary" href="/list">목록으로</a> <a
-						href="/update?bookId=${bookid}" class="btn btn-outline-primary">수정</a>
+				<form method="POST" action="/book/delete">
+					<input type="hidden" name="bookId" value="${bookid}" /> 
+					<input type="submit" value="삭제" class="btn btn-outline-primary" /> 
+					<a class="btn btn-outline-primary" href="/book/list">목록으로</a> 
+					<a href="/book/update?bookId=${bookid}" class="btn btn-outline-primary">수정</a>
 				</form>
 			</div>
 		</div>
