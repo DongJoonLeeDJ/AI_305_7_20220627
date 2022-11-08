@@ -34,6 +34,14 @@
 					<a href="/book/update?bookid=${bookid}" class="btn btn-outline-primary">수정</a>
 				</form>
 			</div>
+			
+			<div class="row">&nbsp;</div>
+			<div class="text-center">
+				<form action = "/orders/create">
+					<input type="hidden" name="bookid" value="${bookid}" /> 
+					<input type="submit" class="btn btn-outline-danger" value="해당 도서 주문 진행">
+				</form>
+			</div>
 		</div>
 	</div>
 

@@ -24,7 +24,7 @@ a{
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="../orders/list">주문 현황</a></li>
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="../priceListChart">도서 가격대별 수량</a></li>
+					aria-current="page" href="../bookpricelist">도서 가격대별 수량</a></li>
 			</ul>
 		</div>
 	</div>

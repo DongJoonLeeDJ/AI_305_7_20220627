@@ -21,24 +21,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bookstore.service.BookService;
 import com.bookstore.service.CustomerService;
+import com.bookstore.service.OrdersService;
 
 
 
 /**
  * Handles requests for the application home page.
  */
-@RequestMapping("/customer/*") 
+@RequestMapping("/orders/*") 
 @Controller
-public class CustomerController {
+public class OrdersController {
 
-	private static final Logger Logger = LoggerFactory.getLogger(CustomerController.class);
+	private static final Logger Logger = LoggerFactory.getLogger(OrdersController.class);
 
 	@Autowired
-	CustomerService customerService;
+	OrdersService ordersService;
 
 	//페이징 처리 위해서 매개 변수가 2개가 됨
 		//기존의 객체 매개변수인 map과 더불어서
@@ -61,12 +62,12 @@ public class CustomerController {
 			}
 			
 			List<Map<String,Object>> list =
-					this.customerService.list(map);
+					this.ordersService.list(map);
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("data",list);
 			int totalCount = 
 					(int)Math.ceil
-					(this.customerService.countTotalCustomer(map)/CNT);
+					(this.ordersService.countTotalOrders(map)/CNT);
 					//ceil : 올림
 			mav.addObject("totalCount", totalCount);//맨 끝 페이지 정보
 			
@@ -96,7 +97,7 @@ public class CustomerController {
 			if(map.containsKey("keyword"))
 				mav.addObject("keyword", map.get("keyword"));
 			
-			mav.setViewName("/customer/customerList");
+			mav.setViewName("/orders/orderList");
 			return mav;
 			
 		}
@@ -107,21 +108,26 @@ public class CustomerController {
 		public ModelAndView detail
 		(@RequestParam Map<String,Object> map) {
 			Map<String,Object> detailMap = 
-					this.customerService.detail(map);
+					this.ordersService.detail(map);
 			//ModelAndView : 어느페이지로 갈지, 어떤 데이터 보낼지
 			//정보 저장해서 한 번에 보낸다.
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("data", detailMap);
-			String custId = map.get("custid").toString();
-			mav.addObject("custid", custId);
-			mav.setViewName("/customer/customerDetail");
+			String orderid = map.get("orderid").toString();
+			mav.addObject("orderid", orderid);
+			mav.setViewName("/orders/orderDetail");
 			return mav;
 		}
 		
 		@RequestMapping(value="create", 
 				method=RequestMethod.GET)
-		public ModelAndView create() {
-			return new ModelAndView("customer/customerCreate");
+		public ModelAndView create(@RequestParam Map<String,Object>map) {
+			//ModelAndView 객체는 화면도 넘기고 값도 넘김
+			Logger.info("create my map : " + map);
+			ModelAndView mav = new ModelAndView("orders/orderCreate");
+			mav.addObject("bookid", map.get("bookid"));
+			mav.addObject("custid", map.get("custid"));
+			return mav;
 		}
 		
 		@RequestMapping(value="create", 
@@ -133,13 +139,13 @@ public class CustomerController {
 			
 			ModelAndView mav = new ModelAndView();
 			
-			String custId = this.customerService.create(map);
+			String orderid = this.ordersService.create(map);
 			
-			if(custId==null)
-				mav.setViewName("redirect:/customer/create");
+			if(orderid==null)
+				mav.setViewName("redirect:/orders/create");
 			else
 				mav.setViewName
-				("redirect:/customer/detail?custid="+custId);
+				("redirect:/orders/detail?orderid="+orderid);
 			return mav;
 		}
 	
@@ -147,12 +153,12 @@ public class CustomerController {
 	public ModelAndView deletePost (@RequestParam Map<String,Object> map) {
 		ModelAndView mav = new ModelAndView();
 		Logger.info("delete map = {}", map);
-		boolean isDeleteSuccess = this.customerService.remove(map);
+		boolean isDeleteSuccess = this.ordersService.remove(map);
 		if(isDeleteSuccess) {
-			mav.setViewName("redirect:/customer/list");
+			mav.setViewName("redirect:/orders/list");
 		} else {
-			String custId = map.get("custid").toString();
-			mav.setViewName	("redirect:/customer/detail?custid="+custId);
+			String orderid = map.get("orderid").toString();
+			mav.setViewName	("redirect:/orders/detail?orderid="+orderid);
 		}
 		return mav;
 	}
@@ -161,11 +167,11 @@ public class CustomerController {
 			method=RequestMethod.GET)
 	public ModelAndView update
 	(@RequestParam Map<String,Object> map) {
-		Map<String,Object> detailMap = this.customerService.detail(map);
+		Map<String,Object> detailMap = this.ordersService.detail(map);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("data", detailMap);
 		System.out.println(detailMap);
-		mav.setViewName("/customer/customerUpdate");
+		mav.setViewName("/orders/orderUpdate");
 		return mav;
 	}
 	
@@ -173,10 +179,10 @@ public class CustomerController {
 	public ModelAndView updatePost (@RequestParam Map<String, Object> map) {
 		
 		ModelAndView mav = new ModelAndView();
-		boolean isUpdateSuccess = this.customerService.edit(map);
+		boolean isUpdateSuccess = this.ordersService.edit(map);
 		if(isUpdateSuccess) {
-			String custId=map.get("custid").toString();
-			mav.setViewName("redirect:/customer/detail?custid="+custId);
+			String orderid=map.get("orderid").toString();
+			mav.setViewName("redirect:/orders/detail?orderid="+orderid);
 		} else {
 			mav = this.update(map); //get방식으로 다시 접근
 		}
