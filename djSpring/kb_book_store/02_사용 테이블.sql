@@ -18,6 +18,11 @@ name varchar(40), /* 회원명 */
 address varchar(50), /* 회원 주소*/
 phone varchar(20) unique); /* 회원 연락처 */
 
+/* 고객 추가 시점. log테이블에도 기록하지만 정렬을 위하여 추가 */
+ALTER TABLE `kb_book_store`.`customer` 
+ADD COLUMN `insert_date` DATETIME NULL DEFAULT now() AFTER `phone`;
+
+
 -- fk가 2개, book, customer에서 가져옴
 create table orders 
 (

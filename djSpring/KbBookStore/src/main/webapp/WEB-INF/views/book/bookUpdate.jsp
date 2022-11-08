@@ -12,7 +12,7 @@
 		<%@ include file="../nav.jsp"%>
 		<div class="container">
 			<form method="post" role="form" autocomplete="off"
-				enctype="multipart/form-data" id="registBookForm">
+				enctype="multipart/form-data" id="updateBookForm">
 				<h1 class="text-center p-2">책 수정</h1>
 				<div class="row">&nbsp;</div>
 				<div class="row">
@@ -79,7 +79,8 @@
 	<%@ include file="../footer.jsp"%>
 	<script>
 
-		let registBookForm = document.querySelector("#registBookForm")
+		//bookCreate를 그대로 긁어옴
+		let updateBookForm = document.querySelector("#updateBookForm")
 		let isbn = document.querySelector('input[name=bookisbn]')
 		let bookname  = document.querySelector('input[name=bookname]')
 		let price = document.querySelector('input[name=bookprice]')
@@ -91,7 +92,7 @@
 			return tag.value==''
 		}
 		
-		registBookForm.addEventListener("submit", function (event) {
+		updateBookForm.addEventListener("submit", function (event) {
 			
 			//빈 값 있으면 안 됨
 			// price는 반드시 숫자 들어가야 함
