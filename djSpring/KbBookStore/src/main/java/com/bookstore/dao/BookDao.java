@@ -41,6 +41,18 @@ public class BookDao {
 
 		return this.sqlSessionTemplate.insert("book.insert",map);
 	}
+	public int update(Map<String,Object> map) {
+		return 
+		this.sqlSessionTemplate.update
+		("book.update", map);
+	}
+	
+	public int delete(Map<String, Object> map) {
+		return 
+		this.sqlSessionTemplate.delete
+		("book.delete",map);
+	}
+	
 	
 }
 

@@ -41,7 +41,21 @@ public class BookServiceImpl implements BookService{
 			return map.get("bookid").toString();
 		return null;
 	}
+	@Override
+	public boolean edit(Map<String, Object> map) {
+		int afftectRowCount = 
+				this.bookDao.update(map);
+		//afftectRowCount가 1일 때 true리턴
+		//즉 update 성공시 true리턴
+		return afftectRowCount==1;
+	}
 	
+	@Override
+	public boolean remove(Map<String,Object> map) {
+		int affectRowCount 
+		= this.bookDao.delete(map);
+		return affectRowCount==1;
+	}
 }
 
 

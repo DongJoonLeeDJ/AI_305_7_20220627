@@ -27,13 +27,15 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bookstore.service.BookService;
 
 
+
 /**
  * Handles requests for the application home page.
  */
 @RequestMapping("/book/*") //앞에 book을 붙여야 이 컨트롤러로 이동한다.
 @Controller
 public class BookController {
-	
+
+	private static final Logger bookLogger = LoggerFactory.getLogger(BookController.class);
 
 	@Autowired
 	BookService bookService;
@@ -124,21 +126,20 @@ public class BookController {
 			return new ModelAndView("book/bookCreate");
 		}
 		
+		//파일업로드 name이랑 변수명 똑같아야 함
+		//name=bookImg면 변수명도 bookImg로 해야 함
 		@RequestMapping(value="create", 
 				method = RequestMethod.POST) 
 		public ModelAndView createPost
 		(@RequestParam Map<String,Object>map, MultipartFile bookImg) {
 
-			System.out.println(map.toString());
+			bookLogger.info("create map = " + map.toString());
 			String uploadFileName="";
 			try {
 				String uploadPath = "D:\\study\\mywork\\AI_305_7_20220627\\djSpring\\KbBookStore\\src\\main\\webapp\\resources\\imgUpload";
 				uploadFileName = bookImg.getOriginalFilename();
-				System.out.println(uploadFileName);
+				bookLogger.info("filename = " + uploadFileName);
 				bookImg.transferTo(new File(uploadPath, uploadFileName));
-				System.out.println(new File(uploadPath, uploadFileName).canExecute());
-				System.out.println(new File(uploadPath, uploadFileName).getName());
-				System.out.println(uploadPath+"\\"+uploadFileName);
 			} catch (IllegalStateException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -151,8 +152,8 @@ public class BookController {
 			map.put("bookImg", "../resources/imgUpload/"+uploadFileName);
 			String bookId = this.bookService.create(map);
 			
-			System.out.println("bkid="+bookId);
-			System.out.println(map.toString());
+			bookLogger.info("bkid="+bookId);
+			bookLogger.info("create map before redirect : " + map.toString());
 			if(bookId==null)
 				mav.setViewName("redirect:/book/create");
 			else
@@ -160,27 +161,42 @@ public class BookController {
 				("redirect:/book/detail?bookid="+bookId);
 			return mav;
 		}
-		
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		System.out.println("?");
-		return "home";
+	@RequestMapping(value="delete", method= RequestMethod.POST) 
+	public ModelAndView deletePost (@RequestParam Map<String,Object> map) {
+		ModelAndView mav = new ModelAndView();
+		bookLogger.info("delete map = {}", map);
+		boolean isDeleteSuccess = this.bookService.remove(map);
+		if(isDeleteSuccess) {
+			mav.setViewName("redirect:/book/list");
+		} else {
+			String bookId = map.get("bookid").toString();
+			mav.setViewName	("redirect:/book/detail?bookid="+bookId);
+		}
+		return mav;
 	}
 	
+	@RequestMapping(value="update",
+			method=RequestMethod.GET)
+	public ModelAndView update
+	(@RequestParam Map<String,Object> map) {
+		Map<String,Object> detailMap = this.bookService.detail(map);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("data", detailMap);
+		System.out.println(detailMap);
+		mav.setViewName("/book/bookUpdate");
+		return mav;
+	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public ModelAndView home2(@RequestParam Map<String, Object> map, MultipartFile file, HttpServletRequest request) {
-
-		System.out.println("!");
-		String uploadPath = "D:\\study\\mywork\\AI_305_7_20220627\\djSpring\\KbBookStore\\src\\main\\webapp\\resources\\imgUpload";
-		String uploadFileName = file.getOriginalFilename();
+	@RequestMapping(value="update", method=RequestMethod.POST)
+	public ModelAndView updatePost (@RequestParam Map<String, Object> map, MultipartFile bookImg) {
 		
+		String uploadFileName="";
 		try {
-			file.transferTo(new File(uploadPath, uploadFileName));
-			System.out.println(new File(uploadPath, uploadFileName).canExecute());
-			System.out.println(new File(uploadPath, uploadFileName).getName());
-			System.out.println(uploadPath+"\\"+uploadFileName);
+			String uploadPath = "D:\\study\\mywork\\AI_305_7_20220627\\djSpring\\KbBookStore\\src\\main\\webapp\\resources\\imgUpload";
+			uploadFileName = bookImg.getOriginalFilename();
+			bookLogger.info("filename = " + uploadFileName);
+			bookImg.transferTo(new File(uploadPath, uploadFileName));
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -188,15 +204,18 @@ public class BookController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("home");
-		Map<String,Object> attributeValue = new HashMap<String,Object>();
-		attributeValue.put("fileName", "resources/imgUpload/"+uploadFileName);
-		System.out.println(attributeValue.get("fileName"));
-		mav.addObject("data", attributeValue);
+		map.put("bookImg", "../resources/imgUpload/"+uploadFileName);
 		
+		ModelAndView mav = new ModelAndView();
+		boolean isUpdateSuccess = this.bookService.edit(map);
+		if(isUpdateSuccess) {
+			String bookId=map.get("bookid").toString();
+			mav.setViewName("redirect:/book/detail?bookid="+bookId);
+		} else {
+			mav = this.update(map); //get방식으로 다시 접근
+		}
 		return mav;
 	}
+	
 	
 }

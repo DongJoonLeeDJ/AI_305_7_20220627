@@ -13,7 +13,7 @@
 		<if test="keyword!=null and keyword!=''">
 			and (bookname like CONCAT('%',#{keyword},'%') )
 		</if>
-			order by bookid desc
+		order by bookid desc
 
 	</select>
 
@@ -48,7 +48,8 @@
 	book where bookid=#{bookid}
 ]]>
 	</select>
-	<insert id="insert" parameterType="hashMap" useGeneratedKeys="true" keyProperty="bookid">  
+	<insert id="insert" parameterType="hashMap"
+		useGeneratedKeys="true" keyProperty="bookid">  
     <![CDATA[
     insert into book
     (bookisbn, bookname, publisher, price, bookImg) 
@@ -56,6 +57,17 @@
     (#{bookisbn}, #{bookname}, #{publisher}, #{bookprice}, #{bookImg})
     ]]>
 	</insert>
+	
+	<delete id="delete" parameterType="hashMap">
+		<![CDATA[
+			delete from book where bookid=#{bookid}
+		]]>
+	</delete>
+	<update id="update" parameterType="hashMap">
+		<![CDATA[
+			update book set bookisbn=#{bookisbn}, bookname=#{bookname}, publisher=#{publisher}, price=#{bookprice}, bookImg=#{bookImg} where bookid=#{bookid}
+		]]>
+	</update>
 </mapper>
 
 
