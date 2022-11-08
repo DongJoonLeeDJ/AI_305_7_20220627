@@ -13,11 +13,8 @@
 	width: 900px;
 }
 
-rect:first-child {
-	fill: red
-}
-rect:last-child {
-	fill: blue
+rect{
+	fill: green
 }
 </style>
 </head>
