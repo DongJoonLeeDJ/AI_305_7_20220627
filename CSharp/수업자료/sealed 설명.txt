@@ -1,0 +1,9 @@
+태조
+//virtual 키워드의 용도
+//메소드를 오버라이딩 할 수 있다라는 표시
+public void virtual Fight()
+정종 - 태종
+sealed public override Fight();
+
+세종
+Fight를 상속받지 못 함
