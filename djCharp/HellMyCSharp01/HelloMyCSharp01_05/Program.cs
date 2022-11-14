@@ -85,11 +85,11 @@ namespace HelloMyCSharp01_05
             }
             else if (num1 < 0)
             {
-                Console.WriteLine("양");
+                Console.WriteLine("음");
             }
             else
             {
-                Console.WriteLine("음");
+                Console.WriteLine("양");
             }
 
             Console.WriteLine("숫자 입력");
