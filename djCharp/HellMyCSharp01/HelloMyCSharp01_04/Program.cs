@@ -48,7 +48,7 @@ namespace HelloMyCSharp01_04
             double kg = double.Parse(Console.ReadLine());
             
             
-            Console.WriteLine("내 몸무게는 " + kg +"입니다.");
+            Console.WriteLine("내      몸무게는 " + kg +"입니다.");
 
 
 
