@@ -25,7 +25,10 @@ namespace HellMyCSharp01
             bool tf = true; //자바에선 boolean
             Boolean tf2 = false; //Boolean과 bool 둘 다 됨
 
+
             char c1 = "안녕하세요"[0]; //첫글자 가져옴
+            //java : "안녕하세요".charAt(0);
+            
             string s1 = "Hello";
             char c2 = s1[1]; //알파벳 e를 가져옴
 
@@ -36,6 +39,7 @@ namespace HellMyCSharp01
             Console.WriteLine(10+20); //30
             Console.WriteLine("안녕"+"하세요");//안녕하세요
             Console.WriteLine("10"+20); //1020
+            Console.WriteLine('1'+20); //69 '1'=49
 
             //연산자는 자바랑 마찬가지로
             //+ - / * % 이렇게 있다

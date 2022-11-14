@@ -14,6 +14,7 @@ namespace HelloMyCSharp01_03
             Console.WriteLine("이름이 뭐에요?");
             string name = Console.ReadLine();
             //java의 nextInt
+            //int.Parse = Integer.parseInt();
             Console.WriteLine("나이가 어떻게 되요?");
             int age = int.Parse(Console.ReadLine());
             //Console.ReadLine() = 문자열 입력

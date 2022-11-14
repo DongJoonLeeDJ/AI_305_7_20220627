@@ -32,7 +32,7 @@ namespace HelloMyCSharp01_04
             //3. 원의 반지름 입력 후 그에 맞는 원의 넓이와 둘레값 출력
             Console.WriteLine("원의 반지름은?");
             int r = int.Parse(Console.ReadLine());
-            const double PI = 3.14; //상수
+            const double PI = 3.1415; //상수
             Console.WriteLine($"원의 둘레 {2*r*PI}");
             Console.WriteLine($"원의 넓이 {r*r*PI}");
 

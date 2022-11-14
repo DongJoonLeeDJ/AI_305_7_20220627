@@ -38,6 +38,11 @@ namespace HelloMyCSharp01_05
                 Console.WriteLine("홀수");
             }
 
+            //단일 조건문
+            if(a<0) //수행할 코드가 1줄이면 중괄호 생략 가능
+                Console.WriteLine("a는 음수에요");
+
+
             //switch
             switch (a) //a 값에 따라서 결과가 달라진다.
             {
@@ -182,7 +187,7 @@ namespace HelloMyCSharp01_05
             {
                 Console.WriteLine("미성년자");
             }
-            else if(age>=20 && age<150)
+            else if(age>=20 && age<150) //else if(age<150)
             {
                 Console.WriteLine("성인");
             }
