@@ -1,0 +1,22 @@
+1. gitignore.io 사이트 방문
+
+2. 원하는 언어에 대해서 ignore 출력
+
+3. .gitignore 파일로 저장
+(해당 저장소 안에 저장)
+
+4. 해당 저장소 안에서 git bash 열고
+아래 명령어들 입력
+
+git rm -r --cached .
+git add .
+git commit -m "message"
+
+
+
+
+
+
+
+
+
