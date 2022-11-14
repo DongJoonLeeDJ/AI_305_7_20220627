@@ -1,8 +1,0 @@
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HelloMyCSharp01_02\bin\Debug\HelloMyCSharp01_02.exe.config
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HelloMyCSharp01_02\bin\Debug\HelloMyCSharp01_02.exe
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HelloMyCSharp01_02\bin\Debug\HelloMyCSharp01_02.pdb
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HelloMyCSharp01_02\obj\Debug\HelloMyCSharp01_02.csproj.AssemblyReference.cache
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HelloMyCSharp01_02\obj\Debug\HelloMyCSharp01_02.csproj.SuggestedBindingRedirects.cache
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HelloMyCSharp01_02\obj\Debug\HelloMyCSharp01_02.csproj.CoreCompileInputs.cache
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HelloMyCSharp01_02\obj\Debug\HelloMyCSharp01_02.exe
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HelloMyCSharp01_02\obj\Debug\HelloMyCSharp01_02.pdb

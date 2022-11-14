@@ -42,8 +42,16 @@ namespace HelloMyCSharp01_04
             Console.WriteLine("내 시력은 " + eye+"입니다.");
 
             Console.WriteLine("키가 얼만가요");
+            
+            
+            
             double kg = double.Parse(Console.ReadLine());
+            
+            
             Console.WriteLine("내 몸무게는 " + kg +"입니다.");
+
+
+
 
         }
     }

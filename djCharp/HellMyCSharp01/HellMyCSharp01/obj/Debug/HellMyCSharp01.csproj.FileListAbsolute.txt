@@ -1,8 +1,0 @@
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HellMyCSharp01\bin\Debug\HellMyCSharp01.exe.config
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HellMyCSharp01\bin\Debug\HellMyCSharp01.exe
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HellMyCSharp01\bin\Debug\HellMyCSharp01.pdb
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HellMyCSharp01\obj\Debug\HellMyCSharp01.csproj.AssemblyReference.cache
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HellMyCSharp01\obj\Debug\HellMyCSharp01.csproj.SuggestedBindingRedirects.cache
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HellMyCSharp01\obj\Debug\HellMyCSharp01.csproj.CoreCompileInputs.cache
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HellMyCSharp01\obj\Debug\HellMyCSharp01.exe
-D:\study\mywork\AI_305_7_20220627\djCharp\HellMyCSharp01\HellMyCSharp01\obj\Debug\HellMyCSharp01.pdb

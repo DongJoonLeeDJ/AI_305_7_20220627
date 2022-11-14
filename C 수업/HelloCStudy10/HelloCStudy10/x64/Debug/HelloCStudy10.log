@@ -1,7 +1,0 @@
-﻿  explain_static.c
-D:\shareFolder\C 수업\HelloCStudy10\HelloCStudy10\explain_static.c(25,2): warning C4013: 'myin'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  statictest.c
-D:\shareFolder\C 수업\HelloCStudy10\HelloCStudy10\statictest.c(7,2): warning C4013: 'printf'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  코드를 생성하고 있습니다...
-D:\shareFolder\C 수업\HelloCStudy10\HelloCStudy10\statictest.c(8): warning C4716: 'myin': 값을 반환해야 합니다.
-  HelloCStudy10.vcxproj -> D:\shareFolder\C 수업\HelloCStudy10\x64\Debug\HelloCStudy10.exe
