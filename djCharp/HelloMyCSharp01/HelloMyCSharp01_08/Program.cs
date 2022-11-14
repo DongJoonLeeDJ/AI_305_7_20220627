@@ -16,7 +16,11 @@ namespace HelloMyCSharp01_08
             for (int i = 1; i <= 10; i++)
                 Console.Write(i + " ");
             int count = 1;
-            Console.WriteLine("\nwhile문 버전 \n");
+            //\n : 줄바꿈 코드
+            //Environment.NewLine : 줄바꿈
+            //환경에 따라서 다른 줄바꿈 코드 제공
+            //리눅스냐 윈도우냐 따라서 다르다.
+            Console.WriteLine(Environment.NewLine+"while문 버전 \n");
             while (count <= 10)
             {
                 Console.Write(count + " ");
@@ -30,6 +34,7 @@ namespace HelloMyCSharp01_08
             Console.WriteLine("b?");
             int b = int.Parse(Console.ReadLine());
 
+            //5번 문제
             //두 숫자 값 바꾸기
             if(a>b)
             {
