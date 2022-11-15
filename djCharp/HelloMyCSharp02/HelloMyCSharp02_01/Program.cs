@@ -123,7 +123,7 @@ namespace HelloMyCSharp02_01
 
                 Console.WriteLine("이름 :" + stus2[i].Name);
                 Console.WriteLine("나이 :" + stus2[i].Age);
-                Console.WriteLine("시력 :" + stus2[i].eye);
+                Console.WriteLine("시력 :" + stus2[i].eye.ToString("0.0"));
             }
 
         }
