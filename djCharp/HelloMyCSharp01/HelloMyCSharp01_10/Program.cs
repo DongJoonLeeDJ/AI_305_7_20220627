@@ -26,6 +26,9 @@ namespace HelloMyCSharp01_10
             int max = numbers[0];
             int min = numbers[0];
 
+            //max = int.MinValue; //int타입의 가장 작은 수
+            //min = int.MaxValue; //int타입의 가장 큰 수
+
             for (int i = 1; i < numbers.Length; i++)
             {
                 if (max < numbers[i])
@@ -71,6 +74,8 @@ namespace HelloMyCSharp01_10
                     minIdx = i;
                 }
             }
+            Console.WriteLine($"최대는 [{maxIdx}]");
+            Console.WriteLine($"최소는 [{minIdx}]");
             max = numbers[0];
             min = numbers[0]; 
             maxIdx = 0;
@@ -91,6 +96,8 @@ namespace HelloMyCSharp01_10
                 }
                 idx++;
             }
+            Console.WriteLine($"최대는 [{maxIdx}]");
+            Console.WriteLine($"최소는 [{minIdx}]");
 
             int[] newNumbers = new int[10];
             for (int i = 0; i < newNumbers.Length; i++)

@@ -1,0 +1,19 @@
+1. Student 이용해서 학생 1명을 만든다.
+Name, Age, eye 값도 추가한다.
+
+2. Student 이용해서 학생 1명을 만들고 
+이 번엔 Console.ReadLine으로 값 받기
+
+3. Student 타입의 배열을 만들고, 
+3명의 학생 집어넣기
+각각 Name, Age, eye 값도 추가한다.
+
+4. Student 타입의 배열을 만들고, 3명의 학생 집어넣기
+반복문과 Console.ReadLine 이용해서 각 학생들의 정보(Name, Age, eye)도 
+추가한다.
+
+5. 1~4번 학생들의 정보를 출력한다.
+
+6. KBStudent라는 구조체를 만든다. (이름,시력,나이,MBTI)
+
+7. 이 구조체를 이용하여 학생을 1명이상 만들고 그 학생의 정보를 출력해본다.
