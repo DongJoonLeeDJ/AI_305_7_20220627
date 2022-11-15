@@ -11,5 +11,6 @@ namespace HelloMyCSharp02_01
         public int Age;
         public string Name;
         public double eye;
+
     }
 }
