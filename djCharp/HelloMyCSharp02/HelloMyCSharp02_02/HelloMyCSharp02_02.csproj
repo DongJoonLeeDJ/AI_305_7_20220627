@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB686FD3-E445-490F-B86D-4CCD3D941D61}</ProjectGuid>
+    <ProjectGuid>{31FABFE7-783B-45F0-A252-858E786E9E29}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HelloMyCSharp02_01</RootNamespace>
-    <AssemblyName>HelloMyCSharp02_01</AssemblyName>
+    <RootNamespace>HelloMyCSharp02_02</RootNamespace>
+    <AssemblyName>HelloMyCSharp02_02</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KBStudent.cs" />
+    <Compile Include="BKBank.cs" />
+    <Compile Include="KBBank.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

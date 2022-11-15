@@ -126,6 +126,26 @@ namespace HelloMyCSharp02_01
                 Console.WriteLine("시력 :" + stus2[i].eye.ToString("0.0"));
             }
 
+
+            Console.WriteLine("KB 학생 만들기!");
+            KBStudent kb1 = new KBStudent();
+            kb1.Name = "장혜정";
+            kb1.Age = 20;
+            kb1.Eye = 1.5;
+            kb1.MBTI = "ISFP";
+
+            Console.WriteLine("이름 : " + kb1.Name);
+            Console.WriteLine("나이 : " + kb1.Age);
+            Console.WriteLine("시력 : " + kb1.Eye);
+            Console.WriteLine("mbti : " + kb1.MBTI);
+
+            KBStudent kb2 = new KBStudent();
+            kb2.Name = "김성환";
+            kb2.Age = 20;
+            kb2.Eye = 1.7;
+            kb2.MBTI = "ENFP";
+            kb2.introduce(); //kb2의 모든 정보를 다 출력함
+
         }
     }
 }
