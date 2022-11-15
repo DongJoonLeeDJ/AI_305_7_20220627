@@ -137,7 +137,8 @@ namespace HelloMyCSharp02
                     break;
             }
 
-            if(com==mychoice)
+            Console.WriteLine("15번");
+            if (com==mychoice)
                 Console.WriteLine("비김");
             else if( (mychoice==0 && com==2) || (mychoice==1 && com==0) ||(mychoice == 2 && com == 1) ) //가위(0) -> 보(2), 바위(1) -> 가위(0), 보(2) -> 바위(1)
                 Console.WriteLine("이김");
