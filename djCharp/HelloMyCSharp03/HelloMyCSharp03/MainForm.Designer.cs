@@ -32,6 +32,7 @@
             this.textBox_input = new System.Windows.Forms.TextBox();
             this.button_customized = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_show = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_mbox
@@ -70,11 +71,22 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "글자 입력";
             // 
+            // button_show
+            // 
+            this.button_show.Location = new System.Drawing.Point(273, 48);
+            this.button_show.Name = "button_show";
+            this.button_show.Size = new System.Drawing.Size(210, 23);
+            this.button_show.TabIndex = 4;
+            this.button_show.Text = "그냥 창 띄우기";
+            this.button_show.UseVisualStyleBackColor = true;
+            this.button_show.Click += new System.EventHandler(this.button_show_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_show);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_customized);
             this.Controls.Add(this.textBox_input);
@@ -92,6 +104,7 @@
         private System.Windows.Forms.TextBox textBox_input;
         private System.Windows.Forms.Button button_customized;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_show;
     }
 }
 

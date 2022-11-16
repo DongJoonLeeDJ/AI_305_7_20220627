@@ -27,5 +27,12 @@ namespace HelloMyCSharp03
             SubForm s = new SubForm(textBox_input.Text);
             s.Show();
         }
+
+        private void button_show_Click(object sender, EventArgs e)
+        {
+            //기본 생성자를 이용해서 만든 것
+            SubForm s = new SubForm();
+            s.Show();
+        }
     }
 }
