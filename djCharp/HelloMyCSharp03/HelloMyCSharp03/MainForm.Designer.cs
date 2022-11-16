@@ -33,6 +33,7 @@
             this.button_customized = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button_show = new System.Windows.Forms.Button();
+            this.circularButton1 = new HelloMyCSharp03.CircularButton();
             this.SuspendLayout();
             // 
             // button_mbox
@@ -73,6 +74,7 @@
             // 
             // button_show
             // 
+            this.button_show.FlatAppearance.BorderSize = 0;
             this.button_show.Location = new System.Drawing.Point(273, 48);
             this.button_show.Name = "button_show";
             this.button_show.Size = new System.Drawing.Size(210, 23);
@@ -81,11 +83,24 @@
             this.button_show.UseVisualStyleBackColor = true;
             this.button_show.Click += new System.EventHandler(this.button_show_Click);
             // 
+            // circularButton1
+            // 
+            this.circularButton1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.circularButton1.FlatAppearance.BorderSize = 0;
+            this.circularButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circularButton1.Location = new System.Drawing.Point(273, 119);
+            this.circularButton1.Name = "circularButton1";
+            this.circularButton1.Size = new System.Drawing.Size(223, 221);
+            this.circularButton1.TabIndex = 5;
+            this.circularButton1.Text = "circularButton1";
+            this.circularButton1.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.circularButton1);
             this.Controls.Add(this.button_show);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_customized);
@@ -105,6 +120,7 @@
         private System.Windows.Forms.Button button_customized;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_show;
+        private CircularButton circularButton1;
     }
 }
 
