@@ -31,6 +31,9 @@ namespace HelloMyCSharp03_01
         private void label5_Click(object sender, EventArgs e)
         {
             Hide();
+            //ShowDialog랑, Show다른 것
+            //ShowDialog = 모달(Modal) => 뒤에 창 조작 불가능, 코드가 여기서 멈춤
+            //Show = 모달리스(Modeless) => 뒤에 창 조작 가능, 코드가 멈추지 않음
             new Form2(textBox1.Text, textBox2.Text).ShowDialog();
             Show();
         }
