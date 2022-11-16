@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +44,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,18 +81,21 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 419);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 12);
+            this.label4.Size = new System.Drawing.Size(99, 12);
             this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.label4.Text = "아이디가 없나요?";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(101, 419);
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label5.Location = new System.Drawing.Point(119, 419);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 12);
+            this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.label5.Text = "회원가입";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBox1
             // 
@@ -119,19 +125,25 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Location = new System.Drawing.Point(492, 0);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(476, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(308, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(192, 447);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(725, 0);
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(593, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 57);
             this.button2.TabIndex = 9;
@@ -140,7 +152,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(178, 401);
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ImageIndex = 0;
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(212, 401);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(41, 37);
             this.button3.TabIndex = 10;
@@ -148,7 +164,11 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(240, 401);
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ImageIndex = 1;
+            this.button4.ImageList = this.imageList1;
+            this.button4.Location = new System.Drawing.Point(277, 401);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(41, 37);
             this.button4.TabIndex = 11;
@@ -156,7 +176,11 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(302, 401);
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ImageIndex = 2;
+            this.button5.ImageList = this.imageList1;
+            this.button5.Location = new System.Drawing.Point(338, 401);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(41, 37);
             this.button5.TabIndex = 12;
@@ -164,18 +188,31 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(370, 401);
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ImageIndex = 3;
+            this.button6.ImageList = this.imageList1;
+            this.button6.Location = new System.Drawing.Point(396, 401);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(41, 37);
             this.button6.TabIndex = 13;
             this.button6.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8_whatsapp_480px.png");
+            this.imageList1.Images.SetKeyName(1, "icons8_facebook_480px.png");
+            this.imageList1.Images.SetKeyName(2, "icons8_twitter_480px.png");
+            this.imageList1.Images.SetKeyName(3, "icons8_gmail_logo_480px.png");
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(669, 450);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -216,6 +253,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
