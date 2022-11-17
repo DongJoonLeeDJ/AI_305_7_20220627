@@ -40,8 +40,6 @@ namespace HelloMyCSharp03_02
             Dispose();
         }
 
-        
-
         private void bringToSideBar(object sender, EventArgs e)
         {
             Button btn = (sender as Button);
