@@ -50,6 +50,9 @@ namespace HelloMyCSharp03_04
             //EventArgs : 이벤트에 연관된 내용이 저장된 객체
 
             //object 타입의 sender를 Button으로 형변환한 것
+
+            //as : 형변환
+            //Button btn = (Button)(sender);
             Button btn = (sender as Button);
             panel_side.Height = btn.Height;
             panel_side.Top = btn.Top;
