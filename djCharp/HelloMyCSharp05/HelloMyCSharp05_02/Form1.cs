@@ -23,8 +23,8 @@ namespace HelloMyCSharp05_02
             ListText.Text = ""; //프로그램시작하면
             //디자인창에 있는 label4라는 글자 대신 ""을 넣는다.
             Random rand = new Random();
-            button1.Text = rand.Next(100).ToString();
-            button2.Text = rand.Next(100) + "";
+            button1.Text = rand.Next(100).ToString();//string
+            button2.Text = rand.Next(100) + "";//string
             button3.Text = ""+rand.Next(100);
             button4.Text = rand.Next(100).ToString();
             button5.Text = button1.Text;
