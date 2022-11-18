@@ -42,6 +42,9 @@ namespace HelloMyCSharp05
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Controls의 길이 만큼 동작하는 반복문
+            //item은 Controls에 있는 다양한 타입들의 
+            //구성요소들을 의미
             foreach (var item in Controls)
             {
                 //is = 타입 체크
@@ -50,12 +53,15 @@ namespace HelloMyCSharp05
                 //Controls 안에 있는 버튼, Label등이 다 item인데
                 //그 중에서 Label 타입인 것을 만나면 이 조건문으로
                 //들어옴
-                if(item is Label)
+                if(item is Label) //타입 체크
                 {
-                    Label temp = item as Label;
-                    if(temp.Name=="mylabel")
+                    Label temp = item as Label; //형변환
+                    //item이랑 temp라는 변수는 똑같이
+                    //똑같은 곳을 가리키게 됨(Label은 클래스니까)
+                    //KBBank랑 같은 상황.
+                    if(temp.Name=="mylabel") //Name을 체크
                     {
-                        Controls.Remove(temp);
+                        Controls.Remove(temp);//해당 위치 가리키는 곳을 삭제
                         break;
                     }
                 }
