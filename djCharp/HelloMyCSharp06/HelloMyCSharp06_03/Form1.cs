@@ -36,7 +36,14 @@ namespace HelloMyCSharp06_03
             {
                 if (students[i].grade > 1)
                     students.RemoveAt(i);
+
+                //if (students[i].grade > 1)
+                //{
+                //    var temp = students[i];
+                //    students.Remove(temp);
+                //}
             }
+
             for (int i = 0; i < students.Count; i++)
             {
                 Label l = new Label();
