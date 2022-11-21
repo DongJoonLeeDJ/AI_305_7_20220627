@@ -23,8 +23,22 @@ namespace HelloMyCSharp06_04
         //매개변수의 개수가 달라서 다른 메소드로 취급
         //이렇게 매개변수(=파라메터)의 개수나
         //타입이 다르면 다른 메소드로 취급함 = 오버로딩
+
+        //이건 이미 메모리에 올라가있음
+        public static int count = 0;
+        public static void hello()
+        {
+            Console.WriteLine(  "Hello");
+        }
+        
+        //인스턴스 만들 때 메모리에 올라감
+        //그러니 이 시점엔 count가 이미 있다.
         public  int power(int x, int c)
         {
+            count++;
+            hello();
+
+
             //Math.Pow는 double타입
             //return (int)Math.Pow(x, c);
             int result = 1;

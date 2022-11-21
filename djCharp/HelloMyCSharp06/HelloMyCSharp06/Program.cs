@@ -12,10 +12,14 @@ namespace HelloMyCSharp06
         {
             return w * h;
         }
-
+        static int example = 0;
+        int ex = 0;
+        //static이 있는 메소드 안에는 static이 붙은 메소드나
+        //static이 붙은 변수만 들어감
+        //이유 : static 붙은 게 메모리에 더 빨리 올라감
         static void Main(string[] args)
         {
-            Console.WriteLine(  "---");
+            Console.WriteLine(example+ "---");
             Rect rt = new Rect();
             Console.WriteLine("---");
             rt.w = 5; //5가 value

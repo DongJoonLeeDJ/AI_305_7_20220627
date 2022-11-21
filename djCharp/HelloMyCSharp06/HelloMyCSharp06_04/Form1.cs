@@ -77,5 +77,28 @@ namespace HelloMyCSharp06_04
                 = MyMath2.power(int.Parse(textBox1.Text),
                 int.Parse(textBox2.Text)).ToString();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int.TryParse(textBox1.Text, out int x);
+            label1.Text =
+                MyMath3.power(x).ToString();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            int.TryParse(textBox1.Text, out int x);
+            int.TryParse(textBox2.Text, out int y);
+            label1.Text =
+                MyMath3.multi(x,y).ToString();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            int.TryParse(textBox1.Text, out int x);
+            int.TryParse(textBox2.Text, out int y);
+            label1.Text =
+                MyMath3.power(x, y).ToString();
+        }
     }
 }

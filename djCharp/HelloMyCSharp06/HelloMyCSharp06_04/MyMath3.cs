@@ -25,6 +25,7 @@ namespace HelloMyCSharp06_04
         //뒷부분에 있는 매개변수(=파라메터)는 
         //생략이 가능하다.
         //제곱
+        //int c=2 => 선택적 매개 변수
         public static int power(int x, int c=2)
         {
             int result = 1;
@@ -32,6 +33,9 @@ namespace HelloMyCSharp06_04
                 result *= x;
             return result;
         }
+        
+
+
         //두 숫자 곱
         public static int multi(int x, int y)
         {
