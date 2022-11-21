@@ -1,0 +1,11 @@
+1. MyMath 클래스를 만든다.
+
+2. 메소드를 3개 만든다.
+
+Power(int x) : x값을 제곱한 것을 리턴
+Power(int x, int c) : x값을 c제곱한 것 리턴
+Multi(int x, int y) : x*y 리턴
+
+3. ppt처럼 textbox와 button으로 값 입력,
+출력하게해서
+label에 띄우기

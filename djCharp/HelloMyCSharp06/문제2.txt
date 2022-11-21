@@ -1,0 +1,4 @@
+공유폴더에 올려 놓은 프로젝트
+그대로 따라해보시고
+원리 파악하고 계세요
+D:\shareFolder\djCharp\HelloMyCSharp06
