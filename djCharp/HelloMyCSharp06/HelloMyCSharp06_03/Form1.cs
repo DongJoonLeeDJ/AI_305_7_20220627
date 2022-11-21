@@ -37,10 +37,17 @@ namespace HelloMyCSharp06_03
                 if (students[i].grade > 1)
                     students.RemoveAt(i);
 
-                //if (students[i].grade > 1)
+                // if (students[i].grade > 1)
                 //{
-                //    var temp = students[i];
-                //    students.Remove(temp);
+                //temp가 i번째 값을 "가리키기" 때문이다.
+
+                //var temp = students[i];
+                //Student temp = students[i];
+                //students.Remove(temp);
+
+                //Student t = new Student() { name = students[i].name, 
+                //    grade = students[i].grade };
+                //students.Remove(t);
                 //}
             }
 
@@ -52,6 +59,9 @@ namespace HelloMyCSharp06_03
                 l.Location = new Point(130, 13 + 26 * i);
                 Controls.Add(l);
             }
+
+            //foreach (var item in students)
+            //    item.introduce();
         }
     }
 }
