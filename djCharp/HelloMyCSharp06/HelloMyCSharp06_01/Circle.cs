@@ -9,7 +9,9 @@ namespace HelloMyCSharp06_01
     public class Circle
     {
         public int r { get; set; }
-        protected double PI = 3.14;
+        //r값은 인스턴스 별로 다르지만
+        //PI는 모두 똑같기 때문이다.
+        protected static double PI = 3.14;
         //public Circle()
         //{
         //}

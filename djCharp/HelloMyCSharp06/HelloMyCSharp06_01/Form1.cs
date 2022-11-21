@@ -19,9 +19,10 @@ namespace HelloMyCSharp06_01
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Rect r = new Rect();
-            r.w = 10;
-            r.h = 5;
+            //Rect r = new Rect();
+            //r.w = 10;
+            //r.h = 5;
+            Rect r = new Rect() { w = 10, h = 5 };
             MessageBox.Show("직사각형의 넓이 : " + r.getArea());
         }
 

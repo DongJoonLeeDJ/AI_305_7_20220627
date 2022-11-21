@@ -8,15 +8,29 @@ namespace HelloMyCSharp06
 {
     internal class Program
     {
+        static int getArea(int w, int h)
+        {
+            return w * h;
+        }
+
         static void Main(string[] args)
         {
-
+            Console.WriteLine(  "---");
             Rect rt = new Rect();
-            rt.w = 5;
+            Console.WriteLine("---");
+            rt.w = 5; //5가 value
             rt.h = 2;
             Console.WriteLine( rt.getArea());
 
+            //getArea가 없었다면 여기서 따로 넓이를 구해야 함
+            //식이 복잡해지면 main이 커진다. 그러면 코드가 보기 힘들어 짐
+            Console.WriteLine("넓이 : " + (rt.w*rt.h));
+
+            Console.WriteLine("넓이 : " + getArea(rt.w,rt.h));
+
+            Console.WriteLine("!!!!---!!!!!!!");
             Cuboid cb = new Cuboid();
+            Console.WriteLine("!!!!---!!!!!!!");
             cb.w = 10;
             cb.h = 10;
             cb.z = 2;
@@ -24,6 +38,7 @@ namespace HelloMyCSharp06
             Console.WriteLine(cb.getVolume());
 
             Circle c = new Circle(10);
+            //Circle c222 = new Circle(); //기본 생성자 없음
             Sphere s = new Sphere(10);
             Console.WriteLine(c.getArea());
             Console.WriteLine(c.getRound());
