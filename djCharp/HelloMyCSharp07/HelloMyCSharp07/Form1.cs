@@ -30,6 +30,7 @@ namespace HelloMyCSharp07
         public Form1()
         {
             InitializeComponent();
+            label5.Text = ""; //프로그램 시작할 땐 아무 것도 없음
             int a = 3;
             int b = 5;
             swapFunction(a, b);//ref 없는 거
@@ -60,6 +61,14 @@ namespace HelloMyCSharp07
             swapFunction(ref a, ref b);
             textBox3.Text = a.ToString();
             textBox4.Text = b.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //대문자 M = Month, 소문자 m = minute
+            //대문자 H = 24시간제, 소문자 h= 12시간제
+            label5.Text
+                = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
         }
     }
 }
