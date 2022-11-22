@@ -22,5 +22,13 @@ namespace HelloMyCSharp07_02
                 ($"!!!!!!!!!!!!!!{age}살 {name} 호랑이의 혈투 캬오오오");
 
         }
+        
+        //object에 있는 ToString을 오버라이드한 것
+        //즉 object에 있는 ToString을 대체한 것(=덮어쓰기)
+        public override string ToString()
+        {
+            return $"이름:{name}, 나이:{age}";
+            //return base.ToString();
+        }
     }
 }
