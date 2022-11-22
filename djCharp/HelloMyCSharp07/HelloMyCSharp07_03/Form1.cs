@@ -10,11 +10,41 @@ using System.Windows.Forms;
 
 namespace HelloMyCSharp07_03
 {
+    enum 가위바위보
+    {
+        가위=1,바위,보
+    }
+    enum Fruit
+    {
+        apple,banana=5,orange
+    }
+
     public partial class Form1 : Form
     {
+        const int 가위 = 0;
         public Form1()
         {
             InitializeComponent();
+
+            string[] fruits = new string[10];
+            fruits[0] = "영주사과";
+            fruits[1] = "청주사과";
+            fruits[2] = "공주사과";
+            fruits[3] = "경주사과";
+            fruits[4] = "성주사과";
+            fruits[5] = "대구 바나나";
+            fruits[6] = "제주도 귤";
+
+            MessageBox.Show(fruits[0]);
+            MessageBox.Show(fruits[5]);
+            MessageBox.Show(fruits[6]);
+            MessageBox.Show(fruits[(int)Fruit.apple]);
+            MessageBox.Show(fruits[(int)Fruit.banana]);
+            MessageBox.Show(fruits[(int)Fruit.orange]);
+
+
+            MessageBox.Show(가위바위보.가위.ToString());
+            MessageBox.Show(((int)가위바위보.가위).ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,6 +93,17 @@ namespace HelloMyCSharp07_03
 
             foreach (var item in animals)
                 sleep_and_eat(item);
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Pig p = new Pig() { age = 1, name = "윌버" };
+            sleep_and_eat(p);
+            Animal pp = new Pig() { age = 2, name = "저팔계" };
+            sleep_and_eat(pp);
+
+
         }
     }
 }
