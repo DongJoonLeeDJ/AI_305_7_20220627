@@ -44,18 +44,25 @@ namespace HelloMyCSharp07_01
             Console.WriteLine(MyParent.money);//자식이 태어나고 그 자식이 비트코인 투자하면서 2000만원 날린 우리집!?
             Console.WriteLine(MyChild.money);
 
-            List<MyParent> family = new List<MyParent>() { myParent1, myParent2, myChild };
+            
+            //이동순때문에 돈이 깎인다. 
+            List<MyParent> family = new List<MyParent>() { myParent1, myParent2, myChild, new MyChild() {name="이동순",age=0 } };
 
-            foreach(var item in family)
+            Console.WriteLine(MyParent.money);//7999
+            Console.WriteLine(MyChild.money);
+
+            foreach (var item in family) 
             {
                 item.eat();
                 item.sleep();
                 MyChild temp = item as MyChild;
-                if(temp!=null)
+                if(temp!=null) //item이 MyParent라면 null값
                 {
                     temp.study();
                     temp.playgame();
-                    temp.buyBitCoin(10000); //열심히 벌어 호강하는!?
+                    //1억 1만원을 두 번 더함
+                    //7999+10001+10001 = 28001
+                    temp.buyBitCoin(10001); //열심히 벌어 호강하는!?
                 }
             }
 
@@ -63,6 +70,32 @@ namespace HelloMyCSharp07_01
             Console.WriteLine(MyChild.money);
 
 
+        }
+
+        //MyParent p
+        //매개변수가 MyParent라고 해서 MyParent 타입의 변수만 
+        //들어가는 거 아니다.
+        //이걸 상속받은 자식 클래스 역시 매개변수로 들어갈 수 있다.
+        //이 것이 다형성의 특징
+        void introduce(MyParent p)
+        {
+            p.eat();
+            p.sleep();
+            if(p is MyChild)
+            {
+                (p as MyChild).study();
+                (p as MyChild).playgame();
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MyParent myParent1 = new MyParent() { age = 28, name = "이상길" };
+            MyParent myParent2 = new MyParent() { age = 30, name = "최정은" };
+            MyChild myChild = new MyChild() { age = 1, name = "이동준" };
+
+            introduce(myParent1);
+            introduce(myParent2);
+            introduce(myChild);
         }
     }
 }

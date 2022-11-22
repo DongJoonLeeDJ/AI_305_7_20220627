@@ -11,7 +11,7 @@ namespace HelloMyCSharp07_01
         public static int money;
         public static void openDoor()
         {
-            Console.WriteLine(  "문이 열리네요~ ");
+            Console.WriteLine(  "문이 열리네요~ " );
         }
 
         public string name { get; set; }
