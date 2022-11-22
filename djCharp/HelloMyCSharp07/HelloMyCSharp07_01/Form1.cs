@@ -77,11 +77,11 @@ namespace HelloMyCSharp07_01
         //들어가는 거 아니다.
         //이걸 상속받은 자식 클래스 역시 매개변수로 들어갈 수 있다.
         //이 것이 다형성의 특징
-        void introduce(MyParent p)
+        void introduce(MyParent p) //MyParent 타입이나 MyParent를 상속받은 타입의 모든 변수들을 의미
         {
             p.eat();
             p.sleep();
-            if(p is MyChild)
+            if(p is MyChild) // new MyChild()로 된 경우
             {
                 (p as MyChild).study();
                 (p as MyChild).playgame();
