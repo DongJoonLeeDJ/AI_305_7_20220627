@@ -12,5 +12,21 @@ namespace HelloMyCSharp07_01
         {
             money--;
         }
+
+        public void study()
+        {
+            Console.WriteLine(  "LOL 공부 ");
+        }
+        public void playgame()
+        {
+            Console.WriteLine(  "LOL ");
+        }
+
+        public  void buyBitCoin(int m)
+        {
+            money += m;
+        }
+
+
     }
 }
