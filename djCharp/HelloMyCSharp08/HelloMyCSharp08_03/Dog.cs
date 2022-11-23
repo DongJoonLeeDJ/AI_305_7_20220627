@@ -26,7 +26,7 @@ namespace HelloMyCSharp08_03
 
         public void welCome()
         {
-            Console.WriteLine("꼬리를 흔든다.");
+            System.Windows.Forms.MessageBox.Show("꼬리를 흔든다.");
         }
     }
 }
