@@ -16,5 +16,24 @@ namespace HelloMyCSharp08_02
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cogmo c = new Cogmo();
+            c.sayHello();
+            c.MoveDown();
+            c.MoveUp();
+            c.MoveLeft();
+            c.MoveRight();
+
+            c.Attack();
+
+            c.Qkey();
+            c.Wkey();
+            c.Ekey();
+            c.Rkey();
+
+
+        }
     }
 }

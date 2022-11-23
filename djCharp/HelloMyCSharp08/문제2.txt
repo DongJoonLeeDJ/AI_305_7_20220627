@@ -1,0 +1,17 @@
+1.롤 캐릭터 2마리이상 만들어보기
+2. 윈폼에서 버튼 누르면 해당 캐릭터가
+메소드들을 호출하게(Qkey 등)
+예시
+Cogmo c = new Cogmo();
+            c.sayHello();
+            c.MoveDown();
+            c.MoveUp();
+            c.MoveLeft();
+            c.MoveRight();
+
+            c.Attack();
+
+            c.Qkey();
+            c.Wkey();
+            c.Ekey();
+            c.Rkey();
