@@ -55,5 +55,38 @@ namespace HelloMyCSharp08_01
             }
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Class1 a = new Class1();
+            a[50] = 10;
+            MessageBox.Show(a[100]+"");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Class1[] aa = new Class1[100];
+            aa[0] = new Class1();
+            aa[0][5] = 50;
+            MessageBox.Show(aa[0][5].ToString()); 
+        }
+
+        void test(ref int a)
+        {
+            
+            Console.WriteLine(  a );
+        }
+        //out과 ref끼리는 오버로딩 안 됨
+        void test2(out int a)
+        {
+            a = 100;//반드시 대입 연산자 필요
+            Console.WriteLine(a);
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int aa = 100;
+            test(ref aa);
+            Console.WriteLine(  aa);
+        }
     }
 }
