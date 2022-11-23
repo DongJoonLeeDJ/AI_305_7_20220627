@@ -72,14 +72,14 @@ namespace HelloMyCSharp08_01
         }
 
         void test(ref int a)
-        {
-            
-            Console.WriteLine(  a );
+        {//ref는...
+            a = 1; //이건 필수가 아니다. 대입연산자 없어도 됨
+            Console.WriteLine(  a );//값읽기만 해도 됨
         }
         //out과 ref끼리는 오버로딩 안 됨
         void test2(out int a)
         {
-            a = 100;//반드시 대입 연산자 필요
+            a = 1000;//반드시 대입 연산자 필요
             Console.WriteLine(a);
         }
         private void button5_Click(object sender, EventArgs e)
@@ -87,6 +87,9 @@ namespace HelloMyCSharp08_01
             int aa = 100;
             test(ref aa);
             Console.WriteLine(  aa);
+            test2(out aa);
+            Console.WriteLine(aa);
+
         }
     }
 }

@@ -19,8 +19,16 @@ namespace HelloMyCSharp08_01
         public int CompareTo(Product other)
         {
             //이 값이 음수,0,양수냐에 따라서 정렬이 달라짐
-            return price.CompareTo(other.price);
+            //가격 오름 차순
+            //return price.CompareTo(other.price);
             //throw new NotImplementedException(); //미구현 오류
+
+            //가격 내림 차순
+            //return -1*price.CompareTo(other.price);
+            //return other.price.CompareTo(price);
+
+            //id순으로 하고 싶다면?
+            return id.CompareTo(other.id);
         }
     }
 }
