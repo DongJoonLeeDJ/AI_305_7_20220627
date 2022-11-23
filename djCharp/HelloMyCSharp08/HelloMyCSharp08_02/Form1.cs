@@ -20,6 +20,9 @@ namespace HelloMyCSharp08_02
         private void button1_Click(object sender, EventArgs e)
         {
             Cogmo c = new Cogmo();
+            c.name = "꿀벌코그모";
+            c.level = 5;
+
             c.sayHello();
             c.MoveDown();
             c.MoveUp();
@@ -34,6 +37,26 @@ namespace HelloMyCSharp08_02
             c.Rkey();
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Timo t = new Timo();
+            t.name = "피카츄성우";
+            t.level = 50;
+            t.sayHello();
+
+            t.Attack();
+
+            t.Qkey();
+            t.Wkey();
+            t.Ekey();
+            t.Rkey();
+
+            t.MoveDown();
+            t.MoveUp();
+            t.MoveLeft();
+            t.MoveRight();
         }
     }
 }

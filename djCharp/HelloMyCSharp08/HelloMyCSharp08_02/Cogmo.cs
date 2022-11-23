@@ -8,6 +8,7 @@ namespace HelloMyCSharp08_02
 {
     public class Cogmo : LoLCharacter
     {
+
         public override void Qkey()
         {
             System.Windows.Forms.MessageBox.Show("Q 퉤퉤퉤");
@@ -31,6 +32,8 @@ namespace HelloMyCSharp08_02
             System.Windows.Forms.MessageBox.Show("그모그모 코그모~");
         }
 
+        //하이딩
+        //코그모 타입의 변수는 Attack시 메시지 박스 띄움
         public new void Attack()
         {
             System.Windows.Forms.MessageBox.Show("빠세이");

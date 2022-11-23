@@ -60,8 +60,11 @@
     <Compile Include="IRpgCharacter.cs" />
     <Compile Include="IRts.cs" />
     <Compile Include="LoLCharacter.cs" />
+    <Compile Include="PokemonGoCharacter.cs" />
+    <Compile Include="PokemonGold.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

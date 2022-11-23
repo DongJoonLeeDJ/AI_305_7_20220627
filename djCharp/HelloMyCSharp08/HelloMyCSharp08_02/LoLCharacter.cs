@@ -14,6 +14,7 @@ namespace HelloMyCSharp08_02
     {
         public int level { get; set; }
 
+
         public virtual void Qkey() { Console.WriteLine("q키누름"); }
         public virtual void Wkey() { Console.WriteLine("w키누름"); }
         public virtual void Ekey() { Console.WriteLine("e키누름"); }

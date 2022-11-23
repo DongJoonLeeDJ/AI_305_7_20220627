@@ -8,8 +8,8 @@ namespace HelloMyCSharp08_02
 {
     public interface IRpgCharacter
     {
-        int level { get; set; }
+        int level { get; set; } //해당 속성도 구체화해줘야 함
 
-        void Attack();
+        void Attack(); //Attack이라는 이름의 메소드를 구현해야 됨
     }
 }
