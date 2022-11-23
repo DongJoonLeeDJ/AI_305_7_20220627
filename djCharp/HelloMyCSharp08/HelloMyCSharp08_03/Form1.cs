@@ -65,5 +65,41 @@ namespace HelloMyCSharp08_03
                 fightForMe(item, textBox1.Text);
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Android a = new Android();
+            //다형성에 의해서 오른쪽은 인스턴스(해당 인터페이스 구현한 것)
+            //왼쪽은 인터페이스
+            IMyRobot i = new Android();
+            IFight f = new Android();
+            ICharming c = new Android();
+            a.printMessage("헬로월드");
+            a.actCute();
+            a.smile();
+            a.welCome();
+            a.attackTarget();
+            a.killTarget();
+            a.protectMaster("주인");
+
+
+            i.printMessage("안녕 세상");
+            i.actCute();
+            i.smile();
+            i.welCome();
+            i.attackTarget();
+            i.killTarget();
+            i.protectMaster("마스터");
+
+            f.attackTarget();
+            f.killTarget();
+            f.protectMaster("이동준");
+            
+            c.actCute();
+            c.smile();
+            c.welCome();
+
+
+        }
     }
 }
