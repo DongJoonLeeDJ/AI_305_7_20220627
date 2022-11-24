@@ -12,13 +12,14 @@ namespace HelloMyCSharp09_01
 {
     public partial class Form1 : Form, ISubject
     {
+        List<IObserver> observers = new List<IObserver>();
         public Form1()
         {
             InitializeComponent();
 
             //this = Form1을 의미
             //Form1이 들어갈 수 있는 이유는 ISubject를 구현해서 그렇다.
-            Form2 frm2 = new Form2(this);
+            Form2 frm2 = new Form2(this);//observers에 Form2 들어감
             frm2.TopLevel = false;
             frm2.FormBorderStyle = FormBorderStyle.None;
             panel1.Controls.Add(frm2);
@@ -39,7 +40,6 @@ namespace HelloMyCSharp09_01
 
         }
 
-        List<IObserver> observers = new List<IObserver>();
 
         public void notify(string msg)
         {

@@ -16,7 +16,7 @@ namespace HelloMyCSharp09_01
         {
             InitializeComponent();
         }
-        public Form2(ISubject sub)
+        public Form2(ISubject sub) //Form1
         {
             InitializeComponent();
             //this = Form2
