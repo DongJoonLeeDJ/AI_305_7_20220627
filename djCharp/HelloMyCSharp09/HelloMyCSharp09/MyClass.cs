@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace HelloMyCSharp09
 {
-    public class MyClass
+    //https://math-development-geometry.tistory.com/58
+
+    public class MyClass : MyBase
     {
         //클래스변수가 아니고 인스턴스 변수입니다.
         //그러나 싱글톤패턴을 쓰면 
@@ -16,6 +18,12 @@ namespace HelloMyCSharp09
         public void printMsg(string msg)
         {
             System.Windows.Forms.MessageBox.Show(msg+"Test"+num);
+        }
+        //static 메소드(=클래스 메소드)는 오버라이드 안 됨
+        public override void print(string msg)
+        {
+            System.Windows.Forms.MessageBox.Show(msg);
+            //base.print(msg);
         }
         //싱글톤의 핵심
         //단 한 개의 객체만 만듦
