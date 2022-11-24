@@ -30,6 +30,12 @@ namespace HelloMyCSharp09_01
             panel2.Controls.Add(frm3);
             frm3.Show();
 
+            Form4 frm4 = new Form4(this,frm2,frm3);
+            frm4.TopLevel = false;
+            frm4.FormBorderStyle = FormBorderStyle.None;
+            panel3.Controls.Add(frm4);
+            frm4.Show();
+
 
         }
 
