@@ -10,11 +10,45 @@ using System.Windows.Forms;
 
 namespace HelloMyCSharp09_01
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, ISubject
     {
         public Form1()
         {
             InitializeComponent();
+
+            //this = Form1을 의미
+            //Form1이 들어갈 수 있는 이유는 ISubject를 구현해서 그렇다.
+            Form2 frm2 = new Form2(this);
+            frm2.TopLevel = false;
+            frm2.FormBorderStyle = FormBorderStyle.None;
+            panel1.Controls.Add(frm2);
+            frm2.Show();
+
+            Form3 frm3 = new Form3(this);
+            frm3.TopLevel = false;
+            frm3.FormBorderStyle = FormBorderStyle.None;
+            panel2.Controls.Add(frm3);
+            frm3.Show();
+
+
+        }
+
+        List<IObserver> observers = new List<IObserver>();
+
+        public void notify(string msg)
+        {
+            foreach (IObserver o in observers)
+                o.update(msg);
+        }
+
+        public void register(IObserver o)
+        {
+            observers.Add(o);
+        }
+
+        public void unregister(IObserver o)
+        {
+            observers.Remove(o);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,6 +68,12 @@ namespace HelloMyCSharp09_01
             s.unregister(o1); //허영무의 옵저버가 빠진 상태에서
             s.notify(",스2,"); //2마리의 옵저버만 update를 호출함
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //notify(textBox1.Text);
+            notify((sender as TextBox).Text);
         }
     }
 }

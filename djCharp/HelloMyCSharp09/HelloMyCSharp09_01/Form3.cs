@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace HelloMyCSharp09_01
 {
-    public partial class Form3 : Form
+    public partial class Form3 : Form, IObserver
     {
         public Form3()
         {
             InitializeComponent();
+        }
+        public Form3(ISubject sub)
+        {
+            InitializeComponent();
+            sub.register(this);
+        }
+
+        public void update(string value)
+        {
+            textBox1.Text = value;
         }
     }
 }
