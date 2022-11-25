@@ -17,12 +17,31 @@ namespace HelloMyCSharp10_01
     //델리게이트와 람다를 이용하면 코드를 적게 쓰고
     //많은 기능 동작하게 하거나
     //불필요한 함수 선언을 줄일 수 있다.
+
+    //클래스 밖에서도 선언 됨
     public delegate void VoidFunc();
-    public delegate int IntegerFunc();
-    public delegate void ParameterFunc(int i);
     public delegate int IntegerParamFunc(int i);
     public partial class Form1 : Form
     {
+        //클래스 안에서도 선언 됨
+        public delegate int IntegerFunc();
+        public delegate void ParameterFunc(int i);
+
+        public int power(int num)
+        {
+            return num * num;
+        
+        }
+
+        //executeFunc 오버로딩
+        //public void executeFunc(VoidFunc v, int c)
+        //이번엔 매개변수와 반환형이 필요한 함수를 i라는 변수에
+        //받아온 다음에 매개변수는 num으로 하고, i의 반환형을 활용
+        public void executeFunc(IntegerParamFunc i, int num)
+        {
+            MessageBox.Show("num의 제곱 : " + i(num));
+        }
+
         public void myTest()
         {
             MessageBox.Show("Test");
@@ -38,9 +57,18 @@ namespace HelloMyCSharp10_01
                 v();
         }
 
+
+        List<Product> products = new List<Product>();
+
+
         public Form1()
         {
             InitializeComponent();
+            products.Add(new Product() { id=5,name="감자",price=100});
+            products.Add(new Product() { id = 1, name = "돌", price = 50 });
+            products.Add(new Product() { id = 3, name = "칫솔살균기", price = 0 });
+
+
             //button4같은 경우엔 첫번째 매개변수 object,
             //두번쨰 매개변수 EventArgs인 함수라면
             //누구나 다 이벤트 추가됨
@@ -92,6 +120,55 @@ namespace HelloMyCSharp10_01
             //메모리 관리 측면에서도 무명델리게이트나 람다가 더 효율적
             executeFunc(() => { MessageBox.Show("aaa"); },
                 10);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            executeFunc(power, 10); //10의 제곱인 100이 출력된다.
+
+            //델리게이트를 매개변수나 변수로 만들 수 있다.
+            VoidFunc myvoid = yourTest;
+            myvoid(); //yourTest를 호출한다.
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //세제곱하는 함수를 매개변수로 함
+            //매개변수는 5이다.
+            executeFunc(delegate (int n) { return n * n * n; }, 5);
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //return도 생략됨
+            executeFunc((n) => n * n * n * n, 10);
+
+            executeFunc((n) => { return n * n * n * n * n; }, 10);
+
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //id정렬
+            products.Sort(delegate (Product a, Product b)
+            {
+                return a.id.CompareTo(b.id);
+            });
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            //가격정렬
+            products.Sort((a, b) => a.price.CompareTo(b.price));
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            //출력
+            foreach(Product p in products)
+                MessageBox.Show($"{p.name},{p.price},{p.id}");
         }
     }
 }
