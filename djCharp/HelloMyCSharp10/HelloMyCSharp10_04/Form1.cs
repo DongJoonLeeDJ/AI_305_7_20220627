@@ -86,6 +86,9 @@ namespace HelloMyCSharp10_04
                          wf = item.Element("wfKor").Value.ToString(),
                          temp = double.Parse(item.Element("temp").Value)
                      };
+            //List 형태로 변환하는 법
+            List<Weather> w = xq.ToList<Weather>();
+
             foreach (var item in xq)
             {
                 Console.WriteLine(item.hour);
