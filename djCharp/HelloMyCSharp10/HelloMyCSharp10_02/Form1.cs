@@ -16,6 +16,7 @@ namespace HelloMyCSharp10_02
         public Form1()
         {
             InitializeComponent();
+            label1.Text = "";
         }
 
         void printA()
@@ -58,6 +59,65 @@ namespace HelloMyCSharp10_02
                 for (int i = 0; i < 100; i++)
                     Console.Write('E');
             });
+        }
+
+        public delegate void SetLabelDelegate(Label l, string n);
+
+        public void SetLabelText(Label l, string n)
+        {
+            //https://jeongkyun-it.tistory.com/90
+            //Invoke 정리
+            //> 컨트롤의 본인 스레드가 아닌 다른 스레드를 이용하여 해당 컨트롤 객체를 동기식으로 실행하는 방법이다.
+            if (l.InvokeRequired)
+            {
+                SetLabelDelegate d = new SetLabelDelegate(SetLabelText);
+                this.Invoke(d, new object[] { l, n });
+                //this.BeginInvoke(d, new object[] { l, n });
+            }
+            else
+            {
+                for(int i = 0; i < 200; i++)
+                    l.Text += n;
+            }
+        }
+        public void SetLabelText2(Label l, string n)
+        {
+            if (l.InvokeRequired)
+            {
+                SetLabelDelegate d = new SetLabelDelegate(SetLabelText2);
+                //this.Invoke(d, new object[] { l, n });
+                this.BeginInvoke(d, new object[] { l, n });
+            }
+            else
+            {
+                for (int i = 0; i < 200; i++)
+                    l.Text += n;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            new Thread(() => SetLabelText(label1, "A")).Start();
+            new Thread(() => SetLabelText(label1, "B")).Start();
+            new Thread(() => SetLabelText(label1, "C")).Start();
+            new Thread(() => SetLabelText(label1, "D")).Start();
+            new Thread(() => SetLabelText(label1, "E")).Start();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label1.Text += Environment.NewLine;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            new Thread(() => SetLabelText2(label1, "A")).Start();
+            new Thread(() => SetLabelText2(label1, "B")).Start();
+            new Thread(() => SetLabelText2(label1, "C")).Start();
+            new Thread(() => SetLabelText2(label1, "D")).Start();
+            new Thread(() => SetLabelText2(label1, "E")).Start();
         }
     }
 }
