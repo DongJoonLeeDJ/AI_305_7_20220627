@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMyCSharp10_01", "Hello
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMyCSharp10_02", "HelloMyCSharp10_02\HelloMyCSharp10_02.csproj", "{510AEB2C-C778-4F37-B759-CAFDA090BE8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMyCSharp10_03", "HelloMyCSharp10_03\HelloMyCSharp10_03.csproj", "{2CB5866A-EFF1-4825-9D4B-2BAB195B6538}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{510AEB2C-C778-4F37-B759-CAFDA090BE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{510AEB2C-C778-4F37-B759-CAFDA090BE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{510AEB2C-C778-4F37-B759-CAFDA090BE8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CB5866A-EFF1-4825-9D4B-2BAB195B6538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CB5866A-EFF1-4825-9D4B-2BAB195B6538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CB5866A-EFF1-4825-9D4B-2BAB195B6538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CB5866A-EFF1-4825-9D4B-2BAB195B6538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

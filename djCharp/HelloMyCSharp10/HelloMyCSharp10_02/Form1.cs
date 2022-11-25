@@ -67,17 +67,23 @@ namespace HelloMyCSharp10_02
         {
             //https://jeongkyun-it.tistory.com/90
             //Invoke 정리
-            //> 컨트롤의 본인 스레드가 아닌 다른 스레드를 이용하여 해당 컨트롤 객체를 동기식으로 실행하는 방법이다.
+            //> 컨트롤(=컴포넌트, 버튼이나 라벨 등)의 본인 스레드가 아닌 다른 스레드를 이용하여 해당 컨트롤 객체를 동기식으로 실행하는 방법이다.
             if (l.InvokeRequired)
             {
                 SetLabelDelegate d = new SetLabelDelegate(SetLabelText);
+                
+                //Invoke = 동기방식
+                //BeginInvoke = 비동기방식
                 this.Invoke(d, new object[] { l, n });
                 //this.BeginInvoke(d, new object[] { l, n });
             }
             else
             {
                 for(int i = 0; i < 200; i++)
+                {
                     l.Text += n;
+                   // Thread.Sleep(100);
+                }
             }
         }
         public void SetLabelText2(Label l, string n)
