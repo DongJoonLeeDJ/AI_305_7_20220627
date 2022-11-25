@@ -95,5 +95,24 @@ namespace HelloMyCSharp10_03
 
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            List<Product> products = new List<Product>();
+            products.Add(new Product() { name = "비빔밥", price = 5000 });
+            products.Add(new Product() { name = "라면", price = 1500 });
+            products.Add(new Product() { name = "국밥", price = 4500 });
+            products.Add(new Product() { name = "귤", price = 500 });
+
+            //만약에 1000원 넘는 거만 나오게 하고, 비싼 순으로 정렬하고
+            //싶다면 어떻게 해야할까요?
+            var output = from item in products
+                         where item.price>1000 
+                         orderby item.price descending 
+                         select item;
+            label5.Text = "";
+            foreach (var item in output)
+                label5.Text += $"{item.name}, {item.price}{Environment.NewLine}";
+        }
     }
 }
