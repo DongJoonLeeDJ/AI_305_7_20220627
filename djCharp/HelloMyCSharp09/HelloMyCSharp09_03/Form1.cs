@@ -32,7 +32,7 @@ namespace HelloMyCSharp09_03
             //이름으로 찾아서 나머지 값들을 수정해보기
             //즉 textBox1의 값을 기준으로 찾겠다.
             string name = textBox1.Text;
-            for(int i = 0; i<studentBindingSource.Count; i++)
+            for (int i = 0; i<studentBindingSource.Count; i++)
             {
                 Student s = studentBindingSource[i] as Student;
                 if(s.name == name)
