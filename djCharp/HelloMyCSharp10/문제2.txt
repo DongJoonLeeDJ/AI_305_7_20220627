@@ -1,0 +1,7 @@
+DataGridView에 기상청 데이터 뿌려보기
+D:\shareFolder\djCharp\HelloMyCSharp10\기상청18_동네예보 조회서비스_오픈API활용가이드
+
+엑셀 파일 참조해서 지역코드 바꾸고 싶으면 바꿔도 됨
+
+혹은 다른 거 긁어와도 됨
+꼭 이거 아니어도 됨
