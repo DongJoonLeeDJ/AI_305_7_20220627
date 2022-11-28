@@ -73,6 +73,9 @@ namespace HelloMyCSharp10_01
             //두번쨰 매개변수 EventArgs인 함수라면
             //누구나 다 이벤트 추가됨
             //함수를 아래와 같이 축약할 수 있다.
+            button4.Click += Button4_Click;
+
+
             button4.Click += (s, e) =>
             {
                 MessageBox.Show("버튼4클릭");
@@ -84,6 +87,11 @@ namespace HelloMyCSharp10_01
             };
             //일반적인 델리게이트 형태, 함수의 이름을 추가한다.
             button4.Click += button1_Click;
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("tab키와 +=로 만든 함수");
         }
 
         private void button1_Click(object sender, EventArgs e)
