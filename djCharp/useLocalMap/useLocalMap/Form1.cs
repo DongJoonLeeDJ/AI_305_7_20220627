@@ -35,5 +35,16 @@ namespace useLocalMap
                 listBox1.Items.Add(item);
             }
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1)
+                return;
+
+            Locale ml = listBox1.SelectedItem as Locale; //선택한 것을 Locale로 변환
+            object[] pos = new object[] { ml.Lat, ml.Lng };
+            HtmlDocument hdoc = webBrowser1.Document;
+            hdoc.InvokeScript("setCenter", pos);
+        }
     }
 }
