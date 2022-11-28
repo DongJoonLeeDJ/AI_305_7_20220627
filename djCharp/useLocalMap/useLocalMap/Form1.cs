@@ -44,6 +44,8 @@ namespace useLocalMap
             Locale ml = listBox1.SelectedItem as Locale; //선택한 것을 Locale로 변환
             object[] pos = new object[] { ml.Lat, ml.Lng };
             HtmlDocument hdoc = webBrowser1.Document;
+            //webBrowser 안에 setCenter를 호출한 것
+            //pos가 매개변수가 된 것
             hdoc.InvokeScript("setCenter", pos);
         }
     }
