@@ -149,24 +149,91 @@ namespace ParkingCarManager
 
         }
 
+        //공간조회
+        //메시지 박스로 해당 공간에 뭐가 있는지 띄움
+        
+        //주차 공간 번호에 있는 차 번호를 리턴하는 함수
+        private string lookUpParkingSpot(int parkingSpot)
+        {
+            string parkedCarNum = "";
+            //Single을 써서 특정 공간에 있는 차를 찾을 수도 있다.
+            //Single이 부담스럽다면, for문이나 foreach문으로 탐색 가능
+            foreach(var item in DataManager.Cars)
+            {
+                if(item.ParkingSpot == parkingSpot)
+                {
+                    parkedCarNum = item.carNumber;
+                    break;
+                }
+            }
+            return parkedCarNum;
+        }
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int parkingSpot = int.Parse(textBox5.Text);//Convert.ToInt32(textBox1.Text);
+                string parkingCar = lookUpParkingSpot(parkingSpot);
+                string contents = "";
+                if (parkingCar.Trim() != "")
+                    contents = $"주차공간 {parkingSpot}에 " +
+                        $"주차된 차는 {parkingCar}입니다.";
+                else
+                    contents = 
+                        $"주차공간 {parkingSpot}에 차가 없습니다.";
+                WriteLog(contents);
+                MessageBox.Show(contents);
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                WriteLog(ex.Message + ex.StackTrace + "조회");
+            }
         }
+
+        //공간추가
 
         private void button4_Click(object sender, EventArgs e)
         {
+            spot_add_delete(textBox5.Text, "insert");
+        }
+
+        private void spot_add_delete(string text, string v)
+        {
+            text = text.Trim(); //공백 제거 후 진행
+            int.TryParse(text, out int pSpot);//주차 공간 번호 가져옴
+            if(pSpot <= 0) //공간번호가 0 이하 혹은 이상한 값인 경우
+            {
+                WriteLog("주차 공간 번호는 0 이상의 숫자여야 함");
+                MessageBox.Show("주차 공간 번호는 0 이상의 숫자여야 함");
+                return; //메소드 종료(이벤트 종료)
+            }
+            string contents = "";
+            //contents : DataManager에서 out과 ref로 인하여 함수 호출 뒤
+            //변한 값이 저장되어 있음
+            bool check = DataManager.Save(v, text, out contents);
+            if (check)
+                button6.PerformClick(); //리프래시 버튼을 누름
+            MessageBox.Show(contents);
+            WriteLog(contents);
 
         }
 
+        //공간삭제
         private void button5_Click(object sender, EventArgs e)
         {
-
+            spot_add_delete(textBox5.Text, "delete");
         }
 
+        //전체 갱신(db에서 값 새로 불러오는 것)
+        //주차 공간 추가/삭제시 활용할 예정
         private void button6_Click(object sender, EventArgs e)
         {
-
+            DataManager.Load();
+            dataGridView1.DataSource = null;
+            if(DataManager.Cars.Count>0)
+                dataGridView1.DataSource=DataManager.Cars;
         }
 
 
@@ -186,6 +253,8 @@ namespace ParkingCarManager
                 ($"yyyy년 MM월 dd일 HH시 mm분 ss초");
         }
 
+        //CellContentClick => 셀 안에 있는 내용을 눌러야 됨
+        //CurrentCellChanged => try catch로 반드시 감싸야 함(책 참고)
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ParkingCar car =
