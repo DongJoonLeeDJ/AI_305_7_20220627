@@ -71,5 +71,78 @@ namespace ParkingCarManager
                 w.WriteLine(contents);
             }
         }
+
+        //주차 출차용 Save
+        public static void Save(string parkingSpotText,
+            string carNumber, string driverName, string phoneNumber,
+            bool isRemove=false)
+        {
+            try
+            {
+                DBHelper.updateQuery
+                    (parkingSpotText, carNumber, driverName, 
+                    phoneNumber, isRemove);
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        //주차 공간 추가/삭제용 Save
+        //Save 이름 오버로딩
+        //리턴 타입은 상관없고 매개변수의 개수 및 타입이 다름
+        public static bool Save(string command, string parkingSpot,
+            out string contents)
+        {
+            //out ref의 차이
+            //ref : 그 값의 참조값 읽음
+            //ref에 해당하는 게 바뀌면 함수 바깥에서도 값 바뀜
+
+            //해당 공간이 이미 있는지 없는지 체크
+            DBHelper.selectQuery(int.Parse(parkingSpot));
+            
+            
+            contents = ""; //out : 반드시 값 대입해줘야 함
+            if (command == "insert")
+                return DBInsert(parkingSpot, ref contents);
+            else
+                return DBDelete(parkingSpot, ref contents);
+        }
+
+        //공간 추가 / 삭제용 함수
+        private static bool DBDelete(string parkingSpot, ref string contents)
+        {
+            //throw new NotImplementedException();
+            if(DBHelper.dt.Rows.Count!=0) //공간 삭제 가능
+            {
+                DBHelper.deleteQuery(parkingSpot);
+                contents = $"주차공간 {parkingSpot}이/가 삭제되었습니다.";
+                return true;
+            }
+            else //삭제 안 됨
+            {
+                contents = $"주차공간 없습니다.";
+                return false;
+            }
+        }
+
+        private static bool DBInsert(string parkingSpot, ref string contents)
+        {
+            //throw new NotImplementedException();
+            if(DBHelper.dt.Rows.Count == 0) //공간 추가 됨
+            {
+                DBHelper.insertQuery(parkingSpot);
+                contents = $"주차 공간 {parkingSpot}이/가 추가되었습니다.";
+                return true;
+            }
+            else //해당 공간이 이미 존재하는 경우
+            {
+                contents = $"해당 공간이 이미 있습니다.";
+                return false;
+            }
+        }
+
+
+
     }
 }
