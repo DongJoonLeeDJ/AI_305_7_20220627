@@ -145,5 +145,46 @@ namespace ParkingCarManager
             }
         }
 
+        private static void executeQuery(string parkingSpot, 
+            string command)
+        {
+            string sqlcommand = "";
+            if (command == "insert")
+                sqlcommand =
+                    "insert into parkingmanager(parkingspot) values (@p1)";
+            else
+                sqlcommand =
+                    "delete from parkingmanager where parkingspot=@p1";
+
+            try
+            {
+                ConnectDB();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@p1", parkingSpot);
+                cmd.CommandText = sqlcommand;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+        }
+        public static void deleteQuery(string parkingSpot)
+        {
+            executeQuery(parkingSpot, "delete");
+        }
+        public static void insertQuery(string parkingSpot)
+        {
+            executeQuery(parkingSpot, "insert");
+        }
+
     }
 }
