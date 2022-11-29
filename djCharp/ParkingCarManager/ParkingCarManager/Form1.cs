@@ -19,6 +19,24 @@ namespace ParkingCarManager
             //프로그램 시작하자마자 현재 시간을 표시함
             label1.Text = DateTime.Now.ToString
                 ($"yyyy년 MM월 dd일 HH시 mm분 ss초");
+
+            try
+            {
+                //+"" 하든지 .ToString() 하기
+                textBox1.Text = DataManager.Cars[0].ParkingSpot + "";
+                textBox2.Text = DataManager.Cars[0].carNumber;
+                textBox3.Text = DataManager.Cars[0].driverName;
+                textBox4.Text = DataManager.Cars[0].phoneNumber;
+                textBox5.Text = textBox1.Text;
+            }
+            catch (Exception)
+            {
+            }
+            //Cars 길이가 0 인데,
+            //DataSource로 넣으려고 하면 셀 선택시 오류 남
+            //셀 : datagridview의 칸들을 의미(엑셀의 셀처럼)
+            if (DataManager.Cars.Count > 0)
+                dataGridView1.DataSource = DataManager.Cars;
         }
 
         private void button1_Click(object sender, EventArgs e)

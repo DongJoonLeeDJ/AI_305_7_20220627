@@ -9,7 +9,7 @@ namespace ParkingCarManager
     public class ParkingCar
     {
         //주차공간번호(PK)
-        public int ParknigSpot { get; set; }
+        public int ParkingSpot { get; set; }
         //차번호
         public string carNumber { get; set; }
         //운전자명

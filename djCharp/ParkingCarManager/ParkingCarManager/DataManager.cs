@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -30,7 +31,28 @@ namespace ParkingCarManager
 
         public static void Load()
         {
-
+            try
+            {
+                DBHelper.selectQuery();
+                Cars.Clear();
+                foreach(DataRow item in DBHelper.dt.Rows)
+                {
+                    ParkingCar car = new ParkingCar();
+                    car.ParkingSpot = int.Parse(item["parkingspot"].ToString());
+                    car.carNumber = item["carnumber"].ToString();
+                    car.driverName = item["drivername"].ToString();
+                    car.phoneNumber = item["phonenumber"].ToString();
+                    car.parkingTime = item["parkingtime"].ToString() == "" ?
+                        new DateTime() /*DateTime의 기본 값*/:
+                        DateTime.Parse(item["parkingtime"].ToString());
+                    Cars.Add(car);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.Message+"load");
+                printLog(e.StackTrace + "load");
+            }
         }
         //파일에 내용 적는 것
         public static void printLog(string contents)
