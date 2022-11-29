@@ -55,11 +55,18 @@ namespace ParkingCarManager
                     //즉 car를 바꾸면 Cars 안에 있는 내용도 같이 바뀜
                     //만약 못 찾으면 catch로 빠진다.
                     //즉 엉뚱한 공간에 주차하려고 하면 catch로 빠짐
+
                     ParkingCar car =
                         DataManager.Cars.Single
-                        (x => x.ParkingSpot.ToString() == textBox1.Text);
+                            (x => x.ParkingSpot.ToString() == textBox1.Text);
+
+                    //    DataManager.Cars.Single
+                    //(delegate(ParkingCar x) { return x.ParkingSpot.ToString() == textBox1.Text; })
+
+
+
                     //공간이 있는 데 이미 그 공간에 차가 있다면?
-                    if(car.carNumber.Trim() != "")
+                    if (car.carNumber.Trim() != "")
                         MessageBox.Show("해당 공간에 이미 차가 있습니다.");
                     else
                     {
@@ -91,7 +98,55 @@ namespace ParkingCarManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            WriteLog("출차");
+            if (textBox1.Text.Trim() == "")
+                MessageBox.Show("주차 공간 번호 입력하세요(출차)");
+            else
+            {
+                try
+                {
+                    //Single = List에서 원하는 거 하나만 가져오는 것
+                    //값을 갖고 오는 게 아니고 참조값을 가져옴
+                    //즉 car를 바꾸면 Cars 안에 있는 내용도 같이 바뀜
+                    //만약 못 찾으면 catch로 빠진다.
+                    //즉 엉뚱한 공간에 주차하려고 하면 catch로 빠짐
+
+                    ParkingCar car =
+                        DataManager.Cars.Single
+                            (x => x.ParkingSpot.ToString() == textBox1.Text);
+
+                    //    DataManager.Cars.Single
+                    //(delegate(ParkingCar x) { return x.ParkingSpot.ToString() == textBox1.Text; })
+
+                    if (car.carNumber.Trim() == "")
+                        MessageBox.Show("아직 차가 없습니다.");
+                    else
+                    {
+                        string oldCar = car.carNumber; //기존에 주차된 차
+                        car.carNumber = "";
+                        car.driverName = "";
+                        car.phoneNumber = "";
+                        car.parkingTime = new DateTime();
+
+                        //데이터 그리드 뷰에 반영
+                        dataGridView1.DataSource = null;
+                        dataGridView1.DataSource = DataManager.Cars;
+
+                        //출차할 땐 어차피 첫번째랑 끝에 매개변수만 사용함
+                        DataManager.Save(textBox1.Text, textBox2.Text,
+                            textBox3.Text, textBox4.Text, true);
+                        string contents = $"주차 공간 {textBox1.Text}에" +
+                            $"{oldCar}차를 출차했습니다.";
+                        WriteLog(contents);
+                        MessageBox.Show(contents);
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show($"주차공간 {textBox1.Text}은/는 없습니다.");
+                    WriteLog($"주차공간 {textBox1.Text}은/는 없습니다.");
+                }
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
