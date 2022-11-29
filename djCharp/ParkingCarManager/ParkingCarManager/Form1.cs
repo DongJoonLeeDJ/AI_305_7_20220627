@@ -188,7 +188,13 @@ namespace ParkingCarManager
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            ParkingCar car =
+                dataGridView1.CurrentRow.DataBoundItem as ParkingCar;
+            textBox1.Text = car.ParkingSpot.ToString();
+            textBox2.Text = car.carNumber;
+            textBox3.Text = car.driverName;
+            textBox4.Text = car.phoneNumber;
+            textBox5.Text = textBox1.Text;
         }
     }
 }
