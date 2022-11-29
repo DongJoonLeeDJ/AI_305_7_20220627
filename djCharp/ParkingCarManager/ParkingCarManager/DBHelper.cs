@@ -94,5 +94,56 @@ namespace ParkingCarManager
                 conn.Close(); //db 연결 해제
             }
         }
+
+        public static void updateQuery
+            (string parkingSpotText, string carNumber,
+            string driverName, string phoneNumber, bool isRemove)
+        {
+            //isRemove = 주차 및 출차 여부
+            try
+            {
+                ConnectDB();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                string sqlcommand = "";
+                if(isRemove)
+                {
+                    sqlcommand = "update parkingmanager set carnumber=''," +
+                        "drivername='', phonenumber='', parkingtime=null where " +
+                        "parkingspot=@p1";
+                    //파라메터 값을 @에 실어서 보내는 방식
+                    //sql injection(sql 삽입공격) 방지를 위함
+                    cmd.Parameters.AddWithValue("@p1", parkingSpotText);
+
+                }
+                else
+                {
+                    sqlcommand = "update parkingmanager set carnumber=@p1," +
+                        "drivername=@p2, phonenumber=@p3, parkingtime=@p4 where " +
+                        "parkingspot=@p5";
+                    //파라메터 값을 @에 실어서 보내는 방식
+                    //sql injection(sql 삽입공격) 방지를 위함
+                    cmd.Parameters.AddWithValue("@p1", carNumber);
+                    cmd.Parameters.AddWithValue("@p2", driverName);
+                    cmd.Parameters.AddWithValue("@p3", phoneNumber);
+                    cmd.Parameters.AddWithValue("@p4", DateTime.Now.ToString
+                        ("yyyy-MM-dd HH:mm:ss.fff"));
+                    cmd.Parameters.AddWithValue("@p5", parkingSpotText);
+                }
+                cmd.CommandText = sqlcommand;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show("update"+e.Message);
+                DataManager.printLog("update" + e.StackTrace);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
 }
