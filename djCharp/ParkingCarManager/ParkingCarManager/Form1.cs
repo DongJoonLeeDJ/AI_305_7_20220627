@@ -16,6 +16,9 @@ namespace ParkingCarManager
         public Form1()
         {
             InitializeComponent();
+            //프로그램 시작하자마자 현재 시간을 표시함
+            label1.Text = DateTime.Now.ToString
+                ($"yyyy년 MM월 dd일 HH시 mm분 ss초");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,7 +28,7 @@ namespace ParkingCarManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            WriteLog("출차");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -59,6 +62,10 @@ namespace ParkingCarManager
 
         }
 
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString
+                ($"yyyy년 MM월 dd일 HH시 mm분 ss초");
+        }
     }
 }
