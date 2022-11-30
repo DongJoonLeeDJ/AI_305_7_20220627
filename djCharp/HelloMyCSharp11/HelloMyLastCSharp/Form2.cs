@@ -53,17 +53,55 @@ namespace HelloMyLastCSharp
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Book book = null;
+            for(int i = 0; i<DataManager.Books.Count; i++)
+            {
+                if(DataManager.Books[i].Isbn == textBox1.Text)
+                {
+                    book = DataManager.Books[i];
+                    book.Name = textBox2.Text;
+                    book.Publisher = textBox3.Text;
+                    book.Page = int.Parse(textBox4.Text);
 
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource= DataManager.Books;
+                    DataManager.Save();
+                }
+            }
+            if(book==null)
+                MessageBox.Show("없는 책입니다.");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            bool existBook = false;
+            for(int i = 0; i<DataManager.Books.Count;i++)
+            {
+                if (DataManager.Books[i].Isbn == textBox1.Text)
+                {
+                    //DataManager.Books.RemoveAt(i);
+                    DataManager.Books.Remove(DataManager.Books[i]);
+                    existBook = true;
+                }
+            }
+            if(existBook == false)
+                MessageBox.Show("없는 책입니다.");
+            else
+            {
+                dataGridView1.DataSource = null;
+                if(DataManager.Books.Count > 0)
+                    dataGridView1.DataSource = DataManager.Books;
+                DataManager.Save();
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            Book book = dataGridView1.CurrentRow.DataBoundItem as Book;
+            textBox1.Text = book.Isbn;
+            textBox2.Text = book.Name;
+            textBox3.Text = book.Publisher;
+            textBox4.Text = book.Page.ToString();
         }
     }
 }
