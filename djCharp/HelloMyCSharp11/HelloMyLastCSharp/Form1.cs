@@ -40,9 +40,6 @@ namespace HelloMyLastCSharp
         {
             new Form2().ShowDialog(); //모달. 창에 꺼져야 밑에 코드 실행
             DataManager.Load(); //책을 추가했으니 다시 불러 온다.
-            dataGridView1.DataSource = null;
-            if(DataManager.Books.Count>0)
-                dataGridView1.DataSource = DataManager.Books;
             ScreenRefresh(); //도서 수 회원 수 등을 다시 리셋하는 함수
         }
 
@@ -50,9 +47,6 @@ namespace HelloMyLastCSharp
         {
             new Form3().ShowDialog(); //모달. 창에 꺼져야 밑에 코드 실행
             DataManager.Load(); //회원을 추가했으니 다시 불러 온다.
-            dataGridView2.DataSource = null;
-            if (DataManager.Users.Count > 0)
-                dataGridView2.DataSource = DataManager.Users;
             ScreenRefresh(); //도서 수 회원 수 등을 다시 리셋하는 함수
         }
 
@@ -79,6 +73,15 @@ namespace HelloMyLastCSharp
                     return x.isBorrowed && x.BorrowedAt.AddDays(7) < DateTime.Now;
                 }
                 ).Count().ToString();
+
+
+            dataGridView1.DataSource = null;
+            dataGridView2.DataSource = null;
+
+            if (DataManager.Books.Count > 0)
+                dataGridView1.DataSource = DataManager.Books;
+            if (DataManager.Users.Count > 0)
+                dataGridView2.DataSource = DataManager.Users;
         }
     }
 }
