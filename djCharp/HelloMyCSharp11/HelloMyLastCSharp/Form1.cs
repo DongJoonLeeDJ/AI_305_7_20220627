@@ -28,7 +28,29 @@ namespace HelloMyLastCSharp
             label8.Text = "";
 
             ScreenRefresh();
+
+            DataGridViewCellEventHandler dgclick1 = (sender, e) =>
+            {
+                Book book = dataGridView1.CurrentRow.DataBoundItem as Book;
+                textBox1.Text = book.Isbn;
+                textBox2.Text = book.Name;
+            };
+
+            dataGridView1.CellClick += dgclick1;
+
+            DataGridViewCellEventHandler dgclick2 = userDataGridViewCellClick;
+            dataGridView2.CellClick += dgclick2;
+
         }
+
+        private void userDataGridViewCellClick(object s, EventArgs e)
+        {
+            //이벤트를 발생시킨 주체 = s
+            DataGridView thisGridView = s as DataGridView;
+            User u = thisGridView.CurrentRow.DataBoundItem as User;
+            textBox3.Text = u.Id.ToString();
+        }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -82,6 +104,16 @@ namespace HelloMyLastCSharp
                 dataGridView1.DataSource = DataManager.Books;
             if (DataManager.Users.Count > 0)
                 dataGridView2.DataSource = DataManager.Users;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
