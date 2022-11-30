@@ -154,8 +154,6 @@ namespace HelloMyLastCSharp
                         (x => x.Isbn == textBox1.Text);
                     if (b.isBorrowed) //빌렸을 경우에만 반납됨
                     {
-                        User u = DataManager.Users.Single
-                            (x => x.Id.ToString() == textBox3.Text);
                         b.UserId = 0; //빌린 사람 없다는 뜻
                         b.UserName = "";
                         b.isBorrowed = false;
