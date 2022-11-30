@@ -144,7 +144,46 @@ namespace HelloMyLastCSharp
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Trim() == "")
+                MessageBox.Show("isbn 없음");
+            else
+            {
+                try
+                {
+                    Book b = DataManager.Books.Single
+                        (x => x.Isbn == textBox1.Text);
+                    if (b.isBorrowed) //빌렸을 경우에만 반납됨
+                    {
+                        User u = DataManager.Users.Single
+                            (x => x.Id.ToString() == textBox3.Text);
+                        b.UserId = 0; //빌린 사람 없다는 뜻
+                        b.UserName = "";
+                        b.isBorrowed = false;
+                        DateTime oldDay = b.BorrowedAt; //빌린 날짜
+                        //현재 빌린 날짜 부분은 초기화함
+                        b.BorrowedAt = new DateTime();
 
+                        TimeSpan timeDiff = DateTime.Now - oldDay;
+
+                        ScreenRefresh();
+                        DataManager.Save();
+                        if(timeDiff.Days > 7)
+                            MessageBox.Show(b.Name+"연체 반납");
+                        else
+                            MessageBox.Show(b.Name+"정상 반납");
+                        //MessageBox.Show($"{b.Name}이가 {u.Name}님께 대여됨");
+                    }
+                    else
+                    {
+                        MessageBox.Show("대여 상태 아님");
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("없는 책입니다.");
+                }
+            }
         }
     }
 }
