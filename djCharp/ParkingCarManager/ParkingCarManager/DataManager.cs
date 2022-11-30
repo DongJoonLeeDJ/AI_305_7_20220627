@@ -24,7 +24,7 @@ namespace ParkingCarManager
         //DataManager 관련된 호출이 보이면
         //(DataManager에 접근하려고 할 때)
         //그 때 호출됨
-        static DataManager()
+        static DataManager() //단 한 번만 호출!
         {
             Load();
         }
