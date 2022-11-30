@@ -108,7 +108,38 @@ namespace HelloMyLastCSharp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text.Trim()=="")
+                MessageBox.Show("isbn 없음");
+            else if(textBox3.Text.Trim()=="")
+                MessageBox.Show("사용자 id 입력해야 함");
+            else
+            {
+                try
+                {
+                    Book b = DataManager.Books.Single
+                        (x => x.Isbn == textBox1.Text);
+                    if(b.isBorrowed)
+                        MessageBox.Show("이미 다른 사람이 빌렸습니다.");
+                    else
+                    {
+                        User u = DataManager.Users.Single
+                            (x => x.Id.ToString() == textBox3.Text);
+                        b.UserId = u.Id;
+                        b.UserName = u.Name;
+                        b.isBorrowed = true;
+                        b.BorrowedAt = DateTime.Now;
 
+                        ScreenRefresh();
+                        DataManager.Save();
+                        MessageBox.Show($"{b.Name}이가 {u.Name}님께 대여됨");
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("없는 책입니다.");
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
