@@ -15,6 +15,7 @@ namespace HelloMyLastCSharp
         public Form2()
         {
             InitializeComponent();
+            dataGridView1.DataSource = null;
             if (DataManager.Books.Count > 0)
                 dataGridView1.DataSource = DataManager.Books;
         }

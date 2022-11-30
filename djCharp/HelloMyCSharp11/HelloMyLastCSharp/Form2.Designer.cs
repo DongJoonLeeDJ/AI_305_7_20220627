@@ -184,6 +184,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -198,6 +200,7 @@
             this.dataGridView1.DataSource = this.bookBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 21);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(852, 126);
             this.dataGridView1.TabIndex = 0;
@@ -208,48 +211,56 @@
             this.isbnDataGridViewTextBoxColumn.DataPropertyName = "Isbn";
             this.isbnDataGridViewTextBoxColumn.HeaderText = "Isbn";
             this.isbnDataGridViewTextBoxColumn.Name = "isbnDataGridViewTextBoxColumn";
+            this.isbnDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // publisherDataGridViewTextBoxColumn
             // 
             this.publisherDataGridViewTextBoxColumn.DataPropertyName = "Publisher";
             this.publisherDataGridViewTextBoxColumn.HeaderText = "Publisher";
             this.publisherDataGridViewTextBoxColumn.Name = "publisherDataGridViewTextBoxColumn";
+            this.publisherDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pageDataGridViewTextBoxColumn
             // 
             this.pageDataGridViewTextBoxColumn.DataPropertyName = "Page";
             this.pageDataGridViewTextBoxColumn.HeaderText = "Page";
             this.pageDataGridViewTextBoxColumn.Name = "pageDataGridViewTextBoxColumn";
+            this.pageDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // userIdDataGridViewTextBoxColumn
             // 
             this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
             this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
             this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+            this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // userNameDataGridViewTextBoxColumn
             // 
             this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
             this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
             this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            this.userNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // isBorrowedDataGridViewCheckBoxColumn
             // 
             this.isBorrowedDataGridViewCheckBoxColumn.DataPropertyName = "isBorrowed";
             this.isBorrowedDataGridViewCheckBoxColumn.HeaderText = "isBorrowed";
             this.isBorrowedDataGridViewCheckBoxColumn.Name = "isBorrowedDataGridViewCheckBoxColumn";
+            this.isBorrowedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // borrowedAtDataGridViewTextBoxColumn
             // 
             this.borrowedAtDataGridViewTextBoxColumn.DataPropertyName = "BorrowedAt";
             this.borrowedAtDataGridViewTextBoxColumn.HeaderText = "BorrowedAt";
             this.borrowedAtDataGridViewTextBoxColumn.Name = "borrowedAtDataGridViewTextBoxColumn";
+            this.borrowedAtDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bookBindingSource
             // 
