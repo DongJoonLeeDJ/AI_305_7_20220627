@@ -20,6 +20,7 @@ namespace HelloMyCSharp11
             chart1.Series[0].Points.AddXY("a", 2);
             chart1.Series[0].Points.AddXY("b", 3);
             chart1.Series[0].Points.AddXY("c", 4);
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
 
             //두번째 차트
             chart2.Series[0].Points.AddXY(0.0, 10);
