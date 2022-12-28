@@ -11,3 +11,5 @@ print('y축',y)
 
 plt.plot(x,y)
 plt.show()
+
+
